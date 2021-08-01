@@ -3,7 +3,9 @@
 
 .codeblock {
   background-color: $lgtstblue;
-  width: 35%;
+  width: 90%;
+  min-width: 335px;
+  max-width: 395px;
   margin: 0 auto;
   padding: 5px;
   border-radius: 5px;

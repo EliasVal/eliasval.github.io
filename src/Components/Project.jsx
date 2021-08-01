@@ -19,7 +19,7 @@ const Project = ({ projectData, margin }) => {
   const madeWithIcon = (iconName) => {
     switch (iconName) {
       case "unity":
-        return <SiUnity title="Unity" />;
+        return <SiUnity title="Unity" dataContainer="body" />;
       case "js":
         return <SiJavascript title="JavaScript" />;
       case "html":
@@ -50,33 +50,39 @@ const Project = ({ projectData, margin }) => {
   };
 
   return (
-    <div className="project" style={{ margin: `${margin} auto` }}>
-      <div className="imageDiv">
+    <div className="project flex flex-row" style={{ margin: `${margin} auto` }}>
+      <div class="imageDiv">
         <img alt="" src={projectData.img} />
       </div>
-      <div className="info">
-        <h3>{projectData.title}</h3>
-        <p>
-          {projectData.desc
-            .split("|")
-            .map((desc) => (desc === "\n" ? <br /> : desc))}
-        </p>
-      </div>
-      <div className="madeWith">
-        <p>{projectData.madeWith.map((mw) => madeWithIcon(mw))}</p>
-      </div>
-      <div className="status">
-        <h4>
-          Status:{" "}
-          <u style={{ color: projectData.status.color }}>
-            {projectData.status.title}
-          </u>
-        </h4>
+      <div className="content">
+        <div className="title">
+          <div className="flex flex-between">
+            <h1>{projectData.title}</h1>
+          </div>
+        </div>
+        <div className="desc">
+          <p className={projectData.desc.length >= 70 && "scaleText"}>
+            {projectData.desc
+              .split("|")
+              .map((desc) => (desc === "\n" ? <br /> : desc))}
+          </p>
+        </div>
       </div>
       <div className="icons">
         {projectData.availableAt.map((loc) => (
           <ProjectLocation url={loc.url} logo={loc.logo}></ProjectLocation>
         ))}
+      </div>
+      <div className="madeWith">
+        {projectData.madeWith.map((mw) => madeWithIcon(mw))}
+      </div>
+      <div className="status">
+        <h5>
+          Status:{" "}
+          <span style={{ color: projectData.status.color }}>
+            {projectData.status.title}
+          </span>
+        </h5>
       </div>
     </div>
   );

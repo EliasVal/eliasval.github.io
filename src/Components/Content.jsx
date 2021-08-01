@@ -40,11 +40,11 @@ const Content = () => {
           <span
             style={{
               textDecoration: "underline",
-              textDecorationStyle: "wavy",
+              textDecorationStyle: "solid",
               textDecorationThickness: "2px",
               textDecorationSkipInk: "none",
               textDecorationSkip: "none",
-              textDecorationColor: "#FB4028",
+              textDecorationColor: "darkblue",
             }}>
             {data.iknow}.
           </span>
@@ -60,7 +60,7 @@ const Content = () => {
 
       <section id="projects">
         <CodeBlock
-          margin="10em auto 3em auto"
+          margin="10em auto 5em auto"
           addCursor={true}
           code={[
             { text: "console", color: "orange" },

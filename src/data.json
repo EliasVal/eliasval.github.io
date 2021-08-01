@@ -21,7 +21,7 @@
             "url": "https://discord.com/oauth2/authorize?client_id=687228371016351760&scope=bot&permissions=8"
           }
         ],
-        "madeWith": ["ts", "fb", "njs"]
+        "madeWith": ["ts", "njs", "fb"]
       },
       "margin": "5px"
     },
@@ -35,9 +35,9 @@
           "color": "darkorange"
         },
         "availableAt": [],
-        "madeWith": ["unity", "cs"]
+        "madeWith": ["cs", "unity"]
       },
-      "margin": "50px"
+      "margin": "75px"
     },
     {
       "projectData": {
@@ -58,10 +58,10 @@
             "url": "https://eliasv.itch.io/dont-feed-the-hole"
           }
         ],
-        "madeWith": ["unity", "cs"]
+        "madeWith": ["cs", "unity"]
       },
 
-      "margin": "50px"
+      "margin": "75px"
     },
     {
       "projectData": {
@@ -72,11 +72,20 @@
           "title": "Done",
           "color": "limegreen"
         },
-        "availableAt": [],
-        "madeWith": ["react", "scss", "js"]
+        "availableAt": [
+          {
+            "logo": "github",
+            "url": "https://github.com/EliasVal/eliasval.github.io"
+          },
+          {
+            "logo": "web",
+            "url": "https://eliasval.github.io"
+          }
+        ],
+        "madeWith": ["js", "scss", "react"]
       },
 
-      "margin": "50px"
+      "margin": "75px"
     },
     {
       "projectData": {
@@ -97,10 +106,10 @@
             "url": "https://trumpmathsquiz.eliasval.repl.co/"
           }
         ],
-        "madeWith": ["ts", "fb", "scss", "html"]
+        "madeWith": ["html", "scss", "ts", "fb"]
       },
 
-      "margin": "50px"
+      "margin": "75px"
     },
     {
       "projectData": {
@@ -117,16 +126,16 @@
             "url": "https://github.com/EliasVal/DiscordEmojiBot"
           }
         ],
-        "madeWith": ["ts", "fb", "njs"]
+        "madeWith": ["ts", "njs", "fb"]
       },
 
-      "margin": "50px"
+      "margin": "75px"
     },
     {
       "projectData": {
         "img": "https://cdn.discordapp.com/avatars/332567411620577280/a_0bd113d5720ff9211136cbe1b5cb18f0.png",
         "title": "Image to ASCII art Converter",
-        "desc": "This project Converts images to ASCII art. Originally made with Electron but later remade in WPF Forms and C#.",
+        "desc": "This project Converts images to ASCII art. Originally made with Electron and later remade in WPF Forms.",
         "status": {
           "title": "Done",
           "color": "limegreen"
@@ -141,10 +150,10 @@
             "url": "https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF"
           }
         ],
-        "madeWith": ["js", "electron", "css", "html", "wpf", "cs"]
+        "madeWith": ["html", "scss", "js", "cs", "electron", "wpf"]
       },
 
-      "margin": "50px"
+      "margin": "75px"
     }
   ]
 }
