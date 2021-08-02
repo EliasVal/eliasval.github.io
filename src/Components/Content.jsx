@@ -46,7 +46,7 @@ const Content = () => {
               textDecorationSkip: "none",
               textDecorationColor: "darkblue",
             }}>
-            {data.iknow}.
+            {data.iknow}&#8202;.
           </span>
           <br />
           My Comissions are open, I can make any game, website, etc. you want as

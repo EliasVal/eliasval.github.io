@@ -11,6 +11,7 @@ import {
   SiFirebase,
   SiNodeDotJs,
   SiElectron,
+  SiVisualstudiocode,
 } from "react-icons/si";
 
 import { FaWpforms, FaCss3 } from "react-icons/fa";
@@ -19,7 +20,7 @@ const Project = ({ projectData, margin }) => {
   const madeWithIcon = (iconName) => {
     switch (iconName) {
       case "unity":
-        return <SiUnity title="Unity" dataContainer="body" />;
+        return <SiUnity title="Unity" />;
       case "js":
         return <SiJavascript title="JavaScript" />;
       case "html":
@@ -44,6 +45,8 @@ const Project = ({ projectData, margin }) => {
         return <FaWpforms title="WPF Forms" />;
       case "css":
         return <FaCss3 title="CSS3" />;
+      case "vs":
+        return <SiVisualstudiocode title="VSCode" />;
       default:
         throw new Error("Unknown Icon");
     }

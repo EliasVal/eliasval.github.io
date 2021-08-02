@@ -18,3 +18,10 @@
   border-radius: 10px;
   width: 90%;
 }
+
+#projects {
+  padding-bottom: 150px;
+  .project:last-child {
+    margin: 0 auto !important;
+  }
+}
