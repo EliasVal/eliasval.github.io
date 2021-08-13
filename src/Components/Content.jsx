@@ -33,7 +33,7 @@ const Content = () => {
         <h4 className="intro notBlueSelect">
           Hello! I'm Elias! I'm a{" "}
           {new Date(new Date() - new Date(2005, 11, 25)).getFullYear() - 1970}{" "}
-          year old Programmer! I make anything from Websites, to games to
+          year old Programmer, and I make anything from Websites, to games to
           Discord bots. I've been programming since 11, starting off with web
           development with HTML5 and CSS3. I've learned C# at 12 and got into
           game development using the Unity Game Engine. Nowdays, I use:{" "}

@@ -133,7 +133,7 @@
     },
     {
       "projectData": {
-        "img": "https://cdn.discordapp.com/avatars/332567411620577280/a_0bd113d5720ff9211136cbe1b5cb18f0.png",
+        "img": "https://cdn.discordapp.com/attachments/687275796917911601/875733533262512158/a_3fd80d9eed669c09bf6acb4767b389f7.png",
         "title": "Image to ASCII art Converter",
         "desc": "This project Converts images to ASCII art. Originally made with Electron and later remade in WPF Forms.",
         "status": {
@@ -151,6 +151,26 @@
           }
         ],
         "madeWith": ["html", "scss", "js", "cs", "electron", "wpf"]
+      },
+
+      "margin": "75px"
+    },
+    {
+      "projectData": {
+        "img": "https://cdn.discordapp.com/attachments/687275796917911601/870963897883054100/webbody.png",
+        "title": "TCP Messaging App",
+        "desc": "This project was me fiddling with TCP. Use it however you'd like.",
+        "status": {
+          "title": "Done",
+          "color": "limegreen"
+        },
+        "availableAt": [
+          {
+            "logo": "github",
+            "url": "https://github.com/EliasVal/TcpMessaging"
+          }
+        ],
+        "madeWith": ["cs"]
       },
 
       "margin": "75px"
