@@ -38,6 +38,10 @@
           {
             "logo": "github",
             "url": "https://github.com/EliasVal/D-Bugger"
+          },
+          {
+            "logo": "web",
+            "url": "https://eliasval.github.io/D-Bugger"
           }
         ],
         "madeWith": ["svelte", "js", "ts", "fb", "tailwind"]
