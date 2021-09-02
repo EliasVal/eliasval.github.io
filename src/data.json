@@ -27,6 +27,25 @@
     },
     {
       "projectData": {
+        "img": "https://cdn.discordapp.com/attachments/582275306862280724/880737583347417098/icon.png",
+        "title": "D-Bugger",
+        "desc": "A project made for developers to log & keep track of bugs.",
+        "status": {
+          "title": "Work in Progress",
+          "color": "darkorange"
+        },
+        "availableAt": [
+          {
+            "logo": "github",
+            "url": "https://github.com/EliasVal/D-Bugger"
+          }
+        ],
+        "madeWith": ["svelte", "js", "ts", "fb", "tailwind"]
+      },
+      "margin": "75px"
+    },
+    {
+      "projectData": {
         "img": "https://cdn.discordapp.com/attachments/687275796917911601/870965719318265856/WIP.png",
         "title": "DWAG",
         "desc": "A 2D Platformer set in hell which I am working on, currently it is far from being done, but I am actively working on it.",

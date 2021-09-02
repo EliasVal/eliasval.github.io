@@ -12,6 +12,8 @@ import {
   SiNodeDotJs,
   SiElectron,
   SiVisualstudiocode,
+  SiSvelte,
+  SiTailwindcss,
 } from "react-icons/si";
 
 import { FaWpforms, FaCss3 } from "react-icons/fa";
@@ -47,6 +49,11 @@ const Project = ({ projectData, margin }) => {
         return <FaCss3 title="CSS3" />;
       case "vs":
         return <SiVisualstudiocode title="VSCode" />;
+      case "svelte":
+        return <SiSvelte title="Svelte" />;
+      case "tailwind":
+      case "tailwindcss":
+        return <SiTailwindcss title="Tailwind CSS" />;
       default:
         throw new Error("Unknown Icon");
     }
