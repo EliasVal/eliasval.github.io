@@ -1,5 +1,13 @@
 import "../Styling/Project.scss";
 import ProjectLocation from "./ProjectLocation";
+
+import alphabot from "../images/alphabot.png";
+import dbugger from "../images/dbugger.png";
+import dfth from "../images/DFTH.png";
+import wip from "../images/WIP.png";
+import spunch from "../images/spunch.png";
+import webbody from "../images/WebBody.png";
+
 import {
   SiCsharp,
   SiHtml5,
@@ -17,6 +25,15 @@ import {
 } from "react-icons/si";
 
 import { FaWpforms, FaCss3 } from "react-icons/fa";
+
+const imgObj = {
+  alphabot,
+  dbugger,
+  dfth,
+  wip,
+  spunch,
+  webbody,
+};
 
 const Project = ({ projectData, margin }) => {
   const madeWithIcon = (iconName) => {
@@ -62,7 +79,7 @@ const Project = ({ projectData, margin }) => {
   return (
     <div className="project flex flex-row" style={{ margin: `${margin} auto` }}>
       <div class="imageDiv">
-        <img alt="" src={projectData.img} />
+        <img alt="" src={imgObj[projectData.img]} />
       </div>
       <div className="content">
         <div className="title">
