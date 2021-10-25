@@ -56,7 +56,7 @@
           },
           {
             "logo": "web",
-            "url": "https://eliasval.github.io/D-Bugger"
+            "url": "https://dbugger.me"
           }
         ],
         "madeWith": ["svelte", "js", "ts", "fb", "tailwind"]
