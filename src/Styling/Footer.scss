@@ -1,0 +1,37 @@
+@import "./colours";
+
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: $dblue;
+  width: 100%;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: gray !important;
+  }
+
+  > div {
+    padding: 15px;
+    div {
+      display: inline-block;
+    }
+    div:first-of-type {
+      h5 {
+        user-select: none;
+        svg {
+          fill: #61dbfb;
+        }
+      }
+    }
+    #inspiredBy {
+      float: right;
+    }
+  }
+}
