@@ -19,3 +19,7 @@ body {
 
   background: linear-gradient(to bottom left, #1f1f1f, #1a1a1a);
 }
+
+p {
+  line-height: 1.6;
+}

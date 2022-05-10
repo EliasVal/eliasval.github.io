@@ -11,11 +11,13 @@
 </div>
 
 <style lang="scss">
+  @import "../scss/_mixins";
   #nextSect {
     position: fixed;
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
+    @include unselectable;
     button {
       aspect-ratio: 1 / 1;
       width: 3rem;

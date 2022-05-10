@@ -8,23 +8,43 @@
 </script>
 
 <section>
-  <h1>Introduction</h1>
-  <p>
-    Hello! I'm Elias! I'm a {age} year old Programmer, and I make anything from Websites,
-    to games to Discord bots. I've been programming since 11, starting off with web
-    development with HTML and CSS. I've learned C# at 12 and got into game development
-    using the Unity Game Engine. Nowadays, I use:<br />
-    Languages: {langs}
-    <br />
-    Frameworks/Libraries: {libs}
-  </p>
+  <div>
+    <h1>Introduction</h1>
+    <br /><br />
+    <p>
+      Hello! I'm Elias! I'm a {age} year old Programmer, and I make anything from
+      Websites, to games to Discord bots. I've been programming since 11, starting
+      off with web development with HTML and CSS. I've learned C# at 12 and got into
+      game development using the Unity Game Engine. Nowadays, I use:<br />
+      <span style="font-weight: 600">Languages</span>: <u>{langs}</u>
+      <br />
+      <span style="font-weight: 600">Frameworks/Libraries</span>: <u>{libs}</u>
+    </p>
+  </div>
 </section>
 
 <style lang="scss">
   section {
-    position: relative;
-    h1 {
-      font-weight: 300;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      h1 {
+        font-weight: 300;
+        font-size: 3rem;
+      }
+      p {
+        text-align: justify;
+        max-width: 60ch;
+        margin: 0 5rem;
+      }
     }
   }
+
+  // @media screen and (max-width: 1200px) {
+  //   p {
+  //     mar
+  //   }
+  // }
 </style>

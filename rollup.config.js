@@ -45,7 +45,12 @@ export default {
   },
   plugins: [
     svelte({
-      preprocess: sveltePreprocess({ sourceMap: !production }),
+      preprocess: sveltePreprocess({
+        sourceMap: !production,
+        postcss: {
+          plugins: [require("autoprefixer")],
+        },
+      }),
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production,
@@ -68,7 +73,7 @@ export default {
     typescript({
       sourceMap: !production,
       inlineSources: !production,
-      rootDir: "./src"
+      rootDir: "./src",
     }),
 
     // In dev mode, call `npm run start` once

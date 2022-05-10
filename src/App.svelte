@@ -31,6 +31,7 @@
   <Header />
 </Visibility>
 
+<hr />
 <Visibility
   steps={100}
   threshold={50}
