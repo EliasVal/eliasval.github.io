@@ -1,6 +1,6 @@
 <script lang="typescript">
-  import Header from "./Components/Header.svelte";
-  import Introduction from "./Components/Introduction.svelte";
+  import Header from "./Components/Sections/Header.svelte";
+  import Introduction from "./Components/Sections/Introduction.svelte";
   import NextSection from "./Components/NextSection.svelte";
   import Visibility from "./Components/Visibility.svelte";
 
@@ -27,8 +27,14 @@
   on:visible={(e) => {
     count = HTMLCollectionIndexOf(sections, e.detail);
   }}
+  let:visible
+  fireOnce={true}
 >
-  <Header />
+  <section>
+    {#if visible}
+      <Header />
+    {/if}
+  </section>
 </Visibility>
 
 <hr />
@@ -38,15 +44,14 @@
   on:visible={(e) => {
     count = HTMLCollectionIndexOf(sections, e.detail);
   }}
+  let:visible
+  fireOnce={true}
 >
-  <Introduction langs={data.langs} libs={data.libs} />
+  <section>
+    {#if visible}
+      <Introduction langs={data.langs} libs={data.libs} />
+    {/if}
+  </section>
 </Visibility>
 
 <NextSection on:move={MoveToNextSection} />
-
-<style lang="scss">
-  :global(section) {
-    /*width: 100vw;*/
-    height: 100vh;
-  }
-</style>

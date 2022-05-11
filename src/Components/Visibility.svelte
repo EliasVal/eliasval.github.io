@@ -8,6 +8,7 @@
 
   export let steps = 100;
   export let threshold = 0;
+  export let fireOnce = false;
 
   let element;
   let percent;
@@ -27,6 +28,8 @@
           dispatch("visible", element.children[0]);
           toggle = true;
         }
+
+        if (fireOnce) unobserve();
       } else {
         toggle = false;
       }
@@ -59,8 +62,13 @@
 </script>
 
 <div bind:this={element}>
-  <slot {percent} {unobserve} {intersectionObserverSupport} />
+  <slot
+    {percent}
+    {unobserve}
+    visible={toggle || !intersectionObserverSupport}
+  />
 </div>
 
-<!-- Code taken from -->
+<!-- Original code taken from -->
 <!-- https://dev.to/dan_1s/visibility-detection-using-svelte-2e96 -->
+<!-- modified by me -->

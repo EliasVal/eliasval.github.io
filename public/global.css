@@ -23,3 +23,11 @@ body {
 p {
   line-height: 1.6;
 }
+
+section {
+  height: 100vh;
+}
+
+section > span {
+  height: 100%;
+}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fly } from "svelte/transition";
   export let langs: string = "";
   export let libs: string = "";
 
@@ -7,11 +8,11 @@
     new Date(new Date() - new Date(2005, 11, 25)).getFullYear() - 1970;
 </script>
 
-<section>
+<span id="introduction">
   <div>
-    <h1>Introduction</h1>
+    <h1 in:fly={{ y: -20, duration: 1000 }}>Introduction</h1>
     <br /><br />
-    <p>
+    <p in:fly={{ y: -20, duration: 750, delay: 300 }}>
       Hello! I'm Elias! I'm a {age} year old Programmer, and I make anything from
       Websites, to games to Discord bots. I've been programming since 11, starting
       off with web development with HTML and CSS. I've learned C# at 12 and got into
@@ -21,14 +22,13 @@
       <span style="font-weight: 600">Frameworks/Libraries</span>: <u>{libs}</u>
     </p>
   </div>
-</section>
+</span>
 
 <style lang="scss">
-  section {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @import "src/scss/_mixins.scss";
+
+  #introduction {
+    @include flex-center;
     div {
       h1 {
         font-weight: 300;
@@ -41,10 +41,4 @@
       }
     }
   }
-
-  // @media screen and (max-width: 1200px) {
-  //   p {
-  //     mar
-  //   }
-  // }
 </style>
