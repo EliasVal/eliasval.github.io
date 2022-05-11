@@ -8,7 +8,7 @@
     new Date(new Date() - new Date(2005, 11, 25)).getFullYear() - 1970;
 </script>
 
-<span id="introduction">
+<span>
   <div>
     <h1 in:fly={{ y: -20, duration: 1000 }}>Introduction</h1>
     <br /><br />
@@ -17,9 +17,11 @@
       Websites, to games to Discord bots. I've been programming since 11, starting
       off with web development with HTML and CSS. I've learned C# at 12 and got into
       game development using the Unity Game Engine. Nowadays, I use:<br />
-      <span style="font-weight: 600">Languages</span>: <u>{langs}</u>
+      <span class="bold" style="font-weight: 600">Languages</span>:
+      <u>{langs}</u>
       <br />
-      <span style="font-weight: 600">Frameworks/Libraries</span>: <u>{libs}</u>
+      <span class="bold" style="font-weight: 600">Frameworks/Libraries</span>:
+      <u>{libs}</u>
     </p>
   </div>
 </span>
@@ -27,7 +29,7 @@
 <style lang="scss">
   @import "src/scss/_mixins.scss";
 
-  #introduction {
+  span:not(.bold) {
     @include flex-center;
     div {
       h1 {

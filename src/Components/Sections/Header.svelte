@@ -3,7 +3,7 @@
   import { quadOut } from "svelte/easing";
 </script>
 
-<span id="header">
+<span>
   <div>
     <h1 in:fly={{ y: -40, duration: 1500, easing: quadOut }}>
       Elias' Portfolio
@@ -20,7 +20,7 @@
 
 <style lang="scss">
   @import "src/scss/_mixins.scss";
-  #header {
+  span {
     @include flex-center;
     div {
       h1 {

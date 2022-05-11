@@ -8,7 +8,7 @@
 
   export let steps = 100;
   export let threshold = 0;
-  export let fireOnce = false;
+  // export let fireOnce = false;
 
   let element;
   let percent;
@@ -17,6 +17,7 @@
   let intersectionObserverSupport = false;
 
   let toggle = false;
+  let toggleOnce = false;
 
   const dispatch = createEventDispatcher();
 
@@ -29,7 +30,12 @@
           toggle = true;
         }
 
-        if (fireOnce) unobserve();
+        if (!toggleOnce) {
+          dispatch("visibleOnce", element.children[0]);
+          toggleOnce = true;
+        }
+
+        // if (fireOnce) unobserve();
       } else {
         toggle = false;
       }
@@ -66,6 +72,7 @@
     {percent}
     {unobserve}
     visible={toggle || !intersectionObserverSupport}
+    visibleOnce={toggleOnce || !intersectionObserverSupport}
   />
 </div>
 

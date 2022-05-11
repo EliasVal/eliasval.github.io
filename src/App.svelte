@@ -1,19 +1,23 @@
-<script lang="typescript">
-  import Header from "./Components/Sections/Header.svelte";
-  import Introduction from "./Components/Sections/Introduction.svelte";
-  import NextSection from "./Components/NextSection.svelte";
-  import Visibility from "./Components/Visibility.svelte";
+<script lang="ts">
+  import Content from "./Components/Content/Content.svelte";
 
+  // Navigation
+  import NextSection from "./Components/NextSection.svelte";
+  import Navbar from "./Components/Navbar/Navbar.svelte";
+
+  // Tools & Data
+  import { HTMLCollectionIndexOf, LocationHash } from "./tools";
   // @ts-ignore
   import data from "./static/data.json";
-  import { HTMLCollectionIndexOf } from "./tools";
 
   const sections = document.getElementsByTagName("section");
-  let count = 0;
+  let currentSection = 0;
 
   function MoveToNextSection() {
-    count = count + 1 > sections.length - 1 ? 0 : count + 1;
-    sections[count].scrollIntoView({ behavior: "smooth" });
+    currentSection =
+      currentSection + 1 > sections.length - 1 ? 0 : currentSection + 1;
+    // sections[currentSection].scrollIntoView({ behavior: "smooth" });
+    window.location.assign(`#${sections[currentSection].id}`);
   }
 </script>
 
@@ -21,37 +25,20 @@
   <title>Elias' Portfolio</title>
 </svelte:head>
 
-<Visibility
-  steps={100}
-  threshold={50}
+<Content
+  {data}
   on:visible={(e) => {
-    count = HTMLCollectionIndexOf(sections, e.detail);
+    currentSection = HTMLCollectionIndexOf(sections, e.detail);
+    LocationHash.set(sections[currentSection].id);
   }}
-  let:visible
-  fireOnce={true}
->
-  <section>
-    {#if visible}
-      <Header />
-    {/if}
-  </section>
-</Visibility>
-
-<hr />
-<Visibility
-  steps={100}
-  threshold={50}
-  on:visible={(e) => {
-    count = HTMLCollectionIndexOf(sections, e.detail);
-  }}
-  let:visible
-  fireOnce={true}
->
-  <section>
-    {#if visible}
-      <Introduction langs={data.langs} libs={data.libs} />
-    {/if}
-  </section>
-</Visibility>
+/>
 
 <NextSection on:move={MoveToNextSection} />
+
+<Navbar />
+
+<style lang="scss">
+  :global(.bold) {
+    font-weight: 600;
+  }
+</style>
