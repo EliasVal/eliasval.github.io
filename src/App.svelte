@@ -33,9 +33,9 @@
   }}
 />
 
-<NextSection on:move={MoveToNextSection} />
-
 <Navbar />
+
+<NextSection on:move={MoveToNextSection} />
 
 <style lang="scss">
   :global(.bold) {

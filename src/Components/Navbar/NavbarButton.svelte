@@ -13,9 +13,9 @@
 </script>
 
 <div class:highlight on:click={() => window.location.assign(`#${id}`)}>
-  <div>
+  <button>
     <h1>{char}</h1>
-  </div>
+  </button>
   <span>
     {tooltip}
   </span>
@@ -35,15 +35,19 @@
 
     &.highlight {
       span {
-        left: 60%;
+        left: 65%;
       }
-      div {
+      button {
         transform: scale(1.3);
         background-color: hsl(212, 80%, 48%);
+        border: 3px solid black;
+        h1 {
+          font-size: 1.3rem;
+        }
       }
     }
 
-    > div {
+    button {
       @include unselectable;
       @include flex-center;
 
@@ -58,11 +62,15 @@
 
       transition: transform 0.25s;
 
+      border: none;
+
       h1 {
         color: black;
 
         line-height: 1;
         font-size: 1.6rem;
+
+        transition: font-size 0.25s;
       }
     }
   }
