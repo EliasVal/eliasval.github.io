@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fly, fade } from "svelte/transition";
   import { quadOut } from "svelte/easing";
+  import Typist from "../Typist.svelte";
 </script>
 
 <span>
@@ -12,9 +13,15 @@
       Welcome to my portfolio!
     </h2>
     <br /><br />
-    <h3 in:fade={{ duration: 500, delay: 3500 }}>
-      Tap on the arrow button to continue to the next section.
-    </h3>
+    <!--  in:fade={{ duration: 500, delay: 3500 }} -->
+    <Typist
+      interval={50}
+      delay={2000}
+      cursor={true}
+      keepCursor={true}
+      styles={{ fontSize: "1rem", fontStyle: "italic" }}
+      text="Use the siderbar on the left to navigate between sections"
+    />
   </div>
 </span>
 
@@ -28,10 +35,6 @@
         font-weight: 300;
       }
       h2 {
-        font-style: italic;
-      }
-      h3 {
-        font-size: 1rem;
         font-style: italic;
       }
     }
