@@ -40,7 +40,6 @@
       button {
         transform: scale(1.3);
         background-color: hsl(212, 80%, 48%);
-        border: 3px solid black;
         h1 {
           font-size: 1.3rem;
         }
@@ -60,9 +59,9 @@
 
       background-color: white;
 
-      transition: transform 0.25s;
+      transition: 0.25s;
 
-      border: none;
+      border: 1px solid black;
 
       h1 {
         color: black;
@@ -97,6 +96,8 @@
     z-index: -1;
 
     transition: 0.3s ease-out;
+
+    white-space: nowrap;
 
     pointer-events: none;
   }

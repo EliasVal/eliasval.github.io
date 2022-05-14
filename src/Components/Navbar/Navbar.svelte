@@ -3,8 +3,13 @@
 </script>
 
 <navbar>
-  <NavbarButton id="header" tooltip="Header" char="&#x1F44B;" />
-  <NavbarButton id="introduction" tooltip="Introduction" char="&#x1F4DC;" />
+  <NavbarButton id="header" tooltip="Welcome!" char="&#x1F44B;" />
+  <NavbarButton
+    id="about"
+    tooltip="About Me"
+    char="&#x1F468;&#x200D;&#x1F4BB"
+  />
+  <NavbarButton id="projects" tooltip="Projects" char="&#x1F5C2;&#xFE0F;" />
 
   <!-- Horizontal Line -->
   <span />

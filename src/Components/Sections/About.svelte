@@ -10,7 +10,7 @@
 
 <span>
   <div>
-    <h1 in:fly={{ y: -20, duration: 1000 }}>Introduction</h1>
+    <h1 in:fly={{ y: -20, duration: 1000 }}>About Me</h1>
     <br /><br />
     <p in:fly={{ y: -20, duration: 750, delay: 300 }}>
       Hello! I'm Elias! I'm a {age} year old Programmer, and I make anything from

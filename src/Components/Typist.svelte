@@ -48,22 +48,19 @@
     min-height: calc(1rem + 0.6rem);
 
     &.cursor::after {
-      content: "a";
+      content: "|";
       color: transparent;
       background-color: white;
       margin-left: 0.3ch;
     }
 
     &.blink::after {
-      animation: blink 1s alternate 0.3s infinite;
+      animation: blink 0.75s linear alternate 0.3s infinite;
     }
   }
 
   @keyframes blink {
     from {
-      opacity: 0;
-    }
-    50% {
       opacity: 1;
     }
     to {
