@@ -21,7 +21,8 @@
   }
 
   onMount(() => {
-    window.location.assign(`#header`);
+    // @ts-ignore
+    if (!dev) window.location.assign(`#header`);
   });
 </script>
 

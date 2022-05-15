@@ -30,6 +30,10 @@ section {
   height: 100vh;
 }
 
-section > span {
+section > div {
   height: 100%;
+}
+
+a {
+  text-decoration: none;
 }
