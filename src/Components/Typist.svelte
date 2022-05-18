@@ -34,15 +34,14 @@
       }
       const span = document.createElement("span");
       span.style.color = t.color;
-      span.innerHTML = "";
       for (let [key, value] of Object.entries(styles)) {
         span.style[key] = styles[key];
       }
       element.appendChild(span);
-      while (span.innerHTML != t.text) {
-        span.innerHTML += t.text.substring(
-          span.innerHTML.length,
-          span.innerHTML.length + 1
+      while (span.innerText != t.text) {
+        span.innerText += t.text.substring(
+          span.innerText.length,
+          span.innerText.length + 1
         );
         await sleep(interval);
       }

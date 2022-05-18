@@ -22,6 +22,10 @@ import vscode from "./static/icons/vscode.svg";
 import web from "./static/icons/web.svg";
 import xaml from "./static/icons/xaml.svg";
 
+import waving from "./static/icons/waving.svg";
+import technologist from "./static/icons/technologist.svg";
+import folder from "./static/icons/folder.svg";
+
 // export {
 //   cs,
 //   discord,
@@ -88,5 +92,12 @@ export const ReturnSvg = (name) => {
     case "wpf":
     case "xaml":
       return xaml;
+
+    case "waving":
+      return waving;
+    case "technologist":
+      return technologist;
+    case "folder":
+      return folder;
   }
 };

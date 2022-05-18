@@ -67,7 +67,7 @@
     {
       "img": "dbugger",
       "title": "D-Bugger",
-      "description": "A project made for developers to log & keep track of bugs.|\n|The project shut down because the inability to keep it up and it being unused.",
+      "description": "A project made for developers to log & keep track of bugs.\nThe project shut down because the inability to keep it up and it being unused.",
       "status": {
         "title": "Killed",
         "color": "red"
@@ -83,7 +83,7 @@
     {
       "img": "webbody",
       "title": "My Portfolio",
-      "description": "The current website you're in right now :D|\n|My First project with React!",
+      "description": "The current website you're in right now :D\nMy First project with React!",
       "status": {
         "title": "Maintained",
         "color": "lightblue"

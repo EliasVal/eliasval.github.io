@@ -8,18 +8,20 @@
   export let data;
 </script>
 
-<ContentSection on:visible id="header">
-  <Header />
-</ContentSection>
+<div>
+  <ContentSection on:visible id="header">
+    <Header />
+  </ContentSection>
 
-<hr />
+  <hr />
 
-<ContentSection on:visible id="about">
-  <About langs={data.langs} libs={data.libs} />
-</ContentSection>
+  <ContentSection on:visible id="about">
+    <About langs={data.langs} libs={data.libs} />
+  </ContentSection>
 
-<hr />
+  <hr />
 
-<ContentSection on:visible id="projects">
-  <Projects projects={data.projects} />
-</ContentSection>
+  <ContentSection on:visible id="projects">
+    <Projects projects={data.projects} />
+  </ContentSection>
+</div>

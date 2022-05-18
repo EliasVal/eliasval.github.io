@@ -1,7 +1,8 @@
 import { writable } from "svelte/store";
 
 export const LocationHash = writable(window.location.hash);
-export const ProjectIndx = writable(0);
+export const ProjectIndex = writable(0);
+export const GalleryDirection = writable(0);
 
 export const HTMLCollectionIndexOf = (
   collection: HTMLCollection | HTMLCollectionOf<HTMLElement>,

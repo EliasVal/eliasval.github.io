@@ -1,30 +1,11 @@
 <script lang="ts">
-  import { ReturnSvg } from "../../../svgImports";
+  import { GalleryDirection, ProjectIndex } from "../../../tools";
 
   import Project from "../Project.svelte";
+  import Arrows from "./Arrows.svelte";
+  import ProjectBtn from "./ProjectBtn.svelte";
 
   export let projects: ProjectJson[] = [];
-
-  let projectIndex = 0;
-  let dir = 0;
-
-  const increaseIndex = () => {
-    document.documentElement.style.setProperty("--destIn", "50%");
-    document.documentElement.style.setProperty("--destOut", "-50%");
-
-    dir = -1;
-
-    projectIndex = wrapProjectIndex(projectIndex - 1);
-  };
-
-  const decreaseIndex = () => {
-    document.documentElement.style.setProperty("--destIn", "-50%");
-    document.documentElement.style.setProperty("--destOut", "50%");
-
-    dir = 1;
-
-    projectIndex = wrapProjectIndex(projectIndex + 1);
-  };
 
   const wrapProjectIndex = (idx) => {
     idx = idx < 0 ? projects.length - 1 : idx;
@@ -33,50 +14,57 @@
 
     return idx;
   };
+
+  let previousIndex = -1;
+  let tempPreviousIndex = 0;
+  let index = 0;
+
+  ProjectIndex.subscribe((e) => {
+    if (e !== tempPreviousIndex) {
+      previousIndex = tempPreviousIndex;
+      tempPreviousIndex = e;
+
+      index = e;
+    }
+  });
 </script>
 
 <div class="projects">
-  <button class="arr" on:click={decreaseIndex}
-    >{@html ReturnSvg("arrLeft")}</button
-  >
   <div class="project-container">
     {#each projects as project, i}
       <div
-        class:hidden={i !== projectIndex &&
-          (i !== wrapProjectIndex(projectIndex - (dir == 1 ? 1 : -1)) ||
-            dir == 0)}
-        class:animOut={i ===
-          wrapProjectIndex(projectIndex - (dir == 1 ? 1 : -1)) && dir != 0}
-        class:animIn={i === projectIndex && dir != 0}
+        class:hidden={i !== previousIndex && i !== index}
+        class:animOut={i === previousIndex}
+        class:animIn={i === index && $GalleryDirection !== 0}
       >
-        <Project {project} tempVisible={i === projectIndex} />
+        <Project {project} tempVisible={i === index} />
       </div>
     {/each}
   </div>
-  <button class="arr" on:click={increaseIndex}
-    >{@html ReturnSvg("arrRight")}</button
-  >
+  <Arrows {wrapProjectIndex}>
+    {#each projects as project, i}
+      <ProjectBtn constIndex={i} />
+    {/each}
+  </Arrows>
 </div>
 
 <style lang="scss">
+  @import "src/scss/_mixins.scss";
+
   :root {
     --destIn: -50%;
     --destOut: 50%;
   }
   .projects {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin: 0 150px;
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
     flex-grow: 1;
-    overflow-x: hidden;
+    overflow: hidden;
     .project-container {
       position: relative;
-      flex-grow: 2;
       max-width: 960px;
-      width: 90%;
-      max-height: 750px;
-      height: 50vh;
+      width: 100%;
       .hidden {
         display: none;
       }
@@ -88,27 +76,9 @@
       .animOut {
         animation: flyOut 0.5s ease forwards;
         pointer-events: none;
-      }
-
-      > div {
-        display: flex;
         position: absolute;
-        inset: 0;
+        top: 0;
       }
-    }
-    .arr {
-      :global(svg) {
-        aspect-ratio: 1 / 1;
-      }
-
-      aspect-ratio: 1 / 1;
-      align-self: center;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      color: black;
-
-      cursor: pointer;
     }
 
     @keyframes flyOut {

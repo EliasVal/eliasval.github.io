@@ -3,13 +3,9 @@
 </script>
 
 <navbar>
-  <NavbarButton id="header" tooltip="Welcome!" char="&#x1F44B;" />
-  <NavbarButton
-    id="about"
-    tooltip="About Me"
-    char="&#x1F468;&#x200D;&#x1F4BB"
-  />
-  <NavbarButton id="projects" tooltip="Projects" char="&#x1F5C2;&#xFE0F;" />
+  <NavbarButton id="header" tooltip="Welcome!" emoji="waving" />
+  <NavbarButton id="about" tooltip="About Me" emoji="technologist" />
+  <NavbarButton id="projects" tooltip="Projects" emoji="folder" />
 
   <!-- Horizontal Line -->
   <span />

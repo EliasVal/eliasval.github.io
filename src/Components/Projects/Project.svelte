@@ -158,7 +158,7 @@
     }
     img {
       border-radius: 5px;
-      // border-radius: 15px 5px 5px 15px;
+      width: 64px;
     }
     .made-with,
     .available-at {

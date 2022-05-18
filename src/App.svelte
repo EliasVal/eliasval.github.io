@@ -43,6 +43,6 @@
 <!-- <NextSection on:move={MoveToNextSection} /> -->
 <style lang="scss">
   :global(.bold) {
-    font-weight: 600;
+    font-weight: 700;
   }
 </style>

@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { ReturnSvg } from "../../svgImports";
   import { LocationHash } from "../../tools";
 
   export let id = "";
-  export let char = "";
+  export let emoji = "";
   export let tooltip = "";
 
   let highlight = false;
@@ -14,7 +15,7 @@
 
 <div class:highlight on:click={() => window.location.assign(`#${id}`)}>
   <button>
-    <h1>{char}</h1>
+    {@html ReturnSvg(emoji)}
   </button>
   <span>
     {tooltip}
@@ -40,8 +41,8 @@
       button {
         transform: scale(1.3);
         background-color: hsl(212, 80%, 48%);
-        h1 {
-          font-size: 1.3rem;
+        :global(svg) {
+          width: 2rem;
         }
       }
     }
@@ -63,13 +64,13 @@
 
       border: 1px solid black;
 
-      h1 {
+      :global(svg) {
         color: black;
 
         line-height: 1;
-        font-size: 1.6rem;
+        width: 1.6rem;
 
-        transition: font-size 0.25s;
+        transition: width 0.25s;
       }
     }
   }
