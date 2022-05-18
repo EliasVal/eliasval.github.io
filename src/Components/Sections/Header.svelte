@@ -16,7 +16,12 @@
     cursor={true}
     keepCursor={true}
     styles={{ fontSize: "1rem", fontStyle: "italic" }}
-    text="Use the siderbar on the left to navigate between sections"
+    text={[
+      {
+        text: "Use the siderbar on the left to navigate between sections",
+        color: "white",
+      },
+    ]}
   />
 </div>
 

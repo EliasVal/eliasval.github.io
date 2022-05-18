@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Properties } from "csstype";
-  import { onMount } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
+  import { sleep } from "../tools";
 
-  export let text;
+  export let text: Array<{ text: string; color: string }>;
   export let interval;
   export let delay = 0;
 
@@ -11,10 +12,10 @@
   export let cursor = false;
   export let keepCursor = false;
 
+  const dispatch = createEventDispatcher();
+
   let beganTyping = false;
   let finishedTyping = false;
-
-  let res = "";
 
   let element: HTMLElement;
 
@@ -23,29 +24,45 @@
       element.style[key] = styles[key];
     }
   });
-  setTimeout(() => {
+  setTimeout(async () => {
     beganTyping = true;
-    let intr = setInterval(() => {
-      res += text.substring(res.length, res.length + 1);
-      if (res == text) {
-        clearInterval(intr);
-        finishedTyping = true;
+    for (let t of text) {
+      if (!element) break;
+      if (t.text == "\n") {
+        element.appendChild(document.createElement("br"));
+        continue;
       }
-    }, interval);
+      const span = document.createElement("span");
+      span.style.color = t.color;
+      span.innerHTML = "";
+      for (let [key, value] of Object.entries(styles)) {
+        span.style[key] = styles[key];
+      }
+      element.appendChild(span);
+      while (span.innerHTML != t.text) {
+        span.innerHTML += t.text.substring(
+          span.innerHTML.length,
+          span.innerHTML.length + 1
+        );
+        await sleep(interval);
+      }
+    }
+    finishedTyping = true;
+    dispatch("finished", element);
   }, delay);
 </script>
 
 <p
-  bind:this={element}
   class:cursor={(cursor && !finishedTyping) || keepCursor}
   class:blink={!beganTyping || (finishedTyping && keepCursor)}
 >
-  {res}
+  <span bind:this={element} />
+  <slot {finishedTyping} />
 </p>
 
 <style lang="scss">
   p {
-    min-height: calc(1rem + 0.6rem);
+    // min-height: 1.6rem;
 
     &.cursor::after {
       content: "|";

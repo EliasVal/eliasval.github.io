@@ -22,3 +22,7 @@ export const HTMLCollectionIndexById = (
   }
   return -1;
 };
+
+export const sleep = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};

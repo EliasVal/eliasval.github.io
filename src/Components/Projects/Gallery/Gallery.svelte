@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { ReturnSvg } from "../../../svgImports";
+
   import Project from "../Project.svelte";
 
   export let projects: ProjectJson[] = [];
@@ -7,21 +9,21 @@
   let dir = 0;
 
   const increaseIndex = () => {
-    document.documentElement.style.setProperty("--destIn", "-50%");
-    document.documentElement.style.setProperty("--destOut", "50%");
-
-    dir = 1;
-
-    projectIndex = wrapProjectIndex(projectIndex + 1);
-  };
-
-  const decreaseIndex = () => {
     document.documentElement.style.setProperty("--destIn", "50%");
     document.documentElement.style.setProperty("--destOut", "-50%");
 
     dir = -1;
 
     projectIndex = wrapProjectIndex(projectIndex - 1);
+  };
+
+  const decreaseIndex = () => {
+    document.documentElement.style.setProperty("--destIn", "-50%");
+    document.documentElement.style.setProperty("--destOut", "50%");
+
+    dir = 1;
+
+    projectIndex = wrapProjectIndex(projectIndex + 1);
   };
 
   const wrapProjectIndex = (idx) => {
@@ -33,9 +35,11 @@
   };
 </script>
 
-<div class="projects-container">
-  <button on:click={decreaseIndex}>&lt;</button>
-  <div class="project">
+<div class="projects">
+  <button class="arr" on:click={decreaseIndex}
+    >{@html ReturnSvg("arrLeft")}</button
+  >
+  <div class="project-container">
     {#each projects as project, i}
       <div
         class:hidden={i !== projectIndex &&
@@ -45,11 +49,13 @@
           wrapProjectIndex(projectIndex - (dir == 1 ? 1 : -1)) && dir != 0}
         class:animIn={i === projectIndex && dir != 0}
       >
-        <Project {project} />
+        <Project {project} tempVisible={i === projectIndex} />
       </div>
     {/each}
   </div>
-  <button on:click={increaseIndex}>&gt;</button>
+  <button class="arr" on:click={increaseIndex}
+    >{@html ReturnSvg("arrRight")}</button
+  >
 </div>
 
 <style lang="scss">
@@ -57,36 +63,52 @@
     --destIn: -50%;
     --destOut: 50%;
   }
-  .projects-container {
+  .projects {
     display: flex;
-    .project {
+    align-items: center;
+    gap: 2rem;
+    margin: 0 150px;
+    flex-grow: 1;
+    overflow-x: hidden;
+    .project-container {
       position: relative;
-      // aspect-ratio: 16 / 9;
-      // max-width: 750px;
-      // width: 30vw;
-      // height: auto;
-
+      flex-grow: 2;
+      max-width: 960px;
+      width: 90%;
+      max-height: 750px;
+      height: 50vh;
       .hidden {
         display: none;
       }
 
       .animIn {
-        animation: flyIn 1s forwards;
+        animation: flyIn 0.5s ease forwards;
       }
 
       .animOut {
-        animation: flyOut 1s forwards;
-        position: absolute;
+        animation: flyOut 0.5s ease forwards;
         pointer-events: none;
       }
+
+      > div {
+        display: flex;
+        position: absolute;
+        inset: 0;
+      }
     }
-    button {
+    .arr {
+      :global(svg) {
+        aspect-ratio: 1 / 1;
+      }
+
       aspect-ratio: 1 / 1;
       align-self: center;
-      width: 2rem;
-      height: auto;
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
       color: black;
+
+      cursor: pointer;
     }
 
     @keyframes flyOut {
@@ -104,12 +126,10 @@
       from {
         opacity: 0;
         transform: translateX(var(--destIn));
-        position: absolute;
       }
       to {
         opacity: 1;
         transform: translateX(0);
-        position: relative;
       }
     }
   }

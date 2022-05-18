@@ -1,5 +1,7 @@
 // @ts-nocheck
 
+import arrLeft from "./static/icons/arr-left.svg";
+import arrRight from "./static/icons/arr-right.svg";
 import cs from "./static/icons/cs.svg";
 import discord from "./static/icons/discord.svg";
 import download from "./static/icons/download.svg";
@@ -18,6 +20,7 @@ import ts from "./static/icons/ts.svg";
 import unity from "./static/icons/unity.svg";
 import vscode from "./static/icons/vscode.svg";
 import web from "./static/icons/web.svg";
+import xaml from "./static/icons/xaml.svg";
 
 // export {
 //   cs,
@@ -41,6 +44,10 @@ import web from "./static/icons/web.svg";
 
 export const ReturnSvg = (name) => {
   switch (name) {
+    case "arrRight":
+      return arrRight;
+    case "arrLeft":
+      return arrLeft;
     case "cs":
       return cs;
     case "discord":
@@ -78,5 +85,8 @@ export const ReturnSvg = (name) => {
       return vscode;
     case "web":
       return web;
+    case "wpf":
+    case "xaml":
+      return xaml;
   }
 };

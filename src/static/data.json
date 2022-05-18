@@ -5,7 +5,7 @@
     {
       "img": "webbody",
       "title": "Your Commission!",
-      "description": "As mentioned earlier, you can commission stuff! Just contact me at Spinge Bib Sqorpnts#0116 over on Discord!",
+      "description": "Feel free to message me at Spinge Bib Sqorpnts#0116 over on Discord for a commission!",
       "status": {
         "title": "Pending",
         "color": "magenta"
@@ -110,7 +110,7 @@
       },
       "availableAt": [
         {
-          "logo": "itch",
+          "logo": "itchio",
           "url": "https://eliasv.itch.io/dont-feed-the-hole"
         },
         {

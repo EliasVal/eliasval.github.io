@@ -12,7 +12,7 @@
   @import "src/scss/_mixins.scss";
 
   div {
-    // @include flex-center;
-    flex-direction: column;
+    @include flex-center;
+    // flex-direction: column;
   }
 </style>
