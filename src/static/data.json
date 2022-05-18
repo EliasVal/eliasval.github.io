@@ -3,7 +3,7 @@
   "libs": "discord.js (v12, v13), Svelte & SvelteKit, React, Firebase, ASP.NET, Electron",
   "projects": [
     {
-      "img": "webbody",
+      "img": "WebBody",
       "title": "Your Commission!",
       "description": "Feel free to message me at Spinge Bib Sqorpnts#0116 over on Discord for a commission!",
       "status": {
@@ -81,7 +81,7 @@
       "madeWith": ["svelte", "ts", "firebase", "tailwind"]
     },
     {
-      "img": "webbody",
+      "img": "WebBody",
       "title": "My Portfolio",
       "description": "The current website you're in right now :D\nMy First project with React!",
       "status": {
@@ -121,7 +121,7 @@
       "madeWith": ["cs", "unity"]
     },
     {
-      "img": "webbody",
+      "img": "WebBody",
       "title": "Trump Maths Quiz",
       "description": "A School Project for the \"Trump\" programme.",
       "status": {
@@ -141,7 +141,7 @@
       "madeWith": ["html", "scss", "ts", "firebase"]
     },
     {
-      "img": "webbody",
+      "img": "WebBody",
       "title": "Discord Emoji Bot",
       "description": "Tired of Discord's server emote limits? well, this bot is for you!",
       "status": {
@@ -177,7 +177,7 @@
       "madeWith": ["html", "scss", "js", "cs", "electron", "wpf"]
     },
     {
-      "img": "webbody",
+      "img": "WebBody",
       "title": "TCP Messaging App",
       "description": "This project was me fiddling with TCP. Use it however you'd like.",
       "status": {
