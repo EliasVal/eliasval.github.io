@@ -23,7 +23,7 @@
 
 <div class="project">
   <div>
-    <img src="images/{project.img}.jpg" alt="" class="project-img" />
+    <img src="/images/{project.img}.jpg" alt="" class="project-img" />
   </div>
   {#if visible}
     <div class="details">
