@@ -14,9 +14,29 @@
       "madeWith": ["vs"]
     },
     {
+      "img": "WebBody",
+      "title": "Portfolio",
+      "description": "The website you're currently in!<br>Originally made in react, now remade in Svelte.",
+      "status": {
+        "title": "Maintained",
+        "color": "royalblue"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/eliasval.github.io"
+        },
+        {
+          "logo": "web",
+          "url": "https://eliasval.github.io"
+        }
+      ],
+      "madeWith": ["svelte", "ts", "scss"]
+    },
+    {
       "img": "suffa",
-      "title": "Suffa I Bot",
-      "description": "A lightweight Discord moderation bot that was commissioned.",
+      "title": "Suffa 1 Bot",
+      "description": "A Commissioned lightweight moderation Discord bot.",
       "status": {
         "title": "Completed",
         "color": "limegreen"
@@ -27,7 +47,7 @@
     {
       "img": "drivebot",
       "title": "Drive Bot",
-      "description": "A Discord bot that acts like a Cloud Storage Drive! With a complete file system and all!",
+      "description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a file system!",
       "status": {
         "title": "Completed",
         "color": "limegreen"
@@ -47,10 +67,10 @@
     {
       "img": "alphabot",
       "title": "Alphabot",
-      "description": "A Discord bot I have made with a friend.",
+      "description": "An all-in-one Discord bot that I used to work on with a friend.",
       "status": {
         "title": "Deprecated",
-        "color": "darkred"
+        "color": "red"
       },
       "availableAt": [
         {
@@ -67,9 +87,9 @@
     {
       "img": "dbugger",
       "title": "D-Bugger",
-      "description": "A project made for developers to log & keep track of bugs.\nThe project shut down because the inability to keep it up and it being unused.",
+      "description": "A project made for developers to log & keep track of bugs.<br>The project shut down due to the inability to keep it up and it being unused.",
       "status": {
-        "title": "Killed",
+        "title": "Deprecated",
         "color": "red"
       },
       "availableAt": [
@@ -82,20 +102,20 @@
     },
     {
       "img": "WebBody",
-      "title": "My Portfolio",
-      "description": "The current website you're in right now :D\nMy First project with React!",
+      "title": "Old Portfolio",
+      "description": "The old design of this website.",
       "status": {
-        "title": "Maintained",
-        "color": "lightblue"
+        "title": "Deprecated",
+        "color": "red"
       },
       "availableAt": [
         {
           "logo": "github",
-          "url": "https://github.com/EliasVal/eliasval.github.io"
+          "url": "https://github.com/EliasVal/eliasval.github.io/tree/old-design"
         },
         {
           "logo": "web",
-          "url": "https://eliasval.github.io"
+          "url": "https://eliasval.github.io/old"
         }
       ],
       "madeWith": ["js", "scss", "react"]
@@ -119,26 +139,6 @@
         }
       ],
       "madeWith": ["cs", "unity"]
-    },
-    {
-      "img": "WebBody",
-      "title": "Trump Maths Quiz",
-      "description": "A School Project for the \"Trump\" programme.",
-      "status": {
-        "title": "Completed",
-        "color": "limegreen"
-      },
-      "availableAt": [
-        {
-          "logo": "github",
-          "url": "https://github.com/EliasVal/TrumpMathsQuiz"
-        },
-        {
-          "logo": "web",
-          "url": "https://trumpmathsquiz.eliasval.repl.co/"
-        }
-      ],
-      "madeWith": ["html", "scss", "ts", "firebase"]
     },
     {
       "img": "WebBody",

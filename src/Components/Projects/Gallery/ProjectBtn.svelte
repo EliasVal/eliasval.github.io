@@ -2,6 +2,7 @@
   import { GalleryDirection, ProjectIndex } from "../../../tools";
 
   export let constIndex;
+  export let title;
 
   const updateProjectIndex = () => {
     if (constIndex < $ProjectIndex) {
@@ -22,6 +23,7 @@
 <button
   class:active={$ProjectIndex === constIndex}
   on:click={updateProjectIndex}
+  {title}
 />
 
 <style lang="scss">

@@ -14,11 +14,11 @@
   const sections = document.getElementsByTagName("section");
   let currentSection = 0;
 
-  function MoveToNextSection() {
-    currentSection =
-      currentSection + 1 > sections.length - 1 ? 0 : currentSection + 1;
-    window.location.assign(`#${sections[currentSection].id}`);
-  }
+  // function MoveToNextSection() {
+  //   currentSection =
+  //     currentSection + 1 > sections.length - 1 ? 0 : currentSection + 1;
+  //   window.location.assign(`#${sections[currentSection].id}`);
+  // }
 
   onMount(() => {
     // @ts-ignore

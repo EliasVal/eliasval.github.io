@@ -1,134 +1,70 @@
 <script lang="ts">
-  import { fade } from "svelte/transition";
-
   import { ReturnSvg } from "../../svgImports";
-
-  import Typist from "../Typist.svelte";
-
-  // import * as svgs from "src/svgImports.ts"
   export let project: ProjectJson;
-  export let tempVisible: boolean;
-
-  let visible;
-
-  let finishedName,
-    finishedDesc,
-    finishedMw,
-    finishedAa = Object.entries(project.availableAt).length == 0;
-
-  let interval = 35;
-
-  $: if (tempVisible) visible = true;
 </script>
 
 <div class="project">
   <div>
     <img src="/images/{project.img}.jpg" alt="" class="project-img" />
   </div>
-  {#if visible}
-    <div class="details">
-      <div class="top-details">
-        <span class="project-details">
-          <Typist
-            cursor={true}
-            keepCursor={false}
-            text={[
-              { text: "Name: ", color: "#A5D6DA" },
-              { text: project.title, color: "#C9D1D9" },
-              { text: "\n", color: "" },
-            ]}
-            delay={500}
-            {interval}
-            styles={{ fontWeight: 300 }}
-            on:finished={() => (finishedName = true)}
-          />
-          {#if finishedName}
-            <Typist
-              cursor={true}
-              keepCursor={false}
-              text={[
-                { text: "Description: ", color: "#A5D6DA" },
-                { text: project.description, color: "#C9D1D9" },
-              ]}
-              delay={100}
-              {interval}
-              styles={{ fontWeight: 300 }}
-              on:finished={() => (finishedDesc = true)}
-            />
-          {/if}
-        </span>
-      </div>
+  <div class="details">
+    <div class="top-details">
+      <span class="project-details">
+        <p>
+          <span class="field-title">Name:</span>
+          <span class="field-content">{project.title}</span>
+        </p>
 
-      <div class="bottom-details">
-        {#if finishedDesc}
-          <Typist
-            cursor={true}
-            keepCursor={false}
-            text={[{ text: "Made with: ", color: "#A5D6DA" }]}
-            delay={100}
-            {interval}
-            styles={{ fontWeight: 300 }}
-            let:finishedTyping
-            on:finished={() => (finishedMw = true)}
-          >
-            {#if finishedTyping}
-              <span class="made-with" in:fade={{ delay: 500, duration: 500 }}>
-                {#each project.madeWith as mw}
-                  {@html ReturnSvg(mw)}
-                {/each}
-              </span>
-            {/if}
-          </Typist>
-        {/if}
-        {#if Object.entries(project.availableAt).length > 0 && finishedMw}
-          <Typist
-            cursor={true}
-            keepCursor={false}
-            text={[
-              { text: "\n", color: "" },
-              { text: "Available At:", color: "#A5D6DA" },
-            ]}
-            delay={1000}
-            {interval}
-            styles={{ fontWeight: 300 }}
-            let:finishedTyping
-            on:finished={() => (finishedAa = true)}
-          >
-            {#if finishedTyping}
-              <span
-                class="available-at"
-                in:fade={{ delay: 500, duration: 500 }}
-              >
-                {#each project.availableAt as availableLocation}
-                  <a href={availableLocation.url} target="_blank">
-                    {@html ReturnSvg(availableLocation.logo)}
-                  </a>
-                {/each}
-              </span>
-            {/if}
-          </Typist>
-        {/if}
-        {#if finishedAa && finishedMw}
-          <Typist
-            cursor={true}
-            keepCursor={false}
-            text={[
-              { text: "\n", color: "" },
-              { text: "Status: ", color: "#A5D6DA" },
-              { text: project.status.title, color: project.status.color },
-            ]}
-            delay={1000}
-            {interval}
-            styles={{ fontWeight: 300 }}
-          />
-        {/if}
-      </div>
+        <p>
+          <span class="field-title">Description:</span>
+          <span class="field-content">{@html project.description}</span>
+        </p>
+      </span>
     </div>
-  {/if}
+
+    <div class="bottom-details">
+      <p>
+        <span class="field-title">Made with:</span>
+        <span class="made-with">
+          {#each project.madeWith as mw}
+            {@html ReturnSvg(mw)}
+          {/each}
+        </span>
+      </p>
+      {#if Object.entries(project.availableAt).length > 0}
+        <p>
+          <span class="field-title">Available at:</span>
+          <span class="available-at">
+            {#each project.availableAt as availableLocation}
+              <a href={availableLocation.url} target="_blank">
+                {@html ReturnSvg(availableLocation.logo)}
+              </a>
+            {/each}
+          </span>
+        </p>
+      {/if}
+      <p>
+        <span class="field-title">Name:</span>
+        <span style="color: {project.status.color}">
+          {project.status.title}
+        </span>
+      </p>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">
   .project {
+    .field-title {
+      color: #a5d6da;
+    }
+    .field-content {
+      color: #c9d1d9;
+    }
+
+    * {
+      font-family: "Cascadia Code", sans-serif;
+    }
     display: flex;
     background: linear-gradient(to bottom left, #555555, #3b3b3b);
     box-shadow: 0 0 15px 0px #000;

@@ -37,13 +37,13 @@
         class:animOut={i === previousIndex}
         class:animIn={i === index && $GalleryDirection !== 0}
       >
-        <Project {project} tempVisible={i === index} />
+        <Project {project} />
       </div>
     {/each}
   </div>
   <Arrows {wrapProjectIndex}>
     {#each projects as project, i}
-      <ProjectBtn constIndex={i} />
+      <ProjectBtn title={project.title} constIndex={i} />
     {/each}
   </Arrows>
 </div>

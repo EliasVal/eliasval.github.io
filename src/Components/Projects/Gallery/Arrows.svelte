@@ -24,13 +24,13 @@
 </script>
 
 <div>
-  <button class="arr" on:click={decreaseIndex}>
+  <button title="Previous Project" class="arr" on:click={decreaseIndex}>
     {@html ReturnSvg("arrLeft")}
   </button>
   <span>
     <slot />
   </span>
-  <button class="arr" on:click={increaseIndex}>
+  <button title="Next Project" class="arr" on:click={increaseIndex}>
     {@html ReturnSvg("arrRight")}
   </button>
 </div>
