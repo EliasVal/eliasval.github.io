@@ -45,7 +45,7 @@
       "madeWith": ["njs", "ts"]
     },
     {
-      "img": "drivebot",
+      "img": "driveBot",
       "title": "Drive Bot",
       "description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a file system!",
       "status": {
@@ -121,7 +121,7 @@
       "madeWith": ["js", "scss", "react"]
     },
     {
-      "img": "dfth",
+      "img": "DFTH",
       "title": "Don't Feed the Hole",
       "description": "A 2D Hypercasual game I made with two friends for a game jam.",
       "status": {
