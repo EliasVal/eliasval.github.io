@@ -11,7 +11,7 @@
   </h2>
   <br /><br />
   <Typist
-    interval={50}
+    interval={30}
     delay={2000}
     cursor={true}
     keepCursor={true}
@@ -36,6 +36,7 @@
     }
     h2 {
       font-style: italic;
+      font-weight: 100;
     }
   }
 </style>

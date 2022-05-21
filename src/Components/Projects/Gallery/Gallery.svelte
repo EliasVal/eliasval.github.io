@@ -2,18 +2,8 @@
   import { GalleryDirection, ProjectIndex } from "../../../tools";
 
   import Project from "../Project.svelte";
-  import Arrows from "./Arrows.svelte";
-  import ProjectBtn from "./ProjectBtn.svelte";
 
   export let projects: ProjectJson[] = [];
-
-  const wrapProjectIndex = (idx) => {
-    idx = idx < 0 ? projects.length - 1 : idx;
-
-    idx = idx > projects.length - 1 ? 0 : idx;
-
-    return idx;
-  };
 
   let previousIndex = -1;
   let tempPreviousIndex = 0;
@@ -29,78 +19,62 @@
   });
 </script>
 
-<div class="projects">
-  <div class="project-container">
-    {#each projects as project, i}
-      <div
-        class:hidden={i !== previousIndex && i !== index}
-        class:animOut={i === previousIndex}
-        class:animIn={i === index && $GalleryDirection !== 0}
-      >
-        <Project {project} />
-      </div>
-    {/each}
+{#each projects as project, i}
+  <div
+    class:hidden={i !== previousIndex && i !== index}
+    class:animOut={i === previousIndex}
+    class:animIn={i === index && $GalleryDirection !== 0}
+    style="flex-grow: 1;"
+  >
+    <Project {project} />
   </div>
-  <Arrows {wrapProjectIndex}>
-    {#each projects as project, i}
-      <ProjectBtn title={project.title} constIndex={i} />
-    {/each}
-  </Arrows>
-</div>
+{/each}
 
 <style lang="scss">
-  @import "src/scss/_mixins.scss";
-
   :root {
     --destIn: -50%;
     --destOut: 50%;
   }
-  .projects {
-    @include flex-center;
-    flex-direction: column;
-    gap: 1rem;
-    flex-grow: 1;
-    overflow: hidden;
-    .project-container {
-      position: relative;
-      max-width: 960px;
-      width: 100%;
-      .hidden {
-        display: none;
-      }
 
-      .animIn {
-        animation: flyIn 0.5s ease forwards;
-      }
+  $multiplier: 2;
+  $duration: 0.5s;
 
-      .animOut {
-        animation: flyOut 0.5s ease forwards;
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-      }
+  .hidden {
+    display: none;
+  }
+
+  .animIn {
+    animation: flyIn $duration 0.25s ease forwards;
+    opacity: 0;
+  }
+
+  .animOut {
+    animation: flyOut $duration ease forwards;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+  }
+
+  @keyframes flyOut {
+    from {
+      opacity: 1;
+      transform: translate(0, -50%);
     }
-
-    @keyframes flyOut {
-      from {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      to {
-        opacity: 0;
-        transform: translateX(var(--destOut));
-      }
+    to {
+      opacity: 0;
+      transform: translate(calc(var(--destOut) * $multiplier), -50%);
     }
+  }
 
-    @keyframes flyIn {
-      from {
-        opacity: 0;
-        transform: translateX(var(--destIn));
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+  @keyframes flyIn {
+    from {
+      transform: translateX(calc(var(--destIn) * $multiplier));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 </style>

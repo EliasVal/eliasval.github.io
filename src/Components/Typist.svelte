@@ -24,6 +24,7 @@
       element.style[key] = styles[key];
     }
   });
+
   setTimeout(async () => {
     beganTyping = true;
     for (let t of text) {
@@ -34,15 +35,9 @@
       }
       const span = document.createElement("span");
       span.style.color = t.color;
-      for (let [key, value] of Object.entries(styles)) {
-        span.style[key] = styles[key];
-      }
       element.appendChild(span);
-      while (span.innerText != t.text) {
-        span.innerText += t.text.substring(
-          span.innerText.length,
-          span.innerText.length + 1
-        );
+      for (let i = 0; i < t.text.length; i++) {
+        span.innerText = t.text.substring(0, i);
         await sleep(interval);
       }
     }
@@ -61,8 +56,6 @@
 
 <style lang="scss">
   p {
-    // min-height: 1.6rem;
-
     &.cursor::after {
       content: "|";
       color: transparent;
