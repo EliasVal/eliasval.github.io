@@ -20,6 +20,7 @@
   onMount(() => {
     // @ts-ignore
     window.location.assign(`#header`);
+    LocationHash.set("header");
   });
 </script>
 
