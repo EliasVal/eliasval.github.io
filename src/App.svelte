@@ -30,7 +30,7 @@
 <Content
   {data}
   on:visible={(e) => {
-    // LocationHash.set(e.detail.id);
+    LocationHash.set(e.detail.id);
   }}
 />
 
