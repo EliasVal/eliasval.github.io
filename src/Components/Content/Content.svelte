@@ -4,6 +4,7 @@
   import Header from "../Sections/Header.svelte";
   import About from "../Sections/About.svelte";
   import Projects from "../Sections/Projects.svelte";
+  import Footer from "../Sections/Footer.svelte";
 
   export let data;
 </script>
@@ -21,7 +22,9 @@
 
   <hr />
 
-  <ContentSection on:visible id="projects">
+  <ContentSection on:visible id="projects" checkVisibility={false}>
     <Projects projects={data.projects} />
   </ContentSection>
 </div>
+
+<Footer />

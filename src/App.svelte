@@ -6,13 +6,10 @@
   import Navbar from "./Components/Navbar/Navbar.svelte";
 
   // Tools & Data
-  import { HTMLCollectionIndexOf, LocationHash } from "./tools";
+  import { LocationHash } from "./tools";
   // @ts-ignore
   import data from "./static/data.json";
   import { onMount } from "svelte";
-
-  const sections = document.getElementsByTagName("section");
-  let currentSection = 0;
 
   // function MoveToNextSection() {
   //   currentSection =
@@ -22,7 +19,7 @@
 
   onMount(() => {
     // @ts-ignore
-    if (!dev) window.location.assign(`#header`);
+    window.location.assign(`#header`);
   });
 </script>
 
@@ -33,8 +30,7 @@
 <Content
   {data}
   on:visible={(e) => {
-    currentSection = HTMLCollectionIndexOf(sections, e.detail);
-    LocationHash.set(sections[currentSection].id);
+    // LocationHash.set(e.detail.id);
   }}
 />
 
