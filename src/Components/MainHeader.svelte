@@ -18,7 +18,7 @@
 
 <style lang="scss">
 	main {
-		height: 100vh;
+		height: 100%;
 
 		#main-content {
 			margin: 4em 5em;
@@ -31,9 +31,9 @@
 					font-size: 1.75em;
 					background: linear-gradient(
 						to right,
-						rgb(218, 103, 8),
+						rgb(235, 116, 19) 40%,
 						rgb(212, 124, 51),
-						rgb(238, 160, 97)
+						rgb(226, 146, 81)
 					);
 					background-clip: text;
 					-webkit-text-fill-color: transparent;

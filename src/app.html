@@ -7,6 +7,10 @@
 		%sveltekit.head%
 
 		<style>
+      html {
+        overflow-y: hidden;
+      }
+
       .loading-screen {
         position: fixed;
         inset: 0;
@@ -67,6 +71,8 @@
       document
         .getElementsByClassName("loading-screen")[0]
         .classList.add("finished-loading");
+
+      document.getElementsByTagName("html")[0].style.overflowY = "auto";
 
       // setTimeout(() => {
       //   document.getElementsByClassName("loading-screen")[0].remove();

@@ -12,7 +12,7 @@
 	let percent;
 	let observer;
 	let unobserve = () => {};
-	let intersectionObserverSupport = false;
+	let intersectionObserverSupport = true;
 	let toggle = false;
 	let toggleOnce = false;
 	const dispatch = createEventDispatcher();

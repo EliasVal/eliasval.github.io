@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import IntersectionObserver from '../Components/IntersectionObserver.svelte';
+	import Section from '../Components/Section.svelte';
 	import MainHeader from './../Components/MainHeader.svelte';
+	import AboutMe from '../Components/AboutMe.svelte';
 
 	onMount(() => {
 		fontResize();
@@ -18,16 +20,20 @@
 <!-- <Background /> -->
 
 <IntersectionObserver steps={100} threshold={50} let:visibleOnce>
-	{#if visibleOnce}
-		<MainHeader />
-	{/if}
+	<Section>
+		{#if visibleOnce}
+			<MainHeader />
+		{/if}
+	</Section>
 </IntersectionObserver>
 
-<p>
-	Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos et, repellat commodi nihil labore
-	facilis quis dolores provident nam debitis voluptatibus doloremque aperiam saepe rem perferendis
-	veritatis quo. Voluptate, error.
-</p>
+<IntersectionObserver steps={100} threshold={50} let:visibleOnce>
+	<Section>
+		{#if visibleOnce}
+			<AboutMe />
+		{/if}
+	</Section>
+</IntersectionObserver>
 
 <style lang="scss">
 	@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-!%3F%27%23%26%2F%3A()%2C"');
