@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GradientText from './GradientText.svelte';
+	import GradientText from '../GradientText.svelte';
 	import { fly } from 'svelte/transition';
 
 	import { cubicOut } from 'svelte/easing';
@@ -10,29 +10,29 @@
 </script>
 
 <div id="about">
-	<div id="header">
-		<div in:fly={{ x: -60, duration: 850, easing: cubicOut, delay: 100 }} id="title">
+	<div class="header">
+		<div in:fly={{ x: -60, duration: 850, easing: cubicOut, delay: 100 }} class="title">
 			A little bit
 			<br />
-			<div in:fly={{ x: -50, duration: 750, delay: 200, easing: cubicOut }} id="subtitle">
+			<div in:fly={{ x: -50, duration: 750, delay: 200, easing: cubicOut }} class="subtitle">
 				<!-- About Me -->
-				<GradientText rgbValues={['#EB7413 40%', '#E79C5E', '#F09712']} direction={'to top right'}>
+				<GradientText rgbValues={['#0FF0FF', '#0FFFFF', '#FFFFFF']} direction={'to top right'}>
 					About Me
 				</GradientText>
 			</div>
 		</div>
 	</div>
-	<div id="content">
+	<div class="content">
 		<p in:fly={{ x: 50, delay: 950, easing: cubicOut, duration: 1750 }}>
 			Hello! I'm Elias, a {age}-year-old developer. I can make anything from Discord bots, to
 			websites, games and pretty much anything in between. I picked up my first programming language
 			at 12 years old and from there it's history :)<br />
 			My current skill set includes:
-			<span id="skillset">
+			<span class="skillset">
 				<GradientText rgbValues={['#61DBFB', '#FFFFFF']} direction="to top right">
 					React
 				</GradientText>,
-				<GradientText rgbValues={['#FF3E00', '#FFFFFF']} direction="to top right">
+				<GradientText rgbValues={['#FF3E00 30%', '#FA8761']} direction="to top right">
 					Svelte & SvelteKit
 				</GradientText>,
 				<GradientText rgbValues={['#FFC928 60%', '#FFFFFF']} direction="to top right">
@@ -57,14 +57,14 @@
 	#about {
 		height: 100%;
 
-		#header {
+		.header {
 			margin: 4em 5em;
 			background-color: transparent;
-			#title {
+			.title {
 				font-size: 4em;
 				font-weight: bold;
 
-				#subtitle {
+				.subtitle {
 					font-size: 1.75em;
 					margin-left: 0.75rem;
 				}
@@ -72,13 +72,13 @@
 			display: inline-block;
 		}
 
-		#content {
+		.content {
 			> p {
 				max-width: 60ch;
 				margin: 0 auto;
 				font-size: 1.3em;
 				text-align: justify;
-				#skillset {
+				.skillset {
 					font-weight: bold;
 				}
 			}

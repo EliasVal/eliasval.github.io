@@ -1,17 +1,17 @@
 <script lang="ts">
-	import GradientText from './GradientText.svelte';
+	import GradientText from '../GradientText.svelte';
 	import { fly, fade } from 'svelte/transition';
 
 	import { cubicOut } from 'svelte/easing';
 </script>
 
-<main>
+<main id="header">
 	<div id="main-content">
-		<h1 id="title" in:fly={{ y: -150, duration: 1850, easing: cubicOut, delay: 100 }}>
+		<h1 class="title" in:fly={{ y: -150, duration: 1850, easing: cubicOut, delay: 100 }}>
 			- Welcome -
 		</h1>
 		<h2 in:fade={{ duration: 1750, delay: 1950, easing: cubicOut }}>
-			To my <GradientText rgbValues={['#EB7413 40%', '#E79C5E', '#F09712']} direction={'to right'}>
+			To my <GradientText rgbValues={['#EA6302', '#EB7413', '#F09712']} direction={'to right'}>
 				Portfolio
 			</GradientText>.
 		</h2>
@@ -30,7 +30,7 @@
 		justify-content: center;
 
 		#main-content {
-			#title {
+			.title {
 				font-size: 6em;
 				font-weight: bold;
 			}
