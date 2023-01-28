@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { fly, fade } from 'svelte/transition';
+	import GradientText from './GradientText.svelte';
+	import { fly } from 'svelte/transition';
 
 	import { cubicOut } from 'svelte/easing';
 
@@ -14,17 +15,40 @@
 			A little bit
 			<br />
 			<div in:fly={{ x: -50, duration: 750, delay: 200, easing: cubicOut }} id="subtitle">
-				About Me
+				<!-- About Me -->
+				<GradientText rgbValues={['#EB7413 40%', '#E79C5E', '#F09712']} direction={'to top right'}>
+					About Me
+				</GradientText>
 			</div>
 		</div>
 	</div>
 	<div id="content">
-		<p>
-			Hello! I'm Elias! I'm a {age} year old developer, and I make anything from Websites, to games to
-			Discord bots. I've been programming since 11, starting off with web development with HTML and CSS.
-			I've learned C# at 12 and got into game development using the Unity Game Engine. Nowadays, I use:
-			Languages: C#, JavaScript & TypeScript, HTML, CSS & SCSS Frameworks/Libraries: discord.js (v12,
-			v13), Svelte & SvelteKit, React, Firebase, ASP.NET, Electron
+		<p in:fly={{ x: 50, delay: 950, easing: cubicOut, duration: 1750 }}>
+			Hello! I'm Elias, a {age}-year-old developer. I can make anything from Discord bots, to
+			websites, games and pretty much anything in between. I picked up my first programming language
+			at 12 years old and from there it's history :)<br />
+			My current skill set includes:
+			<span id="skillset">
+				<GradientText rgbValues={['#61DBFB', '#FFFFFF']} direction="to top right">
+					React
+				</GradientText>,
+				<GradientText rgbValues={['#FF3E00', '#FFFFFF']} direction="to top right">
+					Svelte & SvelteKit
+				</GradientText>,
+				<GradientText rgbValues={['#FFC928 60%', '#FFFFFF']} direction="to top right">
+					JavaScript
+				</GradientText>/
+				<GradientText rgbValues={['#3178C6', '#FFFFFF']} direction="to top right">
+					TypeScript
+				</GradientText>,
+				<GradientText rgbValues={['#F58410', '#FFA713', '#FFCB2D']} direction="to top right">
+					Firebase
+				</GradientText>
+				<span style="font-weight: normal">and</span>
+				<GradientText rgbValues={['#68217A', '#822C98', '#953DAC']} direction="to top right">
+					C# (C Sharp)
+				</GradientText>.
+			</span>
 		</p>
 	</div>
 </div>
@@ -42,15 +66,6 @@
 
 				#subtitle {
 					font-size: 1.75em;
-					background: linear-gradient(
-						to right,
-						rgb(235, 116, 19) 40%,
-						rgb(212, 124, 51),
-						rgb(226, 146, 81)
-					);
-					background-clip: text;
-					-webkit-text-fill-color: transparent;
-
 					margin-left: 0.75rem;
 				}
 			}
@@ -62,6 +77,10 @@
 				max-width: 60ch;
 				margin: 0 auto;
 				font-size: 1.3em;
+				text-align: justify;
+				#skillset {
+					font-weight: bold;
+				}
 			}
 		}
 	}

@@ -17,8 +17,6 @@
 
 <svelte:window on:resize={fontResize} />
 
-<!-- <Background /> -->
-
 <IntersectionObserver steps={100} threshold={50} let:visibleOnce>
 	<Section>
 		{#if visibleOnce}
@@ -44,7 +42,6 @@
 		// font-size: 2vw;
 		color: white;
 		background-color: rgb(32, 32, 32);
-		z-index: 2;
 	}
 
 	:global(body),
@@ -66,5 +63,6 @@
 		z-index: 1;
 
 		content: '';
+		pointer-events: none;
 	}
 </style>
