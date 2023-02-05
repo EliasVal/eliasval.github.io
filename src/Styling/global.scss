@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-!%3F%27%23%26%2F%3A()%2C"');
+//https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-!%3F%27%23%26%2F%3A()%2C%5C
+
+@font-face {
+	font-family: 'Rubik';
+	font-style: italic;
+	font-display: swap;
+	src: url('../Fonts/Rubik/rubik-italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-display: swap;
+	src: url('../Fonts/Rubik/rubik-normal.woff2') format('woff2');
+}
+
 * {
 	margin: 0;
 	padding: 0;

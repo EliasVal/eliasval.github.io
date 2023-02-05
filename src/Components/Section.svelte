@@ -14,6 +14,6 @@
 	section {
 		min-height: 100vh;
 
-		margin: 0 0 1em 0;
+		margin: 0 0 0.5em 0;
 	}
 </style>

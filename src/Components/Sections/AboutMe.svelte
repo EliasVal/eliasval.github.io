@@ -37,7 +37,7 @@
 				</GradientText>,
 				<GradientText rgbValues={['#FFC928 60%', '#FFFFFF']} direction="to top right">
 					JavaScript
-				</GradientText>/
+				</GradientText>,
 				<GradientText rgbValues={['#3178C6', '#FFFFFF']} direction="to top right">
 					TypeScript
 				</GradientText>,
