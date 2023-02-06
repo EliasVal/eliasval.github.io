@@ -1,0 +1,194 @@
+{
+	"projects": [
+		{
+			"img": "WebBody",
+			"title": "Your Commission!",
+			"description": "Feel free to message me at Spinge Bib Sqorpnts#0116 over on Discord for a commission!",
+			"status": {
+				"title": "Pending",
+				"color": "magenta"
+			},
+			"availableAt": [],
+			"madeWith": ["vs"]
+		},
+		{
+			"img": "WebBody",
+			"title": "Portfolio",
+			"description": "The website you're currently in!<br>Originally made in react, now remade in Svelte.",
+			"status": {
+				"title": "Maintained",
+				"color": "royalblue"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/eliasval.github.io"
+				},
+				{
+					"logo": "web",
+					"url": "https://eliasval.github.io"
+				}
+			],
+			"madeWith": ["svelte", "ts", "scss"]
+		},
+		{
+			"img": "suffa",
+			"title": "Suffa 1 Bot",
+			"description": "A Commissioned lightweight moderation Discord bot.",
+			"status": {
+				"title": "Completed",
+				"color": "limegreen"
+			},
+			"availableAt": [],
+			"madeWith": ["njs", "ts"]
+		},
+		{
+			"img": "driveBot",
+			"title": "Drive Bot",
+			"description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a file system!",
+			"status": {
+				"title": "Completed",
+				"color": "limegreen"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/DiscordCloudBot"
+				},
+				{
+					"logo": "discord",
+					"url": "https://discord.gg/H8HwNHhzcs"
+				}
+			],
+			"madeWith": ["njs", "ts"]
+		},
+		{
+			"img": "alphabot",
+			"title": "Alphabot",
+			"description": "An all-in-one Discord bot that I used to work on with a friend.",
+			"status": {
+				"title": "Deprecated",
+				"color": "red"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/AlphaseStudios/Alphabot"
+				},
+				{
+					"logo": "discord",
+					"url": "https://discord.com/oauth2/authorize?client_id=687228371016351760&scope=bot&permissions=8"
+				}
+			],
+			"madeWith": ["ts", "njs", "firebase"]
+		},
+		{
+			"img": "dbugger",
+			"title": "D-Bugger",
+			"description": "A project made for developers to log & keep track of bugs.<br>The project shut down due to the inability to keep it up and it being unused.",
+			"status": {
+				"title": "Deprecated",
+				"color": "red"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/D-Bugger"
+				}
+			],
+			"madeWith": ["svelte", "ts", "firebase", "tailwind"]
+		},
+		{
+			"img": "WebBody",
+			"title": "Old Portfolio",
+			"description": "The old design of this website.",
+			"status": {
+				"title": "Deprecated",
+				"color": "red"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/eliasval.github.io/tree/old-design"
+				},
+				{
+					"logo": "web",
+					"url": "https://eliasval.github.io/old"
+				}
+			],
+			"madeWith": ["js", "scss", "react"]
+		},
+		{
+			"img": "DFTH",
+			"title": "Don't Feed the Hole",
+			"description": "A 2D Hypercasual game I made with two friends for a game jam.",
+			"status": {
+				"title": "Completed",
+				"color": "limegreen"
+			},
+			"availableAt": [
+				{
+					"logo": "itchio",
+					"url": "https://eliasv.itch.io/dont-feed-the-hole"
+				},
+				{
+					"logo": "download",
+					"url": "https://eliasv.itch.io/dont-feed-the-hole"
+				}
+			],
+			"madeWith": ["cs", "unity"]
+		},
+		{
+			"img": "WebBody",
+			"title": "Discord Emoji Bot",
+			"description": "Tired of Discord's server emote limits? well, this bot is for you!",
+			"status": {
+				"title": "Completed",
+				"color": "limegreen"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/DiscordEmojiBot"
+				}
+			],
+			"madeWith": ["ts", "njs", "firebase"]
+		},
+		{
+			"img": "spunch",
+			"title": "Image to ASCII art Converter",
+			"description": "This project Converts images to ASCII art. Originally made with Electron and later remade in WPF Forms.",
+			"status": {
+				"title": "Completed",
+				"color": "limegreen"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/ITAConverter"
+				},
+				{
+					"logo": "download",
+					"url": "https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF"
+				}
+			],
+			"madeWith": ["html", "scss", "js", "cs", "electron", "wpf"]
+		},
+		{
+			"img": "WebBody",
+			"title": "TCP Messaging App",
+			"description": "This project was me fiddling with TCP. Use it however you'd like.",
+			"status": {
+				"title": "Completed",
+				"color": "limegreen"
+			},
+			"availableAt": [
+				{
+					"logo": "github",
+					"url": "https://github.com/EliasVal/TcpMessaging"
+				}
+			],
+			"madeWith": ["cs"]
+		}
+	]
+}
