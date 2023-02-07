@@ -1,33 +1,31 @@
 <script lang="ts">
-	import { currentProjectIndex } from '../../lib/tools';
+	import { currentProjectIndex, projectScrollDir } from '../../lib/tools';
 	import GradientText from '../GradientText.svelte';
 	import { fly } from 'svelte/transition';
 
 	import { cubicOut } from 'svelte/easing';
 
 	import { projects } from '../../lib/data.json';
-	import Project from './Projects/Project.svelte';
+	import Project from './Projects/ProjectCard.svelte';
 	import { onMount } from 'svelte';
 
 	let gallery: Element;
 
-	let dir = -1;
 	let projectElements: NodeListOf<Element>;
 
 	const scrollRight = () => {
-		// @ts-ignore
-		// projectElements[0].style.display = 'none';
-		// @ts-ignore
-		// projectElements[projects.length - 1].style.display = 'block';
+		$projectScrollDir = -1;
 
+		$currentProjectIndex =
+			$currentProjectIndex + 1 >= projects.length ? 0 : $currentProjectIndex + 1;
+	};
+
+	const scrollLeft = () => {
 		$currentProjectIndex =
 			$currentProjectIndex - 1 < 0 ? projects.length - 1 : $currentProjectIndex - 1;
 
-		console.log($currentProjectIndex);
-		console.log(projectElements.length);
+		$projectScrollDir = 1;
 	};
-
-	const scrollLeft = () => {};
 
 	onMount(() => {
 		$currentProjectIndex = 0;
@@ -49,7 +47,7 @@
 				{project}
 				projectIndex={i}
 				on:outroended={() => {
-					if (dir == -1)
+					if ($projectScrollDir == -1)
 						// @ts-ignore
 						gallery.insertBefore(gallery.lastElementChild, gallery.firstElementChild);
 					else {
@@ -62,7 +60,7 @@
 		{/each}
 	</div>
 	<div class="gallery-controls">
-		<button>L</button>
+		<button on:click={scrollLeft}>L</button>
 		<button on:click={scrollRight}>R</button>
 	</div>
 </div>

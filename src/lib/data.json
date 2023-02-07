@@ -2,19 +2,8 @@
 	"projects": [
 		{
 			"img": "WebBody",
-			"title": "Your Commission!",
-			"description": "Feel free to message me at Spinge Bib Sqorpnts#0116 over on Discord for a commission!",
-			"status": {
-				"title": "Pending",
-				"color": "magenta"
-			},
-			"availableAt": [],
-			"madeWith": ["vs"]
-		},
-		{
-			"img": "WebBody",
 			"title": "Portfolio",
-			"description": "The website you're currently in!<br>Originally made in react, now remade in Svelte.",
+			"description": "The website you're currently in!<br>Originally made in react, now remade (twice) in Svelte.",
 			"status": {
 				"title": "Maintained",
 				"color": "royalblue"
@@ -32,15 +21,14 @@
 			"madeWith": ["svelte", "ts", "scss"]
 		},
 		{
-			"img": "suffa",
-			"title": "Suffa 1 Bot",
-			"description": "A Commissioned lightweight moderation Discord bot.",
+			"img": "WIP",
+			"title": "BULLETFEST",
+			"description": "A 2D Party game where you fight around with friends and strangers!",
 			"status": {
-				"title": "Completed",
-				"color": "limegreen"
+				"title": "In Development",
+				"color": "cyan"
 			},
-			"availableAt": [],
-			"madeWith": ["njs", "ts"]
+			"madeWith": ["unity", "firebase", "ts", "cs"]
 		},
 		{
 			"img": "driveBot",
@@ -54,10 +42,6 @@
 				{
 					"logo": "github",
 					"url": "https://github.com/EliasVal/DiscordCloudBot"
-				},
-				{
-					"logo": "discord",
-					"url": "https://discord.gg/H8HwNHhzcs"
 				}
 			],
 			"madeWith": ["njs", "ts"]
@@ -74,10 +58,6 @@
 				{
 					"logo": "github",
 					"url": "https://github.com/AlphaseStudios/Alphabot"
-				},
-				{
-					"logo": "discord",
-					"url": "https://discord.com/oauth2/authorize?client_id=687228371016351760&scope=bot&permissions=8"
 				}
 			],
 			"madeWith": ["ts", "njs", "firebase"]
@@ -113,10 +93,14 @@
 				},
 				{
 					"logo": "web",
-					"url": "https://eliasval.github.io/old"
+					"url": "https://eliasval.github.io/old-react"
+				},
+				{
+					"logo": "web",
+					"url": "https://eliasval.github.io/old-svelte"
 				}
 			],
-			"madeWith": ["js", "scss", "react"]
+			"madeWith": ["ts", "scss", "react", "svelte"]
 		},
 		{
 			"img": "DFTH",
@@ -128,7 +112,7 @@
 			},
 			"availableAt": [
 				{
-					"logo": "itchio",
+					"logo": "web",
 					"url": "https://eliasv.itch.io/dont-feed-the-hole"
 				},
 				{
