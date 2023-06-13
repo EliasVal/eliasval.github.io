@@ -31,28 +31,29 @@
 	}
 </script>
 
-{#if $currentProjectIndex == projectIndex}
+<!-- {#if $currentProjectIndex == projectIndex} -->
+<div
+	class="project-card"
+	data-name={project.title}
+	in:customFly={{ duration: 500, delay: 100 }}
+	out:customFly={{ duration: 500 }}
+>
 	<div
-		class="project-card"
-		data-name={project.title}
-		in:customFly={{ duration: 500, delay: 100 }}
-		out:customFly={{ duration: 500 }}
+		on:outroend={() => dispatch('outroended')}
+		class="project-container"
+		class:hidden={$currentProjectIndex == projectIndex}
 	>
-		<div
-			on:outroend={() => dispatch('outroended')}
-			class="project-container"
-			class:hidden={$currentProjectIndex == projectIndex}
-		>
-			<ProjectContent {project} />
-		</div>
+		<ProjectContent {project} />
 	</div>
-{/if}
+</div>
 
+<!-- {/if} -->
 <style lang="scss">
 	.project-card {
 		flex: 1 0 auto;
-		position: absolute;
-		inset: 0;
+		height: 100%;
+		// position: absolute;
+		// inset: 0;
 		background: gray;
 		border-radius: 5px;
 		padding: 1rem;

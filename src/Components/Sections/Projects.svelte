@@ -5,9 +5,12 @@
 
 	import { cubicOut } from 'svelte/easing';
 
-	import { projects } from '../../lib/data.json';
-	import Project from './Projects/ProjectCard.svelte';
+	import { projects as tmpP } from '../../lib/data.json';
+	import ProjectCard from './Projects/ProjectCard.svelte';
 	import { onMount } from 'svelte';
+
+	// @ts-ignore
+	let projects: Project[] = tmpP;
 
 	let gallery: Element;
 
@@ -43,7 +46,7 @@
 	</div>
 	<div class="gallery" bind:this={gallery}>
 		{#each projects as project, i}
-			<Project
+			<ProjectCard
 				{project}
 				projectIndex={i}
 				on:outroended={() => {
@@ -88,6 +91,7 @@
 			// gap: 100%;
 			margin: 0 7.5em 4em 7.5em;
 			flex-grow: 1;
+			overflow-wrap: normal;
 		}
 
 		.gallery-controls {
