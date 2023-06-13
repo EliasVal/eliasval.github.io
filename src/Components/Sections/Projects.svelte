@@ -1,38 +1,33 @@
 <script lang="ts">
-	import { currentProjectIndex, projectScrollDir } from '../../lib/tools';
+	import ProjectGallery from './Projects/ProjectGallery.svelte';
+	import { currentProjectIndex, galleryTransitionEnded } from '@tools';
 	import GradientText from '../GradientText.svelte';
 	import { fly } from 'svelte/transition';
 
 	import { cubicOut } from 'svelte/easing';
 
-	import { projects as tmpP } from '../../lib/data.json';
-	import ProjectCard from './Projects/ProjectCard.svelte';
+	import { projects as _projects } from '$lib/data.json';
 	import { onMount } from 'svelte';
 
 	// @ts-ignore
-	let projects: Project[] = tmpP;
-
-	let gallery: Element;
-
-	let projectElements: NodeListOf<Element>;
+	let projects: Project[] = _projects;
 
 	const scrollRight = () => {
-		$projectScrollDir = -1;
-
 		$currentProjectIndex =
 			$currentProjectIndex + 1 >= projects.length ? 0 : $currentProjectIndex + 1;
+
+		$galleryTransitionEnded = false;
 	};
 
 	const scrollLeft = () => {
 		$currentProjectIndex =
 			$currentProjectIndex - 1 < 0 ? projects.length - 1 : $currentProjectIndex - 1;
 
-		$projectScrollDir = 1;
+		$galleryTransitionEnded = false;
 	};
 
 	onMount(() => {
 		$currentProjectIndex = 0;
-		projectElements = gallery.querySelectorAll('.project');
 	});
 </script>
 
@@ -44,25 +39,13 @@
 			</GradientText>
 		</div>
 	</div>
-	<div class="gallery" bind:this={gallery}>
-		{#each projects as project, i}
-			<ProjectCard
-				{project}
-				projectIndex={i}
-				on:outroended={() => {
-					if ($projectScrollDir == -1)
-						// @ts-ignore
-						gallery.insertBefore(gallery.lastElementChild, gallery.firstElementChild);
-					else {
-						// @ts-ignore
-						gallery.appendChild(gallery.firstChild);
-						gallery.firstChild?.remove();
-					}
-				}}
-			/>
-		{/each}
+	<div
+		class="gallery-container"
+		in:fly={{ x: -2050, duration: 2050, easing: cubicOut, delay: 550 }}
+	>
+		<ProjectGallery {projects} />
 	</div>
-	<div class="gallery-controls">
+	<div class="gallery-controls" in:fly={{ y: 250, duration: 550, easing: cubicOut, delay: 2750 }}>
 		<button on:click={scrollLeft}>L</button>
 		<button on:click={scrollRight}>R</button>
 	</div>
@@ -72,11 +55,14 @@
 	#projects {
 		min-height: 100vh;
 
+		overflow: hidden;
+
 		display: flex;
 		flex-direction: column;
+		gap: 2.5rem;
 
 		.header {
-			margin: 4em 5em;
+			margin: 1rem 5em 0 5em;
 			background-color: transparent;
 			.title {
 				font-size: 4em;
@@ -85,11 +71,8 @@
 			display: inline-block;
 		}
 
-		.gallery {
+		.gallery-container {
 			position: relative;
-			// display: flex;
-			// gap: 100%;
-			margin: 0 7.5em 4em 7.5em;
 			flex-grow: 1;
 			overflow-wrap: normal;
 		}
@@ -98,7 +81,6 @@
 			text-align: center;
 
 			button {
-				// font-size: 3rem;
 				aspect-ratio: 1 / 1;
 				width: 3rem;
 			}

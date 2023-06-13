@@ -17,6 +17,6 @@
 		position: relative;
 		z-index: 2;
 
-		margin: 0 0 0.5em 0;
+		margin: 0 0 0.5rem 0;
 	}
 </style>

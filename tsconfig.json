@@ -9,7 +9,12 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"ignoreDeprecations": "5.0"
+		"ignoreDeprecations": "5.0",
+		"paths": {
+			"@tools": ["./src/lib/tools.ts"],
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"]
+		}
 	},
 	"include": ["./src/lib/Typings/**/*.d.ts"]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
