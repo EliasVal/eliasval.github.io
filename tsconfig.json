@@ -11,7 +11,6 @@
 		"strict": true,
 		"ignoreDeprecations": "5.0",
 		"paths": {
-			"@tools": ["./src/lib/tools.ts"],
 			"$lib": ["./src/lib"],
 			"$lib/*": ["./src/lib/*"]
 		}

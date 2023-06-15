@@ -1,30 +1,25 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import arrLeft from './icons/arr-left.svg';
-import arrRight from './icons/arr-right.svg';
-import cs from './icons/cs.svg';
-import discord from './icons/discord.svg';
-import download from './icons/download.svg';
-import electron from './icons/electron.svg';
-import firebase from './icons/firebase.svg';
-import github from './icons/github.svg';
-import htmlSvg from './icons/html.svg';
-import itchio from './icons/itchio.svg';
-import js from './icons/js.svg';
-import nodejs from './icons/nodejs.svg';
-import react from './icons/react.svg';
-import sass from './icons/sass.svg';
-import svelte from './icons/svelte.svg';
-import tailwind from './icons/tailwind.svg';
-import ts from './icons/ts.svg';
-import unity from './icons/unity.svg';
-import vscode from './icons/vscode.svg';
-import web from './icons/web.svg';
-import xaml from './icons/xaml.svg';
-
-// import waving from './icons/waving.svg';
-// import technologist from './icons/technologist.svg';
-// import folder from './icons/folder.svg';
+import cs from './icons/cs.svg?src';
+import discord from './icons/discord.svg?src';
+import download from './icons/download.svg?src';
+import electron from './icons/electron.svg?src';
+import firebase from './icons/firebase.svg?src';
+import github from './icons/github.svg?src';
+import htmlSvg from './icons/html.svg?src';
+import itchio from './icons/itchio.svg?src';
+import js from './icons/js.svg?src';
+import nodejs from './icons/nodejs.svg?src';
+import react from './icons/react.svg?src';
+import sass from './icons/sass.svg?src';
+import svelte from './icons/svelte.svg?src';
+import tailwind from './icons/tailwind.svg?src';
+import ts from './icons/ts.svg?src';
+import unity from './icons/unity.svg?src';
+import vscode from './icons/vscode.svg?src';
+import web from './icons/web.svg?src';
+import xaml from './icons/xaml.svg?src';
 
 export const ReturnSvg = (name: string) => {
 	switch (name) {
@@ -72,12 +67,5 @@ export const ReturnSvg = (name: string) => {
 		case 'wpf':
 		case 'xaml':
 			return xaml;
-
-		// case 'waving':
-		// 	return waving;
-		// case 'technologist':
-		// 	return technologist;
-		// case 'folder':
-		// 	return folder;
 	}
 };

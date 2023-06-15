@@ -1,34 +1,14 @@
 <script lang="ts">
-	import ProjectGallery from './Projects/ProjectGallery.svelte';
-	import { currentProjectIndex, galleryTransitionEnded } from '@tools';
+	import ProjectGallery from '../Projects/ProjectGallery.svelte';
 	import GradientText from '../GradientText.svelte';
 	import { fly } from 'svelte/transition';
 
 	import { cubicOut } from 'svelte/easing';
 
 	import { projects as _projects } from '$lib/data.json';
-	import { onMount } from 'svelte';
 
 	// @ts-ignore
 	let projects: Project[] = _projects;
-
-	const scrollRight = () => {
-		$currentProjectIndex =
-			$currentProjectIndex + 1 >= projects.length ? 0 : $currentProjectIndex + 1;
-
-		$galleryTransitionEnded = false;
-	};
-
-	const scrollLeft = () => {
-		$currentProjectIndex =
-			$currentProjectIndex - 1 < 0 ? projects.length - 1 : $currentProjectIndex - 1;
-
-		$galleryTransitionEnded = false;
-	};
-
-	onMount(() => {
-		$currentProjectIndex = 0;
-	});
 </script>
 
 <div id="projects">
@@ -44,10 +24,6 @@
 		in:fly={{ x: -2050, duration: 2050, easing: cubicOut, delay: 550 }}
 	>
 		<ProjectGallery {projects} />
-	</div>
-	<div class="gallery-controls" in:fly={{ y: 250, duration: 550, easing: cubicOut, delay: 2750 }}>
-		<button on:click={scrollLeft}>L</button>
-		<button on:click={scrollRight}>R</button>
 	</div>
 </div>
 
@@ -75,15 +51,6 @@
 			position: relative;
 			flex-grow: 1;
 			overflow-wrap: normal;
-		}
-
-		.gallery-controls {
-			text-align: center;
-
-			button {
-				aspect-ratio: 1 / 1;
-				width: 3rem;
-			}
 		}
 	}
 </style>

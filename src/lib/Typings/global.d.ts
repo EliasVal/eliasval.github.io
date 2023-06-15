@@ -1,4 +1,3 @@
-// declare global {
 type Project = {
 	img: string;
 	title: string;
@@ -10,7 +9,7 @@ type Project = {
 	availableAt: {
 		logo: string;
 		url: string;
+		alt?: string;
 	}[];
 	madeWith: string[];
 };
-// }

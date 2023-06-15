@@ -1,6 +1,7 @@
 <script lang="ts">
+	import ProjectGalleryControls from './ProjectGalleryControls.svelte';
 	import { onMount } from 'svelte/internal';
-	import { currentProjectIndex, galleryTransitionEnded } from '@tools';
+	import { currentProjectIndex, galleryTransitionEnded } from '$lib/tools';
 	import ProjectCard from './ProjectCard.svelte';
 
 	export let projects: Project[];
@@ -10,6 +11,7 @@
 
 	onMount(() => {
 		getCardSize();
+		$currentProjectIndex = 0;
 	});
 
 	let t: NodeJS.Timeout;
@@ -40,11 +42,13 @@
 	{/each}
 </div>
 
+<ProjectGalleryControls {projects} />
+
 <style lang="scss">
 	.gallery {
 		position: absolute;
 		width: 100%;
-		height: 100%;
+		height: 90%;
 
 		display: flex;
 		gap: 4.5rem;
