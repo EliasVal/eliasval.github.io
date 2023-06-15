@@ -20,11 +20,19 @@
 </script>
 
 <div class="gallery-controls">
-	<button on:click={scrollLeft} in:fly={{ x: -250, duration: 550, easing: cubicOut, delay: 2750 }}>
-		<img src="/images/arr-left.svg" alt="" />
+	<button
+		on:click={scrollLeft}
+		in:fly={{ x: -250, duration: 550, easing: cubicOut, delay: 2750 }}
+		title="Previous Project"
+	>
+		<img src="/svgs/arr-left.svg" alt="" />
 	</button>
-	<button on:click={scrollRight} in:fly={{ x: 250, duration: 550, easing: cubicOut, delay: 2750 }}>
-		<img style="transform: scaleX(-1);" src="/images/arr-left.svg" alt="" />
+	<button
+		on:click={scrollRight}
+		in:fly={{ x: 250, duration: 550, easing: cubicOut, delay: 2750 }}
+		title="Next Project"
+	>
+		<img style="transform: scaleX(-1);" src="/svgs/arr-left.svg" alt="" />
 	</button>
 </div>
 

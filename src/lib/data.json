@@ -9,7 +9,7 @@
 				"color": "magenta"
 			},
 			"availableAt": [],
-			"madeWith": ["vs"]
+			"madeWith": ["vscode"]
 		},
 		{
 			"img": "WebBody",
@@ -66,7 +66,7 @@
 				"title": "In Development",
 				"color": "cyan"
 			},
-			"madeWith": ["firebase", "ts", "njs"],
+			"madeWith": ["firebase", "ts", "nodejs"],
 			"availableAt": [
 				{
 					"logo": "discord",
@@ -88,7 +88,7 @@
 					"url": "https://github.com/EliasVal/DiscordCloudBot"
 				}
 			],
-			"madeWith": ["njs", "ts"]
+			"madeWith": ["nodejs", "ts"]
 		},
 		{
 			"img": "alphabot",
@@ -104,7 +104,7 @@
 					"url": "https://github.com/AlphaseStudios/Alphabot"
 				}
 			],
-			"madeWith": ["ts", "njs", "firebase"]
+			"madeWith": ["ts", "nodejs", "firebase"]
 		},
 		{
 			"img": "dbugger",
@@ -156,7 +156,7 @@
 					"url": "https://github.com/EliasVal/DiscordEmojiBot"
 				}
 			],
-			"madeWith": ["ts", "njs", "firebase"]
+			"madeWith": ["ts", "nodejs", "firebase"]
 		},
 		{
 			"img": "spunch",

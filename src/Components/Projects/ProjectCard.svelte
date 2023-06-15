@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { ReturnSvg } from '$lib/svgImport';
 	import { currentProjectIndex, galleryTransitionEnded } from '$lib/tools';
 	import GradientText from '../GradientText.svelte';
-	import AboutMe from '../Sections/AboutMe.svelte';
 
 	export let project: Project;
 
@@ -41,14 +39,16 @@
 			<li class="made-with">
 				<span class="project-details-header">Made with:</span>
 				{#each project.madeWith as mw}
-					{@html ReturnSvg(mw)}
+					<img src="/svgs/{mw}.svg" alt={mw} />
 				{/each}
 			</li>
 			{#if Object.entries(project.availableAt || {}).length > 0}
 				<li style="margin-top: auto">
 					<span class="project-details-header">Available at:</span>
 					{#each project.availableAt as location}
-						<a title={location.alt} href={location.url}>{@html ReturnSvg(location.logo)}</a>
+						<a title={location.alt} href={location.url} style="text-decoration: none;">
+							<img src="/svgs/{location.logo}.svg" alt={location.alt} />
+						</a>
 					{/each}
 				</li>
 			{/if}
@@ -114,7 +114,8 @@
 				color: limegreen;
 			}
 
-			:global(svg) {
+			img {
+				filter: invert(1);
 				margin-right: 0.55rem;
 				scale: 125%;
 				transform: translateY(20%);
