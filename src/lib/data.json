@@ -1,22 +1,20 @@
 {
-	"langs": "C#, JavaScript & TypeScript, HTML, CSS & SCSS",
-	"libs": "discord.js (v12, v13), Svelte & SvelteKit, React, Firebase, ASP.NET, Electron",
 	"projects": [
 		{
 			"img": "WebBody",
 			"title": "Your Commission!",
-			"description": "Feel free to message me at Spinge Bib Sqorpnts#0116 over on Discord for a commission!",
+			"description": "Feel free to message me, @eliasvalk over on Discord for a commission!",
 			"status": {
 				"title": "Pending",
 				"color": "magenta"
 			},
 			"availableAt": [],
-			"madeWith": ["vs"]
+			"madeWith": ["vscode"]
 		},
 		{
 			"img": "WebBody",
 			"title": "Portfolio",
-			"description": "The website you're currently in!<br>Originally made in react, now remade in Svelte.",
+			"description": "The website you're currently visiting!<br>Originally made with React, but now the portfolio was remade (twice) with Svelte!<br>Old versions also included in the \"Available at\" section below.",
 			"status": {
 				"title": "Maintained",
 				"color": "royalblue"
@@ -28,26 +26,58 @@
 				},
 				{
 					"logo": "web",
-					"url": "https://eliasval.github.io"
+					"url": "https://eliasval.github.io",
+					"alt": "Current Website Version"
+				},
+				{
+					"logo": "web",
+					"url": "https://eliasval.github.io/old-svelte",
+					"alt": "Old Svelte Design"
+				},
+				{
+					"logo": "web",
+					"url": "https://eliasval.github.io/old-react",
+					"alt": "Old React Design"
 				}
 			],
 			"madeWith": ["svelte", "ts", "scss"]
 		},
 		{
-			"img": "suffa",
-			"title": "Suffa 1 Bot",
-			"description": "A Commissioned lightweight moderation Discord bot.",
+			"img": "WIP",
+			"title": "BULLETFEST",
+			"description": "A 2D Party game where you fight around with friends and strangers, with all kinds of strange weapons and items!",
 			"status": {
-				"title": "Completed",
-				"color": "limegreen"
+				"title": "In Development",
+				"color": "cyan"
 			},
-			"availableAt": [],
-			"madeWith": ["njs", "ts"]
+			"madeWith": ["unity", "firebase", "cs"],
+			"availableAt": [
+				{
+					"logo": "discord",
+					"url": "https://discord.com/invite/raupcYM4Gj"
+				}
+			]
+		},
+		{
+			"img": "WIP",
+			"title": "BULLETFEST Bot",
+			"description": "a Discord bot serving as the back-end for the game \"BULLETFEST\"!",
+			"status": {
+				"title": "In Development",
+				"color": "cyan"
+			},
+			"madeWith": ["firebase", "ts", "nodejs"],
+			"availableAt": [
+				{
+					"logo": "discord",
+					"url": "https://discord.com/invite/raupcYM4Gj"
+				}
+			]
 		},
 		{
 			"img": "driveBot",
 			"title": "Drive Bot",
-			"description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a file system!",
+			"description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a fully navigatable file system!",
 			"status": {
 				"title": "Completed",
 				"color": "limegreen"
@@ -56,18 +86,14 @@
 				{
 					"logo": "github",
 					"url": "https://github.com/EliasVal/DiscordCloudBot"
-				},
-				{
-					"logo": "discord",
-					"url": "https://discord.gg/H8HwNHhzcs"
 				}
 			],
-			"madeWith": ["njs", "ts"]
+			"madeWith": ["nodejs", "ts"]
 		},
 		{
 			"img": "alphabot",
 			"title": "Alphabot",
-			"description": "An all-in-one Discord bot that I used to work on with a friend.",
+			"description": "An all-purpose Discord bot that I used to work on.<br>The project was abandoned due to problems with finding a proper server to host the bot, and Discord's many controversial API changes (such as practically forcing slash commands).",
 			"status": {
 				"title": "Deprecated",
 				"color": "red"
@@ -76,18 +102,14 @@
 				{
 					"logo": "github",
 					"url": "https://github.com/AlphaseStudios/Alphabot"
-				},
-				{
-					"logo": "discord",
-					"url": "https://discord.com/oauth2/authorize?client_id=687228371016351760&scope=bot&permissions=8"
 				}
 			],
-			"madeWith": ["ts", "njs", "firebase"]
+			"madeWith": ["ts", "nodejs", "firebase"]
 		},
 		{
 			"img": "dbugger",
 			"title": "D-Bugger",
-			"description": "A project made for developers to log & keep track of bugs.<br>The project shut down due to the inability to keep it up and it being unused.",
+			"description": "A project made for developers to log & keep track of bugs.<br>The project was shut down due to lack of funding and the low demand for it.",
 			"status": {
 				"title": "Deprecated",
 				"color": "red"
@@ -101,36 +123,16 @@
 			"madeWith": ["svelte", "ts", "firebase", "tailwind"]
 		},
 		{
-			"img": "WebBody",
-			"title": "Old Portfolio",
-			"description": "The old design of this website.",
-			"status": {
-				"title": "Deprecated",
-				"color": "red"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/eliasval.github.io/tree/old-design"
-				},
-				{
-					"logo": "web",
-					"url": "https://eliasval.github.io/old"
-				}
-			],
-			"madeWith": ["js", "scss", "react"]
-		},
-		{
 			"img": "DFTH",
 			"title": "Don't Feed the Hole",
-			"description": "A 2D Hypercasual game I made with two friends for a game jam.",
+			"description": "A 2D Hypercasual game I made with a group of friends for a game-jam competition!",
 			"status": {
 				"title": "Completed",
 				"color": "limegreen"
 			},
 			"availableAt": [
 				{
-					"logo": "itchio",
+					"logo": "web",
 					"url": "https://eliasv.itch.io/dont-feed-the-hole"
 				},
 				{
@@ -143,7 +145,7 @@
 		{
 			"img": "WebBody",
 			"title": "Discord Emoji Bot",
-			"description": "Tired of Discord's server emote limits? well, this bot is for you!",
+			"description": "A Discord bot made to \"bypass\" Discord's server limits on custom emojis!",
 			"status": {
 				"title": "Completed",
 				"color": "limegreen"
@@ -154,12 +156,12 @@
 					"url": "https://github.com/EliasVal/DiscordEmojiBot"
 				}
 			],
-			"madeWith": ["ts", "njs", "firebase"]
+			"madeWith": ["ts", "nodejs", "firebase"]
 		},
 		{
 			"img": "spunch",
 			"title": "Image to ASCII art Converter",
-			"description": "This project Converts images to ASCII art. Originally made with Electron and later remade in WPF Forms.",
+			"description": "This applications converts images to ASCII art. Originally made with Electron and later remade with Windows Presentation Foundation (WPF) Forms.",
 			"status": {
 				"title": "Completed",
 				"color": "limegreen"
@@ -179,7 +181,7 @@
 		{
 			"img": "WebBody",
 			"title": "TCP Messaging App",
-			"description": "This project was me fiddling with TCP. Use it however you'd like.",
+			"description": "This project was just me fiddling around with networking, particularly the Transmission Control Protocol (TCP) in C#.",
 			"status": {
 				"title": "Completed",
 				"color": "limegreen"

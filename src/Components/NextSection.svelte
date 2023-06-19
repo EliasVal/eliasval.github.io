@@ -1,49 +1,60 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
+	import { onMount } from 'svelte';
+	import { cubicOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 
-  const dispatch = createEventDispatcher();
+	let sections: NodeListOf<HTMLElement>;
+	let mounted = false;
+
+	onMount(() => {
+		sections = document.querySelectorAll('section');
+		mounted = true;
+	});
+	let i = 0;
+	const ScrollToNextSection = () => {
+		i++;
+		sections[i].scrollIntoView({ behavior: 'smooth', block: 'end' });
+	};
 </script>
 
-<div id="nextSect">
-  <button on:click={() => dispatch("move")}>
-    <div>&#9660;</div>
-  </button>
-</div>
+{#if i < 3 && mounted}
+	<button
+		on:click={ScrollToNextSection}
+		in:fly={{ y: 50, duration: 500, delay: 2750, easing: cubicOut }}
+		out:fly={{ y: 50, duration: 200, easing: cubicOut }}
+	>
+		<img alt="" src="/svgs/arr-left.svg" style="" />
+	</button>
+{/if}
 
 <style lang="scss">
-  @import "../scss/_mixins";
-  #nextSect {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    @include unselectable;
-    button {
-      aspect-ratio: 1 / 1;
-      width: 3rem;
-      height: auto;
+	button {
+		position: fixed;
+		width: 4rem;
+		height: 4rem;
+		aspect-ratio: 1 / 1;
+		bottom: 1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		border-radius: 50%;
+		border: none;
+		outline: none;
+		img {
+			aspect-ratio: 1 / 1;
 
-      border: none;
-      border-radius: 50%;
+			transition: all 0.2s;
+			transform: rotateZ(-90deg);
+		}
 
-      background-color: #fff;
+		&:hover,
+		img:hover {
+			img {
+				transform: rotateZ(-90deg) translateX(-5%);
+			}
+		}
+		cursor: pointer;
+		pointer-events: all;
 
-      div {
-        color: #000;
-        font-size: 1.5rem;
-        transition: transform 0.5s;
-      }
-
-      &:hover {
-        cursor: pointer;
-        div {
-          transform: translateY(15%);
-        }
-      }
-
-      &:active {
-        background-color: #8b8b8b;
-      }
-    }
-  }
+		z-index: 999999;
+	}
 </style>

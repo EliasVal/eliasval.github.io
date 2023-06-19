@@ -1,50 +1,65 @@
 <script lang="ts">
-  import Gallery from "../Projects/Gallery/Gallery.svelte";
-  import Arrows from "../Projects/Gallery/Arrows.svelte";
-  import ProjectBtn from "../Projects/Gallery/ProjectBtn.svelte";
+	import ProjectGallery from '../Projects/ProjectGallery.svelte';
+	import GradientText from '../GradientText.svelte';
+	import { fly } from 'svelte/transition';
 
-  export let projects;
+	import { cubicOut } from 'svelte/easing';
 
-  const wrapProjectIndex = (idx) => {
-    idx = idx < 0 ? projects.length - 1 : idx;
+	import { projects as _projects } from '$lib/data.json';
 
-    idx = idx > projects.length - 1 ? 0 : idx;
-
-    return idx;
-  };
+	// @ts-ignore
+	let projects: Project[] = _projects;
 </script>
 
-<div class="projects">
-  <div class="project-container">
-    <Gallery {projects} />
-  </div>
-  <div class="project-arrows">
-    <Arrows {wrapProjectIndex}>
-      {#each projects as project, i}
-        <ProjectBtn title={project.title} constIndex={i} />
-      {/each}
-    </Arrows>
-  </div>
+<div id="projects">
+	<div class="header">
+		<div in:fly={{ x: -60, duration: 850, easing: cubicOut, delay: 100 }} class="title">
+			<GradientText rgbValues={['#0FF0FF', '#0FFFFF', '#FFFFFF']} direction={'to top right'}>
+				My Projects
+			</GradientText>
+		</div>
+	</div>
+	<div
+		class="gallery-container"
+		in:fly={{ x: -2050, duration: 2050, easing: cubicOut, delay: 550 }}
+	>
+		<ProjectGallery {projects} />
+	</div>
 </div>
 
 <style lang="scss">
-  @import "src/scss/_mixins.scss";
+	#projects {
+		min-height: 100vh;
 
-  .projects {
-    @include flex-center;
-    flex-direction: column;
-    gap: 1rem;
-    overflow: hidden;
+		overflow: hidden;
 
-    .project-container {
-      min-height: 405px;
-      position: relative;
-      max-width: 960px;
-      width: 100%;
-      padding: 0 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
 
-      display: flex;
-      align-items: center;
-    }
-  }
+		.header {
+			margin: 2rem 0 0 3em;
+			background-color: transparent;
+			.title {
+				font-size: 4em;
+				font-weight: bold;
+			}
+			display: inline-block;
+		}
+
+		.gallery-container {
+			position: relative;
+			flex-grow: 1;
+			overflow-wrap: normal;
+		}
+	}
+
+	@media screen and (max-width: 780px) {
+		#projects .header {
+			margin: 2rem 2em 0rem 2em;
+			.title {
+				font-size: 2rem;
+			}
+		}
+	}
 </style>
