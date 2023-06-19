@@ -30,13 +30,20 @@
 		justify-content: center;
 
 		#main-content {
+			width: 70%;
+			margin: 0 auto;
+			text-align: center;
+
 			.title {
-				font-size: 6em;
+				font-size: 5.5rem;
 				font-weight: bold;
 			}
-			h2 {
-				text-align: center;
-			}
+		}
+	}
+
+	@media screen and (max-width: 750px) {
+		main #main-content .title {
+			font-size: 3.6em;
 		}
 	}
 </style>

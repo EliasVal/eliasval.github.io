@@ -73,16 +73,28 @@
 		}
 
 		.content {
+			max-width: 60ch;
+			width: 75%;
+
+			margin: 0 auto;
 			> ul {
-				max-width: 60ch;
-				margin: 0 auto;
 				font-size: 1.3em;
+				text-align: justify;
 				li {
 					margin: 1em 0;
 					b {
 						display: inline-block;
 					}
 				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 780px) {
+		#workvalues .header {
+			margin: 2rem 0 2em 2em;
+			.title {
+				font-size: 3.5rem;
 			}
 		}
 	}

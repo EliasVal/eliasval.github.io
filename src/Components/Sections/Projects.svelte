@@ -38,7 +38,7 @@
 		gap: 2.5rem;
 
 		.header {
-			margin: 1rem 5em 0 5em;
+			margin: 2rem 0 0 3em;
 			background-color: transparent;
 			.title {
 				font-size: 4em;
@@ -51,6 +51,15 @@
 			position: relative;
 			flex-grow: 1;
 			overflow-wrap: normal;
+		}
+	}
+
+	@media screen and (max-width: 780px) {
+		#projects .header {
+			margin: 2rem 2em 0rem 2em;
+			.title {
+				font-size: 2rem;
+			}
 		}
 	}
 </style>

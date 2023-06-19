@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ProjectGalleryControls from './ProjectGalleryControls.svelte';
 	import { onMount } from 'svelte/internal';
 	import { currentProjectIndex, galleryTransitionEnded } from '$lib/tools';
 	import ProjectCard from './ProjectCard.svelte';
@@ -38,11 +37,9 @@
 
 <div class="gallery" bind:this={gallery}>
 	{#each projects as project, i}
-		<ProjectCard {project} projectIndex={i} />
+		<ProjectCard {project} projectIndex={i} projectsLength={projects.length} />
 	{/each}
 </div>
-
-<ProjectGalleryControls {projects} />
 
 <style lang="scss">
 	.gallery {
@@ -53,6 +50,6 @@
 		display: flex;
 		gap: 4.5rem;
 
-		transition: left 0.75s cubic-bezier(0.5, 0, 0.5, 1);
+		transition: left 0.75s cubic-bezier(0.6, 1, 0.6, 1);
 	}
 </style>

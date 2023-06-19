@@ -15,7 +15,6 @@
 			A little bit
 			<br />
 			<div in:fly={{ x: -50, duration: 750, delay: 200, easing: cubicOut }} class="subtitle">
-				<!-- About Me -->
 				<GradientText rgbValues={['#0FF0FF', '#0FFFFF', '#FFFFFF']} direction={'to top right'}>
 					About Me
 				</GradientText>
@@ -51,17 +50,25 @@
 			</span>
 		</p>
 	</div>
+	<span />
 </div>
 
 <style lang="scss">
 	#about {
-		height: 100%;
+		height: 100vh;
+		position: relative;
+
+		display: flex;
+		// flex-direction: column;
+		align-items: center;
 
 		.header {
-			margin: 4em 5em;
+			top: 0;
+			position: absolute;
+			margin: 2em 3em;
 			background-color: transparent;
 			.title {
-				font-size: 4em;
+				font-size: 4rem;
 				font-weight: bold;
 
 				.subtitle {
@@ -73,14 +80,40 @@
 		}
 
 		.content {
+			// position: absolute;
+			// inset: 0;
+			// left: 50%;
+			// top: 50%;
+			// transform: translateX(-50%) translateY(-20%);
+			max-width: 60ch;
+			margin: 0 auto;
+			width: 75%;
 			> p {
-				max-width: 60ch;
-				margin: 0 auto;
 				font-size: 1.3em;
 				text-align: justify;
 				.skillset {
 					font-weight: bold;
 				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 780px) {
+		#about .header {
+			margin: 2rem 0 2em 2em;
+			.title {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	@media screen and (max-height: 660px) {
+		#about {
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: baseline;
+			.header {
+				position: relative;
 			}
 		}
 	}

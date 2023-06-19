@@ -1,32 +1,37 @@
 <script lang="ts">
-	import { currentProjectIndex, galleryTransitionEnded } from '$lib/tools';
+	import ProjectGalleryControls from './ProjectGalleryControls.svelte';
+	import { currentProjectIndex, galleryTransitionEnded, galleryFlyDir } from '$lib/tools';
 	import GradientText from '../GradientText.svelte';
 
 	export let project: Project;
 
 	export let projectIndex: number;
+
+	export let projectsLength: number;
 </script>
 
 <div
 	class="project-card"
 	class:selected={projectIndex == $currentProjectIndex && $galleryTransitionEnded}
+	class:flyRightAnim={!$galleryTransitionEnded && $galleryFlyDir == 1}
+	class:flyLeftAnim={!$galleryTransitionEnded && $galleryFlyDir == -1}
 >
 	<div class="project-image">
 		<img src="/images/{project.img}.jpg" alt={project.title} />
 	</div>
 	<div class="project-details">
 		<h1>
-			<GradientText rgbValues={['#d12d21 75%', '#FFFFFF']} direction={'to top right'}>
+			<GradientText rgbValues={['#fff 25%', '#7f7f7f']} direction={'to bottom left'}>
 				{project.title}
 			</GradientText>
 		</h1>
 		<ul class="project-details-list">
 			<li>
-				<span class="project-details-header">Description:</span>
+				<span class="project-details-header">Description</span>:
 				{@html project.description}
 			</li>
 			<li class="project-status">
-				<span class="project-details-header">Project Status:</span>
+				<span class="project-details-header">Project Status</span>:
 				<span style="font-weight: 550">
 					<GradientText
 						rgbValues={[project.status.color + ' 80%', '#FFF']}
@@ -37,21 +42,35 @@
 				</span>
 			</li>
 			<li class="made-with">
-				<span class="project-details-header">Made with:</span>
+				<span class="project-details-header">Made with</span>:
 				{#each project.madeWith as mw}
 					<img src="/svgs/{mw}.svg" alt={mw} />
 				{/each}
 			</li>
-			{#if Object.entries(project.availableAt || {}).length > 0}
+			<!-- {#if Object.entries(project.availableAt || {}).length > 0}
 				<li style="margin-top: auto">
-					<span class="project-details-header">Available at:</span>
+					<span class="project-details-header">Available at</span>:
 					{#each project.availableAt as location}
 						<a title={location.alt} href={location.url} style="text-decoration: none;">
 							<img src="/svgs/{location.logo}.svg" alt={location.alt} />
 						</a>
 					{/each}
 				</li>
-			{/if}
+			{/if} -->
+			<li class="card-footer">
+				<ProjectGalleryControls {projectsLength}>
+					{#if Object.entries(project.availableAt || {}).length > 0}
+						<span>
+							<span class="project-details-header">Available at</span>:
+							{#each project.availableAt as location}
+								<a title={location.alt} href={location.url} style="text-decoration: none;">
+									<img src="/svgs/{location.logo}.svg" alt={location.alt} />
+								</a>
+							{/each}
+						</span>
+					{/if}
+				</ProjectGalleryControls>
+			</li>
 		</ul>
 	</div>
 </div>
@@ -64,13 +83,14 @@
 		border-radius: 5px;
 		padding: 1rem;
 
-		transition: scale 0.2s;
-
+		transition: 0.1s scale;
 		display: flex;
+		flex-direction: row;
 		gap: 1rem;
 
 		&.selected {
 			scale: 105%;
+			transition: scale 0.2s 0.25s ease-in;
 			box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.15);
 		}
 
@@ -101,6 +121,12 @@
 					font-family: 'CascadiaCode';
 				}
 
+				.card-footer {
+					display: flex;
+					justify-content: space-between;
+					margin-top: auto;
+				}
+
 				list-style: none;
 				display: flex;
 				flex-direction: column;
@@ -111,7 +137,7 @@
 				text-decoration: underline;
 				text-decoration-style: dotted;
 				font-weight: 450;
-				color: limegreen;
+				color: rgb(102, 155, 199);
 			}
 
 			img {
@@ -120,6 +146,52 @@
 				scale: 125%;
 				transform: translateY(20%);
 			}
+		}
+	}
+
+	.flyRightAnim {
+		animation: fly-right 0.75s ease-in-out; // cubic-bezier(1, 0.44, 0.51, 1.32); //cubic-bezier(1, 0.44, 0.51, 1.32); // delay iteration-count direction fill-mode;
+	}
+
+	.flyLeftAnim {
+		animation: fly-left 0.75s ease-in-out; // cubic-bezier(1, 0.44, 0.51, 1.32); //cubic-bezier(1, 0.44, 0.51, 1.32); // delay iteration-count direction fill-mode;
+	}
+
+	@keyframes fly-right {
+		from {
+			transform: rotateZ(0deg);
+		}
+		15%,
+		65% {
+			transform: rotateZ(2deg);
+		}
+		85% {
+			transform: rotateZ(-0.5deg);
+		}
+		to {
+			transform: rotateZ(0deg);
+		}
+	}
+
+	@keyframes fly-left {
+		from {
+			transform: rotateZ(0deg);
+		}
+		15%,
+		65% {
+			transform: rotateZ(-2deg);
+		}
+		85% {
+			transform: rotateZ(0.5deg);
+		}
+		to {
+			transform: rotateZ(0deg);
+		}
+	}
+
+	@media screen and (max-width: 960px) {
+		.project-card {
+			flex-direction: column;
 		}
 	}
 </style>
