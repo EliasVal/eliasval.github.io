@@ -31,10 +31,10 @@
 <style lang="scss">
 	button {
 		position: fixed;
-		width: 4rem;
-		height: 4rem;
+		width: 3.5rem;
+		height: 3.5rem;
 		aspect-ratio: 1 / 1;
-		bottom: 1.5rem;
+		bottom: 1.25rem;
 		left: 50%;
 		transform: translateX(-50%);
 		border-radius: 50%;
@@ -44,13 +44,13 @@
 			aspect-ratio: 1 / 1;
 
 			transition: all 0.2s;
-			transform: rotateZ(-90deg);
+			transform: translateY(-2%) rotateZ(-90deg);
 		}
 
 		&:hover,
 		img:hover {
 			img {
-				transform: rotateZ(-90deg) translateX(-5%);
+				transform: rotateZ(-90deg) translateX(-7%);
 			}
 		}
 		cursor: pointer;
