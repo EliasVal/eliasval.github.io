@@ -9,7 +9,7 @@
 				"color": "magenta"
 			},
 			"availableAt": [],
-			"madeWith": ["vscode"]
+			"madeWith": [{ "img": "vscode", "alt": "Visual Studio Code" }]
 		},
 		{
 			"img": "WebBody",
@@ -22,12 +22,13 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/EliasVal/eliasval.github.io"
+					"url": "https://github.com/EliasVal/eliasval.github.io",
+					"alt": "Source Code (Github)"
 				},
 				{
 					"logo": "web",
 					"url": "https://eliasval.github.io",
-					"alt": "Current Website Version"
+					"alt": "Current Design (You're here!)"
 				},
 				{
 					"logo": "web",
@@ -40,7 +41,11 @@
 					"alt": "Old React Design"
 				}
 			],
-			"madeWith": ["svelte", "ts", "scss"]
+			"madeWith": [
+				{ "img": "svelte", "alt": "Svelte" },
+				{ "img": "ts", "alt": "TypeScript" },
+				{ "img": "scss", "alt": "SCSS" }
+			]
 		},
 		{
 			"img": "WIP",
@@ -50,11 +55,16 @@
 				"title": "In Development",
 				"color": "cyan"
 			},
-			"madeWith": ["unity", "firebase", "cs"],
+			"madeWith": [
+				{ "img": "unity", "alt": "Unity Engine" },
+				{ "img": "firebase", "alt": "Firebase" },
+				{ "img": "cs", "alt": "C#" }
+			],
 			"availableAt": [
 				{
 					"logo": "discord",
-					"url": "https://discord.com/invite/raupcYM4Gj"
+					"url": "https://discord.com/invite/raupcYM4Gj",
+					"alt": "Discord Server"
 				}
 			]
 		},
@@ -66,11 +76,16 @@
 				"title": "In Development",
 				"color": "cyan"
 			},
-			"madeWith": ["firebase", "ts", "nodejs"],
+			"madeWith": [
+				{ "img": "firebase", "alt": "Firebase" },
+				{ "img": "ts", "alt": "TypeScript" },
+				{ "img": "nodejs", "alt": "NodeJS" }
+			],
 			"availableAt": [
 				{
 					"logo": "discord",
-					"url": "https://discord.com/invite/raupcYM4Gj"
+					"url": "https://discord.com/invite/raupcYM4Gj",
+					"alt": "Discord Server"
 				}
 			]
 		},
@@ -85,10 +100,14 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/EliasVal/DiscordCloudBot"
+					"url": "https://github.com/EliasVal/DiscordCloudBot",
+					"alt": "Source Code (Github)"
 				}
 			],
-			"madeWith": ["nodejs", "ts"]
+			"madeWith": [
+				{ "img": "nodejs", "alt": "NodeJS" },
+				{ "img": "ts", "alt": "TypeScript" }
+			]
 		},
 		{
 			"img": "alphabot",
@@ -101,10 +120,15 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/AlphaseStudios/Alphabot"
+					"url": "https://github.com/AlphaseStudios/Alphabot",
+					"alt": "Source Code (Github)"
 				}
 			],
-			"madeWith": ["ts", "nodejs", "firebase"]
+			"madeWith": [
+				{ "img": "ts", "alt": "TypeScript" },
+				{ "img": "nodejs", "alt": "NodeJS" },
+				{ "img": "firebase", "alt": "Firebase" }
+			]
 		},
 		{
 			"img": "dbugger",
@@ -117,10 +141,16 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/EliasVal/D-Bugger"
+					"url": "https://github.com/EliasVal/D-Bugger",
+					"alt": "Source Code (Github)"
 				}
 			],
-			"madeWith": ["svelte", "ts", "firebase", "tailwind"]
+			"madeWith": [
+				{ "img": "svelte", "alt": "Svelte" },
+				{ "img": "ts", "alt": "TypeScript" },
+				{ "img": "firebase", "alt": "Firebase" },
+				{ "img": "tailwind", "alt": "Tailwind CSS" }
+			]
 		},
 		{
 			"img": "DFTH",
@@ -133,14 +163,19 @@
 			"availableAt": [
 				{
 					"logo": "web",
-					"url": "https://eliasv.itch.io/dont-feed-the-hole"
+					"url": "https://eliasv.itch.io/dont-feed-the-hole",
+					"alt": "Play (itch.io)"
 				},
 				{
 					"logo": "download",
-					"url": "https://eliasv.itch.io/dont-feed-the-hole"
+					"url": "https://eliasv.itch.io/dont-feed-the-hole",
+					"alt": "Download"
 				}
 			],
-			"madeWith": ["cs", "unity"]
+			"madeWith": [
+				{ "img": "cs", "alt": "C#" },
+				{ "img": "unity", "alt": "Unity Engine" }
+			]
 		},
 		{
 			"img": "WebBody",
@@ -153,10 +188,15 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/EliasVal/DiscordEmojiBot"
+					"url": "https://github.com/EliasVal/DiscordEmojiBot",
+					"alt": "Source Code (Github)"
 				}
 			],
-			"madeWith": ["ts", "nodejs", "firebase"]
+			"madeWith": [
+				{ "img": "ts", "alt": "TypeScript" },
+				{ "img": "nodejs", "alt": "NodeJS" },
+				{ "img": "firebase", "alt": "Firebase" }
+			]
 		},
 		{
 			"img": "spunch",
@@ -169,14 +209,23 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/EliasVal/ITAConverter"
+					"url": "https://github.com/EliasVal/ITAConverter",
+					"alt": "Source Code (Github)"
 				},
 				{
 					"logo": "download",
-					"url": "https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF"
+					"url": "https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF",
+					"alt": "Download"
 				}
 			],
-			"madeWith": ["html", "scss", "js", "cs", "electron", "wpf"]
+			"madeWith": [
+				{ "img": "html", "alt": "HTML" },
+				{ "img": "scss", "alt": "SCSS" },
+				{ "img": "js", "alt": "JavaScript" },
+				{ "img": "cs", "alt": "C#" },
+				{ "img": "electron", "alt": "Electron" },
+				{ "img": "wpf", "alt": "WPF Forms" }
+			]
 		},
 		{
 			"img": "WebBody",
@@ -189,10 +238,11 @@
 			"availableAt": [
 				{
 					"logo": "github",
-					"url": "https://github.com/EliasVal/TcpMessaging"
+					"url": "https://github.com/EliasVal/TcpMessaging",
+					"alt": "Source Code (Github)"
 				}
 			],
-			"madeWith": ["cs"]
+			"madeWith": [{ "img": "cs", "alt": "C#" }]
 		}
 	]
 }

@@ -15,6 +15,8 @@
 	class:selected={projectIndex == $currentProjectIndex && $galleryTransitionEnded}
 	class:flyRightAnim={!$galleryTransitionEnded && $galleryFlyDir == 1}
 	class:flyLeftAnim={!$galleryTransitionEnded && $galleryFlyDir == -1}
+	class:stopRightAnim={$galleryTransitionEnded && $galleryFlyDir == 1}
+	class:stopLeftAnim={$galleryTransitionEnded && $galleryFlyDir == -1}
 >
 	<div class="project-image">
 		<img src="/images/{project.img}.jpg" alt={project.title} />
@@ -44,19 +46,9 @@
 			<li class="made-with">
 				<span class="project-details-header">Made with</span>:
 				{#each project.madeWith as mw}
-					<img src="/svgs/{mw}.svg" alt={mw} />
+					<img src="/svgs/{mw.img}.svg" alt={mw.alt} title={mw.alt} />
 				{/each}
 			</li>
-			<!-- {#if Object.entries(project.availableAt || {}).length > 0}
-				<li style="margin-top: auto">
-					<span class="project-details-header">Available at</span>:
-					{#each project.availableAt as location}
-						<a title={location.alt} href={location.url} style="text-decoration: none;">
-							<img src="/svgs/{location.logo}.svg" alt={location.alt} />
-						</a>
-					{/each}
-				</li>
-			{/if} -->
 			<li class="card-footer">
 				<ProjectGalleryControls {projectsLength}>
 					{#if Object.entries(project.availableAt || {}).length > 0}
@@ -80,17 +72,19 @@
 		flex-shrink: 0;
 		width: 75vw;
 		background: linear-gradient(to bottom left, #555555, #3b3b3b);
+		box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0);
+
 		border-radius: 5px;
 		padding: 1rem;
 
-		transition: 0.1s scale;
+		transition: scale 0.15s, box-shadow 0.25s;
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;
 
 		&.selected {
 			scale: 105%;
-			transition: scale 0.2s 0.25s ease-in;
+			// transition: scale 0.2s 0.25s ease-in;
 			box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.15);
 		}
 
@@ -150,26 +144,27 @@
 	}
 
 	.flyRightAnim {
-		animation: fly-right 0.75s ease-in-out; // cubic-bezier(1, 0.44, 0.51, 1.32); //cubic-bezier(1, 0.44, 0.51, 1.32); // delay iteration-count direction fill-mode;
+		animation: fly-right 0.5s ease-in-out forwards;
 	}
 
 	.flyLeftAnim {
-		animation: fly-left 0.75s ease-in-out; // cubic-bezier(1, 0.44, 0.51, 1.32); //cubic-bezier(1, 0.44, 0.51, 1.32); // delay iteration-count direction fill-mode;
+		animation: fly-left 0.5s ease-in-out forwards;
+	}
+
+	.stopRightAnim {
+		animation: stop-right 0.25s ease-in-out forwards;
+	}
+
+	.stopLeftAnim {
+		animation: stop-left 0.25s ease-in-out forwards;
 	}
 
 	@keyframes fly-right {
 		from {
 			transform: rotateZ(0deg);
 		}
-		15%,
-		65% {
-			transform: rotateZ(2deg);
-		}
-		85% {
-			transform: rotateZ(-0.5deg);
-		}
 		to {
-			transform: rotateZ(0deg);
+			transform: rotateZ(2deg);
 		}
 	}
 
@@ -177,15 +172,32 @@
 		from {
 			transform: rotateZ(0deg);
 		}
-		15%,
-		65% {
+		to {
 			transform: rotateZ(-2deg);
 		}
-		85% {
+	}
+
+	@keyframes stop-right {
+		from {
+			transform: rotateZ(2deg);
+		}
+		50% {
+			transform: rotateZ(-0.5deg);
+		}
+		to {
+			transform: rotateZ(0);
+		}
+	}
+
+	@keyframes stop-left {
+		from {
+			transform: rotateZ(-2deg);
+		}
+		50% {
 			transform: rotateZ(0.5deg);
 		}
 		to {
-			transform: rotateZ(0deg);
+			transform: rotateZ(0);
 		}
 	}
 

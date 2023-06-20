@@ -12,7 +12,7 @@
 
 <style lang="scss">
 	section {
-		height: 100vh;
+		min-height: 100vh;
 
 		position: relative;
 		z-index: 2;

@@ -1,14 +1,18 @@
 <script lang="ts">
 	import ProjectGallery from '../Projects/ProjectGallery.svelte';
 	import GradientText from '../GradientText.svelte';
-	import { fly } from 'svelte/transition';
-
-	import { cubicOut } from 'svelte/easing';
 
 	import { projects as _projects } from '$lib/data.json';
+	import { galleryIsFocused } from '$lib/tools';
+
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 
 	// @ts-ignore
 	let projects: Project[] = _projects;
+
+	onMount(() => ($galleryIsFocused = true));
 </script>
 
 <div id="projects">
@@ -19,19 +23,14 @@
 			</GradientText>
 		</div>
 	</div>
-	<div
-		class="gallery-container"
-		in:fly={{ x: -2050, duration: 2050, easing: cubicOut, delay: 550 }}
-	>
-		<ProjectGallery {projects} />
-	</div>
+	<ProjectGallery {projects} />
 </div>
 
 <style lang="scss">
 	#projects {
 		min-height: 100vh;
 
-		overflow: hidden;
+		// overflow: hidden;
 
 		display: flex;
 		flex-direction: column;
@@ -45,12 +44,6 @@
 				font-weight: bold;
 			}
 			display: inline-block;
-		}
-
-		.gallery-container {
-			position: relative;
-			flex-grow: 1;
-			overflow-wrap: normal;
 		}
 	}
 

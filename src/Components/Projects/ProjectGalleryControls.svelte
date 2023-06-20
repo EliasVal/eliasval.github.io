@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { currentProjectIndex, galleryTransitionEnded, galleryFlyDir } from '$lib/tools';
+	import {
+		currentProjectIndex,
+		galleryTransitionEnded,
+		galleryFlyDir,
+		galleryIsFocused
+	} from '$lib/tools';
 	export let projectsLength: number;
 
 	const nextProject = () => {
@@ -24,6 +29,13 @@
 
 		$galleryTransitionEnded = true;
 		$galleryTransitionEnded = false;
+	};
+
+	document.onkeydown = function (e) {
+		if ($galleryIsFocused) {
+			if (e.key == 'ArrowLeft') prevProject();
+			else if (e.key == 'ArrowRight') nextProject();
+		}
 	};
 </script>
 

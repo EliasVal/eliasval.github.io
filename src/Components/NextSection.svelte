@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { galleryIsFocused } from '$lib/tools';
 	import { onMount } from 'svelte';
 	import { cubicOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
@@ -13,11 +14,11 @@
 	let i = 0;
 	const ScrollToNextSection = () => {
 		i++;
-		sections[i].scrollIntoView({ behavior: 'smooth', block: 'end' });
+		sections[i].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 	};
 </script>
 
-{#if i < 3 && mounted}
+{#if i < 3 && mounted && !$galleryIsFocused}
 	<button
 		on:click={ScrollToNextSection}
 		in:fly={{ y: 50, duration: 500, delay: 2750, easing: cubicOut }}

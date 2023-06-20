@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Projects from './../Components/Sections/Projects.svelte';
-	import { onMount } from 'svelte';
 
 	import '../Styling/global.scss';
 

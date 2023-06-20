@@ -55,7 +55,7 @@
 
 <style lang="scss">
 	#about {
-		height: 100vh;
+		min-height: 100vh;
 		position: relative;
 
 		display: flex;
@@ -65,10 +65,10 @@
 		.header {
 			top: 0;
 			position: absolute;
-			margin: 2em 3em;
+			margin: 2em 0 0 3em;
 			background-color: transparent;
 			.title {
-				font-size: 4rem;
+				font-size: 3rem;
 				font-weight: bold;
 
 				.subtitle {
@@ -76,7 +76,7 @@
 					margin-left: 0.75rem;
 				}
 			}
-			display: inline-block;
+			// display: inline-block;
 		}
 
 		.content {
@@ -85,9 +85,9 @@
 			// left: 50%;
 			// top: 50%;
 			// transform: translateX(-50%) translateY(-20%);
+			width: 75%;
 			max-width: 60ch;
 			margin: 0 auto;
-			width: 75%;
 			> p {
 				font-size: 1.3em;
 				text-align: justify;
