@@ -23,6 +23,8 @@
 		on:click={ScrollToNextSection}
 		in:fly={{ y: 50, duration: 500, delay: 2750, easing: cubicOut }}
 		out:fly={{ y: 50, duration: 200, easing: cubicOut }}
+		aria-label="Next Section"
+		title="Next Section"
 	>
 		<img alt="" src="/svgs/arr-left.svg" style="" />
 	</button>

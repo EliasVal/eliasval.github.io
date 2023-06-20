@@ -39,11 +39,11 @@
 	};
 </script>
 
-<button on:click={prevProject}>
+<button on:click={prevProject} aria-label="Previous Project" title="Previous Project">
 	<img src="/svgs/arr-left.svg" alt="" />
 </button>
 <slot />
-<button on:click={nextProject}>
+<button on:click={nextProject} aria-label="Next Project" title="Next Project">
 	<img style="transform: scaleX(-1);" src="/svgs/arr-left.svg" alt="" />
 </button>
 
