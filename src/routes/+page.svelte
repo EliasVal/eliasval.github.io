@@ -1,41 +1,41 @@
 <script lang="ts">
-	import Projects from './../Components/Sections/Projects.svelte';
+  import Projects from './../Components/Sections/Projects.svelte';
 
-	import '../Styling/global.scss';
+  import '../Styling/global.scss';
 
-	import Section from '../Components/Section.svelte';
+  import Section from '../Components/Section.svelte';
 
-	import WorkEthics from '../Components/Sections/WorkValues.svelte';
-	import MainHeader from '../Components/Sections/MainHeader.svelte';
-	import AboutMe from '../Components/Sections/AboutMe.svelte';
-	import NextSection from '../Components/NextSection.svelte';
+  import WorkEthics from '../Components/Sections/WorkValues.svelte';
+  import MainHeader from '../Components/Sections/MainHeader.svelte';
+  import AboutMe from '../Components/Sections/AboutMe.svelte';
+  import NextSection from '../Components/NextSection.svelte';
 
-	// onMount(() => {
-	// 	fontResize();
-	// });
+  // onMount(() => {
+  // 	fontResize();
+  // });
 
-	// function fontResize() {
-	// 	let perc = window.outerWidth / (window.outerWidth <= 680 ? 9 : 15);
-	// 	document.getElementsByTagName('body')[0].style.fontSize = `${perc}%`;
-	// }
+  // function fontResize() {
+  // 	let perc = window.outerWidth / (window.outerWidth <= 680 ? 9 : 15);
+  // 	document.getElementsByTagName('body')[0].style.fontSize = `${perc}%`;
+  // }
 </script>
 
 <!-- <svelte:window on:resize={fontResize} on:focus={fontResize} on:blur={fontResize} /> -->
 
 <Section>
-	<MainHeader />
+  <MainHeader />
 </Section>
 
 <Section>
-	<AboutMe />
+  <AboutMe />
 </Section>
 
 <Section>
-	<WorkEthics />
+  <WorkEthics />
 </Section>
 
 <Section>
-	<Projects />
+  <Projects />
 </Section>
 
 <NextSection />

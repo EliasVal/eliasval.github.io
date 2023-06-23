@@ -1,248 +1,248 @@
 {
-	"projects": [
-		{
-			"img": "WebBody",
-			"title": "Your Commission!",
-			"description": "Feel free to message me, @eliasvalk over on Discord for a commission!",
-			"status": {
-				"title": "Pending",
-				"color": "magenta"
-			},
-			"availableAt": [],
-			"madeWith": [{ "img": "vscode", "alt": "Visual Studio Code" }]
-		},
-		{
-			"img": "WebBody",
-			"title": "Portfolio",
-			"description": "The website you're currently visiting!<br>Originally made with React, but now the portfolio was remade (twice) with Svelte!<br>Old versions also included in the \"Available at\" section below.",
-			"status": {
-				"title": "Maintained",
-				"color": "royalblue"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/eliasval.github.io",
-					"alt": "Source Code (Github)"
-				},
-				{
-					"logo": "web",
-					"url": "https://eliasval.github.io",
-					"alt": "Current Design (You're here!)"
-				},
-				{
-					"logo": "web",
-					"url": "https://eliasval.github.io/old-svelte",
-					"alt": "Old Svelte Design"
-				},
-				{
-					"logo": "web",
-					"url": "https://eliasval.github.io/old-react",
-					"alt": "Old React Design"
-				}
-			],
-			"madeWith": [
-				{ "img": "svelte", "alt": "Svelte" },
-				{ "img": "ts", "alt": "TypeScript" },
-				{ "img": "scss", "alt": "SCSS" }
-			]
-		},
-		{
-			"img": "WIP",
-			"title": "BULLETFEST",
-			"description": "A 2D Party game where you fight around with friends and strangers, with all kinds of strange weapons and items!",
-			"status": {
-				"title": "In Development",
-				"color": "cyan"
-			},
-			"madeWith": [
-				{ "img": "unity", "alt": "Unity Engine" },
-				{ "img": "firebase", "alt": "Firebase" },
-				{ "img": "cs", "alt": "C#" }
-			],
-			"availableAt": [
-				{
-					"logo": "discord",
-					"url": "https://discord.com/invite/raupcYM4Gj",
-					"alt": "Discord Server"
-				}
-			]
-		},
-		{
-			"img": "WIP",
-			"title": "BULLETFEST Bot",
-			"description": "a Discord bot serving as the back-end for the game \"BULLETFEST\"!",
-			"status": {
-				"title": "In Development",
-				"color": "cyan"
-			},
-			"madeWith": [
-				{ "img": "firebase", "alt": "Firebase" },
-				{ "img": "ts", "alt": "TypeScript" },
-				{ "img": "nodejs", "alt": "NodeJS" }
-			],
-			"availableAt": [
-				{
-					"logo": "discord",
-					"url": "https://discord.com/invite/raupcYM4Gj",
-					"alt": "Discord Server"
-				}
-			]
-		},
-		{
-			"img": "driveBot",
-			"title": "Drive Bot",
-			"description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a fully navigatable file system!",
-			"status": {
-				"title": "Completed",
-				"color": "limegreen"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/DiscordCloudBot",
-					"alt": "Source Code (Github)"
-				}
-			],
-			"madeWith": [
-				{ "img": "nodejs", "alt": "NodeJS" },
-				{ "img": "ts", "alt": "TypeScript" }
-			]
-		},
-		{
-			"img": "alphabot",
-			"title": "Alphabot",
-			"description": "An all-purpose Discord bot that I used to work on.<br>The project was abandoned due to problems with finding a proper server to host the bot, and Discord's many controversial API changes (such as practically forcing slash commands).",
-			"status": {
-				"title": "Deprecated",
-				"color": "red"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/AlphaseStudios/Alphabot",
-					"alt": "Source Code (Github)"
-				}
-			],
-			"madeWith": [
-				{ "img": "ts", "alt": "TypeScript" },
-				{ "img": "nodejs", "alt": "NodeJS" },
-				{ "img": "firebase", "alt": "Firebase" }
-			]
-		},
-		{
-			"img": "dbugger",
-			"title": "D-Bugger",
-			"description": "A project made for developers to log & keep track of bugs.<br>The project was shut down due to lack of funding and the low demand for it.",
-			"status": {
-				"title": "Deprecated",
-				"color": "red"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/D-Bugger",
-					"alt": "Source Code (Github)"
-				}
-			],
-			"madeWith": [
-				{ "img": "svelte", "alt": "Svelte" },
-				{ "img": "ts", "alt": "TypeScript" },
-				{ "img": "firebase", "alt": "Firebase" },
-				{ "img": "tailwind", "alt": "Tailwind CSS" }
-			]
-		},
-		{
-			"img": "DFTH",
-			"title": "Don't Feed the Hole",
-			"description": "A 2D Hypercasual game I made with a group of friends for a game-jam competition!",
-			"status": {
-				"title": "Completed",
-				"color": "limegreen"
-			},
-			"availableAt": [
-				{
-					"logo": "web",
-					"url": "https://eliasv.itch.io/dont-feed-the-hole",
-					"alt": "Play (itch.io)"
-				},
-				{
-					"logo": "download",
-					"url": "https://eliasv.itch.io/dont-feed-the-hole",
-					"alt": "Download"
-				}
-			],
-			"madeWith": [
-				{ "img": "cs", "alt": "C#" },
-				{ "img": "unity", "alt": "Unity Engine" }
-			]
-		},
-		{
-			"img": "WebBody",
-			"title": "Discord Emoji Bot",
-			"description": "A Discord bot made to \"bypass\" Discord's server limits on custom emojis!",
-			"status": {
-				"title": "Completed",
-				"color": "limegreen"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/DiscordEmojiBot",
-					"alt": "Source Code (Github)"
-				}
-			],
-			"madeWith": [
-				{ "img": "ts", "alt": "TypeScript" },
-				{ "img": "nodejs", "alt": "NodeJS" },
-				{ "img": "firebase", "alt": "Firebase" }
-			]
-		},
-		{
-			"img": "spunch",
-			"title": "Image to ASCII art Converter",
-			"description": "This applications converts images to ASCII art. Originally made with Electron and later remade with Windows Presentation Foundation (WPF) Forms.",
-			"status": {
-				"title": "Completed",
-				"color": "limegreen"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/ITAConverter",
-					"alt": "Source Code (Github)"
-				},
-				{
-					"logo": "download",
-					"url": "https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF",
-					"alt": "Download"
-				}
-			],
-			"madeWith": [
-				{ "img": "html", "alt": "HTML" },
-				{ "img": "scss", "alt": "SCSS" },
-				{ "img": "js", "alt": "JavaScript" },
-				{ "img": "cs", "alt": "C#" },
-				{ "img": "electron", "alt": "Electron" },
-				{ "img": "wpf", "alt": "WPF Forms" }
-			]
-		},
-		{
-			"img": "WebBody",
-			"title": "TCP Messaging App",
-			"description": "This project was just me fiddling around with networking, particularly the Transmission Control Protocol (TCP) in C#.",
-			"status": {
-				"title": "Completed",
-				"color": "limegreen"
-			},
-			"availableAt": [
-				{
-					"logo": "github",
-					"url": "https://github.com/EliasVal/TcpMessaging",
-					"alt": "Source Code (Github)"
-				}
-			],
-			"madeWith": [{ "img": "cs", "alt": "C#" }]
-		}
-	]
+  "projects": [
+    {
+      "img": "WebBody",
+      "title": "Your Commission!",
+      "description": "Feel free to message me, @eliasvalk over on Discord for a commission!",
+      "status": {
+        "title": "Pending",
+        "color": "magenta"
+      },
+      "availableAt": [],
+      "madeWith": [{ "img": "vscode", "alt": "Visual Studio Code" }]
+    },
+    {
+      "img": "WebBody",
+      "title": "Portfolio",
+      "description": "The website you're currently visiting!<br>Originally made with React, but now the portfolio was remade (twice) with Svelte!<br>Old versions also included in the \"Available at\" section below.",
+      "status": {
+        "title": "Maintained",
+        "color": "royalblue"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/eliasval.github.io",
+          "alt": "Source Code (Github)"
+        },
+        {
+          "logo": "web",
+          "url": "https://eliasval.github.io",
+          "alt": "Current Design (You're here!)"
+        },
+        {
+          "logo": "web",
+          "url": "https://eliasval.github.io/old-svelte",
+          "alt": "Old Svelte Design"
+        },
+        {
+          "logo": "web",
+          "url": "https://eliasval.github.io/old-react",
+          "alt": "Old React Design"
+        }
+      ],
+      "madeWith": [
+        { "img": "svelte", "alt": "Svelte" },
+        { "img": "ts", "alt": "TypeScript" },
+        { "img": "scss", "alt": "SCSS" }
+      ]
+    },
+    {
+      "img": "WIP",
+      "title": "BULLETFEST",
+      "description": "A 2D Party game where you fight around with friends and strangers, with all kinds of strange weapons and items!",
+      "status": {
+        "title": "In Development",
+        "color": "cyan"
+      },
+      "madeWith": [
+        { "img": "unity", "alt": "Unity Engine" },
+        { "img": "firebase", "alt": "Firebase" },
+        { "img": "cs", "alt": "C#" }
+      ],
+      "availableAt": [
+        {
+          "logo": "discord",
+          "url": "https://discord.com/invite/raupcYM4Gj",
+          "alt": "Discord Server"
+        }
+      ]
+    },
+    {
+      "img": "WIP",
+      "title": "BULLETFEST Bot",
+      "description": "a Discord bot serving as the back-end for the game \"BULLETFEST\"!",
+      "status": {
+        "title": "In Development",
+        "color": "cyan"
+      },
+      "madeWith": [
+        { "img": "firebase", "alt": "Firebase" },
+        { "img": "ts", "alt": "TypeScript" },
+        { "img": "nodejs", "alt": "NodeJS" }
+      ],
+      "availableAt": [
+        {
+          "logo": "discord",
+          "url": "https://discord.com/invite/raupcYM4Gj",
+          "alt": "Discord Server"
+        }
+      ]
+    },
+    {
+      "img": "driveBot",
+      "title": "Drive Bot",
+      "description": "A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a fully navigatable file system!",
+      "status": {
+        "title": "Completed",
+        "color": "limegreen"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/DiscordCloudBot",
+          "alt": "Source Code (Github)"
+        }
+      ],
+      "madeWith": [
+        { "img": "nodejs", "alt": "NodeJS" },
+        { "img": "ts", "alt": "TypeScript" }
+      ]
+    },
+    {
+      "img": "alphabot",
+      "title": "Alphabot",
+      "description": "An all-purpose Discord bot that I used to work on.<br>The project was abandoned due to problems with finding a proper server to host the bot, and Discord's many controversial API changes (such as practically forcing slash commands).",
+      "status": {
+        "title": "Deprecated",
+        "color": "red"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/AlphaseStudios/Alphabot",
+          "alt": "Source Code (Github)"
+        }
+      ],
+      "madeWith": [
+        { "img": "ts", "alt": "TypeScript" },
+        { "img": "nodejs", "alt": "NodeJS" },
+        { "img": "firebase", "alt": "Firebase" }
+      ]
+    },
+    {
+      "img": "dbugger",
+      "title": "D-Bugger",
+      "description": "A project made for developers to log & keep track of bugs.<br>The project was shut down due to lack of funding and the low demand for it.",
+      "status": {
+        "title": "Deprecated",
+        "color": "red"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/D-Bugger",
+          "alt": "Source Code (Github)"
+        }
+      ],
+      "madeWith": [
+        { "img": "svelte", "alt": "Svelte" },
+        { "img": "ts", "alt": "TypeScript" },
+        { "img": "firebase", "alt": "Firebase" },
+        { "img": "tailwind", "alt": "Tailwind CSS" }
+      ]
+    },
+    {
+      "img": "DFTH",
+      "title": "Don't Feed the Hole",
+      "description": "A 2D Hypercasual game I made with a group of friends for a game-jam competition!",
+      "status": {
+        "title": "Completed",
+        "color": "limegreen"
+      },
+      "availableAt": [
+        {
+          "logo": "web",
+          "url": "https://eliasv.itch.io/dont-feed-the-hole",
+          "alt": "Play (itch.io)"
+        },
+        {
+          "logo": "download",
+          "url": "https://eliasv.itch.io/dont-feed-the-hole",
+          "alt": "Download"
+        }
+      ],
+      "madeWith": [
+        { "img": "cs", "alt": "C#" },
+        { "img": "unity", "alt": "Unity Engine" }
+      ]
+    },
+    {
+      "img": "WebBody",
+      "title": "Discord Emoji Bot",
+      "description": "A Discord bot made to \"bypass\" Discord's server limits on custom emojis!",
+      "status": {
+        "title": "Completed",
+        "color": "limegreen"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/DiscordEmojiBot",
+          "alt": "Source Code (Github)"
+        }
+      ],
+      "madeWith": [
+        { "img": "ts", "alt": "TypeScript" },
+        { "img": "nodejs", "alt": "NodeJS" },
+        { "img": "firebase", "alt": "Firebase" }
+      ]
+    },
+    {
+      "img": "spunch",
+      "title": "Image to ASCII art Converter",
+      "description": "This applications converts images to ASCII art. Originally made with Electron and later remade with Windows Presentation Foundation (WPF) Forms.",
+      "status": {
+        "title": "Completed",
+        "color": "limegreen"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/ITAConverter",
+          "alt": "Source Code (Github)"
+        },
+        {
+          "logo": "download",
+          "url": "https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF",
+          "alt": "Download"
+        }
+      ],
+      "madeWith": [
+        { "img": "html", "alt": "HTML" },
+        { "img": "scss", "alt": "SCSS" },
+        { "img": "js", "alt": "JavaScript" },
+        { "img": "cs", "alt": "C#" },
+        { "img": "electron", "alt": "Electron" },
+        { "img": "wpf", "alt": "WPF Forms" }
+      ]
+    },
+    {
+      "img": "WebBody",
+      "title": "TCP Messaging App",
+      "description": "This project was just me fiddling around with networking, particularly the Transmission Control Protocol (TCP) in C#.",
+      "status": {
+        "title": "Completed",
+        "color": "limegreen"
+      },
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/TcpMessaging",
+          "alt": "Source Code (Github)"
+        }
+      ],
+      "madeWith": [{ "img": "cs", "alt": "C#" }]
+    }
+  ]
 }
