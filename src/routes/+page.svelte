@@ -3,7 +3,7 @@
 
   import '../Styling/global.scss';
 
-  import Section from '../Components/Section.svelte';
+  import IntersectionObserver from '../Components/IntersectionObserver.svelte';
 
   import WorkEthics from '../Components/Sections/WorkValues.svelte';
   import MainHeader from '../Components/Sections/MainHeader.svelte';
@@ -22,20 +22,20 @@
 
 <!-- <svelte:window on:resize={fontResize} on:focus={fontResize} on:blur={fontResize} /> -->
 
-<Section>
+<IntersectionObserver>
   <MainHeader />
-</Section>
+</IntersectionObserver>
 
-<Section>
+<IntersectionObserver>
   <AboutMe />
-</Section>
+</IntersectionObserver>
 
-<Section>
+<IntersectionObserver>
   <WorkEthics />
-</Section>
+</IntersectionObserver>
 
-<Section>
+<IntersectionObserver>
   <Projects />
-</Section>
+</IntersectionObserver>
 
 <NextSection />
