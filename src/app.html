@@ -3,22 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%sveltekit.assets%/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    %sveltekit.head%
-    <title>Elias' Portfolio</title>
-    <meta name="theme-color" content="#007cc7" />
-    <!-- <meta name="description" content="Elias' Portfolio" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="P57V9lJZGctM2dhmk7bC9Ia2arFD5lJhPphBrN11Kuk" />
 
+    <title>Elias' Portfolio</title>
+    <meta name="theme-color" content="#007cc7" />
+    <meta name="title" content="Elias' Portfolio" />
     <meta
       name="description"
-      content="Elias' Portfolio, you can find all about him here and check out his past and current projects!"
+      content="You can find all about him here and check out his past and current projects!"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://eliasval.github.io/" />
+    <meta property="og:title" content="Elias' Portfolio" />
+    <meta
+      property="og:description"
+      content="You can find all about him here and check out his past and current projects!"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://eliasval.github.io/" />
+    <meta property="twitter:title" content="Elias' Portfolio" />
+    <meta
+      property="twitter:description"
+      content="You can find all about him here and check out his past and current projects!"
     />
   </head>
+
+  <!-- SVELTE HEAD -->
+  %sveltekit.head%
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>
-    <!-- <div class="loading-screen">
-      <div class="loader"></div>
-    </div> -->
   </body>
 </html>

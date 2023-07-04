@@ -12,7 +12,7 @@
           { value: document.getElementById(`2-${i}`)?.getAttribute('d'), delay: 0 },
           { value: document.getElementById(`1-${i}`)?.getAttribute('d'), delay: 0 }
         ],
-        duration: 10000 / (i * 0.5),
+        duration: 6000 / (i * 0.5),
         loop: true,
         direction: 'alternate',
         easing: 'linear',

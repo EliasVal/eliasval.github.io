@@ -27,9 +27,9 @@
     // (document.body.clientWidth - cardWidth) / 2 - To center one card
     // rest offsets that by current card index (with addition of 4.5rem gap)
     if (gallery != null)
-      gallery.style.left = `calc(${
+      gallery.style.transform = `translateX(calc(${
         (document.body.clientWidth - cardWidth) / 2
-      }px - (${cardWidth}px + 4.5rem) * ${$currentProjectIndex})`;
+      }px - (${cardWidth}px + 4.5rem) * ${$currentProjectIndex}))`;
 
     // Set gallery container minimum height so project cards will not be cut off
     if (galleryContainer != null) {
@@ -81,7 +81,7 @@
       display: flex;
       gap: 4.5rem;
 
-      transition: left 0.75s cubic-bezier(0.6, 1, 0.6, 1);
+      transition: transform 0.75s cubic-bezier(0.6, 1, 0.6, 1);
     }
   }
 </style>
