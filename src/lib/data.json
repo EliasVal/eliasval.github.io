@@ -48,7 +48,7 @@
       ]
     },
     {
-      "img": "WIP",
+      "img": "bulletfest",
       "title": "BULLETFEST",
       "description": "A 2D Party game where you fight around with friends and strangers, with all kinds of strange weapons and items!",
       "status": {
@@ -69,8 +69,8 @@
       ]
     },
     {
-      "img": "WIP",
-      "title": "BULLETFEST Bot",
+      "img": "bulletfest",
+      "title": "BeanBot",
       "description": "a Discord bot serving as the back-end for the game \"BULLETFEST\"!",
       "status": {
         "title": "In Development",
