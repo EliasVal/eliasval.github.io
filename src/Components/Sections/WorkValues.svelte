@@ -10,7 +10,7 @@
       in:fly={{ x: -150, duration: 850, delay: 100, easing: cubicOut, opacity: 0.00001 }}
       class="title"
     >
-      <GradientText rgbValues={['#503AC9', '#3B28EB', '#0FF0F0']} direction={'to top right'}>
+      <GradientText rgbValues={['#7d49f5 72%', '#fff']} direction={'to bottom'}>
         Work Values
       </GradientText>
     </div>
@@ -48,7 +48,15 @@
             </GradientText>
           </u>
         </b>: I come up with unique designs for every website and game I make so that every product
-        will feel like an entirely unique experience, such as this one.
+        will feel like an entirely unique experience, such as this one. The designs may be
+        simplistic, but they deliever what they need to, with the right UX.
+        <br /><br />
+        <span
+          style="text-decoration: underline; font-style: italic; text-decoration-style: dashed;"
+        >
+          &ldquo;Everything should be made as simple as possible, but no simpler&rdquo; - Albert
+          Einstein, 1933
+        </span>
       </li>
     </ul>
   </div>
@@ -88,9 +96,11 @@
 
   @media screen and (max-width: 780px) {
     #workvalues .header {
-      margin: 2rem 0 2em 2em;
+      margin: 2rem 0;
+      width: 100%;
       .title {
         font-size: 3.5rem;
+        text-align: center;
       }
     }
   }

@@ -103,7 +103,7 @@
       </GradientText>
       with &#x1F9E1;
     </p>
-    <p>&copy; EliasVal, {new Date().getFullYear()}</p>
+    <p>&copy; EliasValk, {new Date().getFullYear()}</p>
   </div>
 </div>
 

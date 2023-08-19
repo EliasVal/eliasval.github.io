@@ -2,17 +2,6 @@
   "projects": [
     {
       "img": "WebBody",
-      "title": "Your Commission!",
-      "description": "Feel free to message me, @eliasvalk over on Discord for a commission!",
-      "status": {
-        "title": "Pending",
-        "color": "magenta"
-      },
-      "availableAt": [],
-      "madeWith": [{ "img": "vscode", "alt": "Visual Studio Code" }]
-    },
-    {
-      "img": "WebBody",
       "title": "Portfolio",
       "description": "The website you're currently visiting!<br>Originally made with React, but now the portfolio was remade (twice) with Svelte!<br>Old versions also included in the \"Available at\" section below.",
       "status": {

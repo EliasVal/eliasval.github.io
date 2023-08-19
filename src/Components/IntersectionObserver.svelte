@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   export let steps = 100;
   export let threshold = 50;
   let element: HTMLElement;
@@ -8,6 +8,7 @@
   let unobserve = () => {};
   let intersectionObserverSupport = true;
   let toggleOnce = false;
+  const dispatch = createEventDispatcher();
 
   function intersectPercent(entries: IntersectionObserverEntry[]) {
     entries.forEach((entry) => {
@@ -15,8 +16,9 @@
       if (percent >= threshold) {
         if (!toggleOnce) {
           toggleOnce = true;
-          unobserve();
+          // unobserve();
         }
+        dispatch('visible');
       }
     });
   }
@@ -59,5 +61,7 @@
     z-index: 2;
 
     margin: 0 0 0.5rem 0;
+
+    scroll-margin-top: 3em;
   }
 </style>

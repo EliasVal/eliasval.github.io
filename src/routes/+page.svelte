@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Navbar from './../Components/Navbar.svelte';
   import Projects from './../Components/Sections/Projects.svelte';
 
   import '../Styling/global.scss';
@@ -6,29 +7,24 @@
   import IntersectionObserver from '../Components/IntersectionObserver.svelte';
 
   import WorkEthics from '../Components/Sections/WorkValues.svelte';
-  import MainHeader from '../Components/Sections/MainHeader.svelte';
-  import AboutMe from '../Components/Sections/AboutMe.svelte';
-  import NextSection from '../Components/NextSection.svelte';
+  import Main from '../Components/Sections/Main.svelte';
 
   import Footer from '../Components/Footer.svelte';
+  import { activeSection } from '$lib/tools';
 </script>
 
-<IntersectionObserver>
-  <MainHeader />
+<Navbar />
+
+<IntersectionObserver on:visible={() => ($activeSection = 0)}>
+  <Main />
 </IntersectionObserver>
 
-<IntersectionObserver>
-  <AboutMe />
-</IntersectionObserver>
-
-<IntersectionObserver>
+<IntersectionObserver on:visible={() => ($activeSection = 1)}>
   <WorkEthics />
 </IntersectionObserver>
 
-<IntersectionObserver>
+<IntersectionObserver on:visible={() => ($activeSection = 2)}>
   <Projects />
 </IntersectionObserver>
 
 <Footer />
-
-<NextSection />
