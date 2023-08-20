@@ -5,8 +5,8 @@
   import { slide } from 'svelte/transition';
 
   let navbar: HTMLElement;
-  let screenWidth: number = 0;
-  let isNavbarActive = false;
+  let screenWidth: number;
+  let isNavbarActive = true;
 
   const UpdateNavbar = () => {
     const scroll = Math.max(Math.min((window.scrollY / 150) * 2, 2), 1);
