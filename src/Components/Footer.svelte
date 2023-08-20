@@ -98,7 +98,7 @@
   </div>
   <div class="content">
     <p>
-      Made in <GradientText rgbValues={['#f7630c 65%', '#ffffff']} direction="to right">
+      Made in <GradientText rgbValues={['#f7630c 65%', '#ffffff']} direction="to bottom right">
         Svelte
       </GradientText>
       with &#x1F9E1;
@@ -114,9 +114,7 @@
     height: 155px;
     overflow-y: hidden;
     svg {
-      // position: absolute;
       left: 0;
-      // top: -100%;
       width: 100%;
       height: 350px;
     }
@@ -124,7 +122,6 @@
 
   .footer .content {
     background-color: black;
-    // z-index: 2;
     position: relative;
     padding: 0 1em 2em 1em;
     display: flex;

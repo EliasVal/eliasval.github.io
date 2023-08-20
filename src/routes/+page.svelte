@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Navbar from './../Components/Navbar.svelte';
+  import Navbar from '../Components/Navbar/Navbar.svelte';
   import Projects from './../Components/Sections/Projects.svelte';
 
   import '../Styling/global.scss';

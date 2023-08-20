@@ -8,7 +8,11 @@
   export let projectIndex: number;
 
   export let projectsLength: number;
+
+  let width = window.innerWidth;
 </script>
+
+<svelte:window on:resize={() => (width = window.innerWidth)} />
 
 <div
   class="project-card"
@@ -53,7 +57,9 @@
         <ProjectGalleryControls {projectsLength}>
           {#if Object.entries(project.availableAt || {}).length > 0}
             <span>
-              <span class="project-details-header">Available at</span>:
+              {#if width >= 510}
+                <span class="project-details-header">Available at</span>:
+              {/if}
               {#each project.availableAt as location}
                 <a title={location.alt} href={location.url} style="text-decoration: none;">
                   <img src="/svgs/{location.logo}.svg" alt={location.alt} />
@@ -77,7 +83,9 @@
     border-radius: 5px;
     padding: 1rem;
 
-    transition: scale 0.15s, box-shadow 0.25s;
+    transition:
+      scale 0.15s,
+      box-shadow 0.25s;
     display: flex;
     flex-direction: row;
     gap: 1rem;
