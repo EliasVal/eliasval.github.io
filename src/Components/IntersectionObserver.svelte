@@ -61,7 +61,11 @@
     z-index: 2;
 
     margin: 0 0 0.5rem 0;
+  }
 
-    scroll-margin-top: 3em;
+  @media screen and (min-width: 750px) {
+    section {
+      scroll-margin-top: 3em;
+    }
   }
 </style>

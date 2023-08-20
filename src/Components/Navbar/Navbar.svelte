@@ -45,7 +45,7 @@
       <ul class="nav-buttons">
         <NavbarButton section={0}>About</NavbarButton>
         <NavbarButton section={1}>Work Values</NavbarButton>
-        <NavbarButton section={2}>About</NavbarButton>
+        <NavbarButton section={2}>Projects</NavbarButton>
         <NavbarButton
           section={-1}
           onClick={() => window.open('mailto:eliasvalk.dev@gmail.com', '_blank')}
