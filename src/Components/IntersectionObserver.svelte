@@ -65,7 +65,7 @@
 
   @media screen and (min-width: 750px) {
     section {
-      scroll-margin-top: 3em;
+      scroll-margin-top: 2.5rem;
     }
   }
 </style>

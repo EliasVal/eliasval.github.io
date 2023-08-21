@@ -1,7 +1,7 @@
 <script lang="ts">
   import NavbarButton from './NavbarButton.svelte';
   import { onMount } from 'svelte';
-  import { cubicOut } from 'svelte/easing';
+  import { cubicInOut } from 'svelte/easing';
   import { slide } from 'svelte/transition';
 
   let navbar: HTMLElement;
@@ -34,6 +34,7 @@
     <button
       class="navbar-toggle"
       class:active={isNavbarActive}
+      aria-label="Toggle Navigation Bar"
       on:click={() => {
         isNavbarActive = !isNavbarActive;
       }}
@@ -44,7 +45,7 @@
 
   <nav bind:this={navbar} class="navbar">
     {#if screenWidth > 750 || isNavbarActive}
-      <span transition:slide={{ easing: cubicOut }}>
+      <span transition:slide={{ easing: cubicInOut }}>
         <h1>Elias Valk</h1>
         <ul class="nav-buttons">
           <NavbarButton section={0}>About</NavbarButton>

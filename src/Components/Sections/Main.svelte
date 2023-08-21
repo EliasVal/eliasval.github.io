@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { fade, fly } from 'svelte/transition';
+  import ContentBox from './../ContentBox.svelte';
+  import { fade } from 'svelte/transition';
   import GradientText from '../GradientText.svelte';
   import { cubicOut } from 'svelte/easing';
 
@@ -9,7 +10,7 @@
 </script>
 
 <main id="header">
-  <div class="titles" in:fade={{ duration: 750, easing: cubicOut, delay: 250 }}>
+  <div class="header" in:fade={{ duration: 750, easing: cubicOut, delay: 250 }}>
     <div>
       <h1 class="main-title">Welcome</h1>
     </div>
@@ -20,38 +21,45 @@
       </GradientText>
     </h2>
   </div>
-  <div class="about" in:fly={{ duration: 750, easing: cubicOut, delay: 750, x: 50 }}>
+  <ContentBox containerStyle={{ width: '75%' }}>
     <p>
       I'm Elias, a {age}-year-old developer. I can make anything from Discord bots, to websites,
       games and pretty much anything in-between. I had begun programming when I was 12, and my first
       language was C#, my favourite language to date. Not too long after, I picked up
-      web-development, with plain HTML, CSS and JS and later on learned a few frameworks :D<br /><br
-      />
-      My current skill-set includes:
-      <span class="skillset">
-        <GradientText rgbValues={['#61DBFB', '#FFFFFF']} direction="to top right">
-          React
-        </GradientText>,
-        <GradientText rgbValues={['#FF3E00 30%', '#FA8761']} direction="to top right">
-          Svelte
-        </GradientText>,
-        <GradientText rgbValues={['#FFC928 60%', '#FFFFFF']} direction="to top right">
-          JavaScript
-        </GradientText>,
-        <GradientText rgbValues={['#3178C6', '#FFFFFF']} direction="to top right">
-          TypeScript
-        </GradientText>,
-        <GradientText rgbValues={['#F58410', '#FFA713', '#FFCB2D']} direction="to top right">
-          Firebase
-        </GradientText>
-        <span style="font-weight: normal">and</span>
-        <GradientText rgbValues={['#68217A', '#822C98', '#953DAC']} direction="to top right">
-          C# (C Sharp)
-        </GradientText>.
-      </span>
+      web-development, with plain HTML, CSS and JS and later on learned a few frameworks :D
+      <br /><br />
+      My skill-set:
     </p>
-  </div>
-  <!-- </div> -->
+
+    <ul class="skillset">
+      <li class="langs">
+        <a href="https://www.w3schools.com/cs/">C# (C Sharp)</a>
+        <a href="https://www.w3schools.com/js/">JavaScript</a>
+        <a href="https://www.w3schools.com/typescript/">TypeScript</a>
+        <a href="https://www.w3schools.com/html/">HTML5</a>
+        <a href="https://sass-lang.com/">SCSS</a>
+      </li>
+      <li class="frameworks">
+        <a href="https://react.dev/">React</a>
+        <a href="https://svelte.dev/">Svelte</a>
+        <a href="https://unity.com/">Unity Engine</a>
+        <a href="https://nodejs.org/">NodeJS</a>
+        <a href="https://expressjs.com/">ExpressJS</a>
+        <a href="https://dotnet.microsoft.com/">.NET Framework & Core</a>
+      </li>
+      <li class="tools">
+        <a href="https://firebase.google.com">Firebase</a>
+        <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+        <a href="https://visualstudio.microsoft.com/">Visual Studio</a>
+        <a href="https://git-scm.com">Git</a>
+        <a href="https://github.com">Github</a>
+        <a href="https://cloud.google.com">Google Cloud</a>
+        <a href="https://linux.org">Linux</a>
+        <a href="https://docker.com/">Docker</a>
+        <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a>
+      </li>
+    </ul>
+  </ContentBox>
 </main>
 
 <style lang="scss">
@@ -64,7 +72,7 @@
     align-items: center;
   }
 
-  main .titles {
+  main .header {
     text-align: center;
 
     .main-title {
@@ -78,24 +86,32 @@
 
     border-bottom: #fff dashed 2px;
     padding: 0 2rem 1.5rem 2rem;
+
+    margin-bottom: 2.5rem;
   }
 
-  main .about {
-    width: 75%;
-    max-width: 60ch;
-    padding: 1rem;
-    background: linear-gradient(to bottom right, #474747, #616161);
-    border-radius: 5px;
-    box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.13);
-    margin-top: 2.5rem;
+  .skillset {
+    > li {
+      margin-top: 0.5rem;
+      margin-left: 20px;
 
-    > p {
-      background-color: #010101;
-      padding: 1rem;
-      border-radius: 5px;
-      font-size: 1.15em;
-      .skillset {
-        font-weight: bold;
+      &.langs a {
+        background-color: #a2102e;
+      }
+
+      &.frameworks a {
+        background-color: blueviolet;
+      }
+
+      &.tools a {
+        background-color: #8b4513;
+      }
+
+      a {
+        padding: 4px 5px;
+        border-radius: 3px;
+        line-height: 2;
+        white-space: nowrap;
       }
     }
   }
