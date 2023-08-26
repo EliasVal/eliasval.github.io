@@ -59,7 +59,7 @@
     opacity: 1;
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 770px) {
     li {
       display: block;
       margin: 0;
