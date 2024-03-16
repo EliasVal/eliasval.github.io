@@ -9,13 +9,14 @@
   let isNavbarActive = false;
 
   const UpdateNavbar = () => {
-    const scroll = Math.max(Math.min((window.scrollY / 150) * 2, 2), 1);
+    const scroll = (1 / 150) * Math.min(window.scrollY, 150);
 
     screenWidth = window.innerWidth;
     const smallScreen = screenWidth <= 770;
     if (!smallScreen) isNavbarActive = true;
 
-    navbar.style.padding = smallScreen ? '0' : `calc(2.5rem / ${scroll * 1.25})`;
+    navbar.style.opacity = smallScreen ? '1' : scroll.toString();
+    navbar.style.padding = smallScreen ? '0' : '1rem';
     if (smallScreen) navbar.style.transition = 'none';
     else navbar.style.transition = 'padding 0.25s';
   };

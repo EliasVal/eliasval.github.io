@@ -11,17 +11,21 @@
 
 <main id="header">
   <div class="header" in:fade={{ duration: 750, easing: cubicOut, delay: 250 }}>
-    <div>
-      <h1 class="main-title">Welcome</h1>
-    </div>
-    <h2 class="secondary-title" in:fade={{ duration: 750, easing: cubicOut, delay: 450 }}>
-      to my
-      <GradientText rgbValues={['#EA6302', '#EB7413', '#F09712']} direction={'to right'}>
-        Portfolio
+    <h2 class="outlined secondary-title">Hello, I'm</h2>
+    <h1 class="main-title">
+      <GradientText rgbValues={['#FFFF0F', '#FFFF42']} direction={'to bottom right'}>
+        Elias Valkonsky
       </GradientText>
-    </h2>
+    </h1>
+    <h2 class="outlined secondary-title">Web developer</h2>
+    <!-- <h2 class="secondary-title" in:fade={{ duration: 750, easing: cubicOut, delay: 450 }}>
+        Welcome to my
+        <GradientText rgbValues={['#EA6302', '#EB7413', '#F09712']} direction={'to right'}>
+          Portfolio
+        </GradientText>
+      </h2> -->
   </div>
-  <ContentBox containerStyle={{ width: '75%' }}>
+  <!-- <ContentBox containerStyle={{ width: '75%' }}>
     <p>
       I'm Elias, a {age}-year-old developer. I can make anything from Discord bots, to websites,
       games and pretty much anything in-between. I had begun programming when I was 12, and my first
@@ -41,6 +45,7 @@
       </li>
       <li class="frameworks">
         <a href="https://react.dev/">React</a>
+        <a href="https://nextjs.org/">Next.js</a>
         <a href="https://svelte.dev/">Svelte</a>
         <a href="https://unity.com/">Unity Engine</a>
         <a href="https://nodejs.org/">NodeJS</a>
@@ -57,9 +62,11 @@
         <a href="https://linux.org">Linux</a>
         <a href="https://docker.com/">Docker</a>
         <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a>
+        <a href="https://azure.microsoft.com/en-us/products/devops">Azure Dev-Ops</a>
+        <a href="https://playwright.dev/">Playwright</a>
       </li>
     </ul>
-  </ContentBox>
+  </ContentBox> -->
 </main>
 
 <style lang="scss">
@@ -69,23 +76,34 @@
     flex-direction: column;
 
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+
+    padding: 5rem;
+    box-sizing: border-box;
   }
 
   main .header {
-    text-align: center;
+    text-align: left;
+    letter-spacing: 0.2ch;
 
     .main-title {
-      font-size: 3.5rem;
-      font-weight: bold;
+      font-size: 2.5rem;
+      letter-spacing: 0.3ch;
     }
 
     .secondary-title {
-      font-style: italic;
+      // font-style: italic;
+      font-size: 2rem;
     }
 
-    border-bottom: #fff dashed 2px;
-    padding: 0 2rem 1.5rem 2rem;
+    .outlined {
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: white;
+      color: transparent;
+    }
+
+    // border-bottom: #fff dashed 2px;
+    // padding: 0 2rem 1.5rem 2rem;
 
     margin-bottom: 2.5rem;
   }

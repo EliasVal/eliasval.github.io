@@ -61,6 +61,7 @@
     z-index: 2;
 
     margin: 0 0 0.5rem 0;
+    // padding: 5rem 2rem;
   }
 
   @media screen and (min-width: 750px) {
