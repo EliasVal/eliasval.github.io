@@ -11,6 +11,7 @@
 
   import Footer from '../Components/Footer.svelte';
   import { activeSection } from '$lib/tools';
+  import About from '../Components/Sections/About.svelte';
 </script>
 
 <Navbar />
@@ -20,10 +21,14 @@
 </IntersectionObserver>
 
 <IntersectionObserver on:visible={() => ($activeSection = 1)}>
-  <WorkEthics />
+  <About />
 </IntersectionObserver>
 
 <IntersectionObserver on:visible={() => ($activeSection = 2)}>
+  <WorkEthics />
+</IntersectionObserver>
+
+<IntersectionObserver on:visible={() => ($activeSection = 3)}>
   <Projects />
 </IntersectionObserver>
 

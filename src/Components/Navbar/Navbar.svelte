@@ -64,17 +64,20 @@
             />
           </svg>
         </span>
-        <ul class="nav-buttons">
-          <NavbarButton section={0}>About</NavbarButton>
-          <NavbarButton section={1}>Work Values</NavbarButton>
-          <NavbarButton section={2}>Projects</NavbarButton>
+        <div class="nav-buttons">
+          <NavbarButton section={0}>
+            <img style="display: block;" width="25px" src="/svgs/home.svg" alt="Home" />
+          </NavbarButton>
+          <NavbarButton section={1}>About</NavbarButton>
+          <NavbarButton section={2}>Work Values</NavbarButton>
+          <NavbarButton section={3}>Projects</NavbarButton>
           <NavbarButton
             section={-1}
             onClick={() => window.open('mailto:eliasvalk.dev@gmail.com', '_blank')}
           >
             Contact <img class="external" alt="" src="/svgs/external.svg" />
           </NavbarButton>
-        </ul>
+        </div>
       </span>
     {/if}
   </nav>
@@ -136,6 +139,8 @@
   .nav-buttons {
     list-style: none;
     z-index: 52;
+    display: flex;
+    align-items: center;
   }
 
   @media screen and (max-width: 770px) {

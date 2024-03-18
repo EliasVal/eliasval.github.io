@@ -13,7 +13,7 @@
   };
 </script>
 
-<li>
+<div>
   <button
     class="navbar-button"
     class:active={$activeSection == section}
@@ -21,10 +21,10 @@
   >
     <slot />
   </button>
-</li>
+</div>
 
 <style lang="scss">
-  li {
+  div {
     margin: 0 0.5rem;
     display: inline-block;
   }
@@ -60,7 +60,7 @@
   }
 
   @media screen and (max-width: 770px) {
-    li {
+    div {
       display: block;
       margin: 0;
       width: 100%;
