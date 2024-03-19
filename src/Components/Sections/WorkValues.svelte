@@ -62,13 +62,11 @@
         sub={true}
         title="- Albert Einstein, 1933&nbsp;"
         titleStyle={{
-          fontSize: '1.15rem',
           fontStyle: 'italic',
           textAlign: 'right',
           marginTop: '0.25rem'
         }}
         containerStyle={{ width: '100%', textAlign: 'left', paddingBottom: '0.35rem' }}
-        contentStyle={{ fontSize: '1.25rem' }}
       >
         &ldquo; Everything should be made as simple as possible, but no simpler &rdquo;
       </ContentBox>
@@ -80,15 +78,16 @@
   #workvalues {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 2rem);
 
     .header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 2em 3em;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // margin: 2em 3em;
       .title {
         font-size: 4em;
         font-weight: 600;
@@ -106,6 +105,12 @@
           display: inline-block;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 687px) {
+    .content {
+      font-size: 2.5vw;
     }
   }
 

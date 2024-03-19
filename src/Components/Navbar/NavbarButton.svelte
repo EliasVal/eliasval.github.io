@@ -27,6 +27,10 @@
   div {
     margin: 0 0.5rem;
     display: inline-block;
+
+    &:first-child .navbar-button::before {
+      border-top-right-radius: 5px;
+    }
   }
 
   button {
@@ -59,7 +63,7 @@
     opacity: 1;
   }
 
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 820px) {
     div {
       display: block;
       margin: 0;

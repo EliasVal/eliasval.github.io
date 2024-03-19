@@ -12,7 +12,7 @@
     const scroll = (1 / 150) * Math.min(window.scrollY, 150);
 
     screenWidth = window.innerWidth;
-    const smallScreen = screenWidth <= 770;
+    const smallScreen = screenWidth <= 820;
     if (!smallScreen) isNavbarActive = true;
 
     navbar.style.opacity = smallScreen ? '1' : scroll.toString();
@@ -24,14 +24,14 @@
   onMount(() => {
     UpdateNavbar();
 
-    if (screenWidth <= 770) isNavbarActive = false;
+    if (screenWidth <= 820) isNavbarActive = false;
   });
 </script>
 
 <svelte:window on:scroll={UpdateNavbar} on:resize={UpdateNavbar} />
 
 <div class="navbar-container">
-  {#if screenWidth <= 770}
+  {#if screenWidth <= 820}
     <button
       class="navbar-toggle"
       class:active={isNavbarActive}
@@ -45,7 +45,7 @@
   {/if}
 
   <nav bind:this={navbar} class="navbar">
-    {#if screenWidth > 770 || isNavbarActive}
+    {#if screenWidth > 820 || isNavbarActive}
       <span transition:slide={{ easing: cubicInOut }}>
         <span>
           <!-- <img class="logo" alt="" style="filter: invert(0);" src="/svgs/white.svg" /> -->
@@ -66,7 +66,11 @@
         </span>
         <div class="nav-buttons">
           <NavbarButton section={0}>
-            <img style="display: block;" width="25px" src="/svgs/home.svg" alt="Home" />
+            {#if screenWidth <= 820}
+              Home
+            {:else}
+              <img style="display: block;" width="25px" src="/svgs/home.svg" alt="Home" />
+            {/if}
           </NavbarButton>
           <NavbarButton section={1}>About</NavbarButton>
           <NavbarButton section={2}>Work Values</NavbarButton>
@@ -143,7 +147,7 @@
     align-items: center;
   }
 
-  @media screen and (max-width: 770px) {
+  @media screen and (max-width: 820px) {
     .navbar-container {
       right: unset;
       top: 1.25rem;
@@ -161,14 +165,16 @@
 
     .nav-buttons {
       width: 100%;
+      flex-direction: column;
     }
 
     .navbar .logo {
-      padding: 0.65rem 0.55rem;
-      border-bottom: #fff solid 2px;
-      width: 10rem !important;
-      box-sizing: border-box;
+      // padding: 0.65rem 0.55rem;
+      // border-bottom: #fff solid 2px;
+      // width: 10rem !important;
+      // box-sizing: border-box;
       // font-size: 1rem;
+      display: none;
     }
   }
 </style>
