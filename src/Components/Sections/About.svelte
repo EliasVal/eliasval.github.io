@@ -1,6 +1,8 @@
 <script lang="ts">
+  import { fly, slide } from 'svelte/transition';
   import ContentBox from '../ContentBox.svelte';
-  import GradientText from '../GradientText.svelte';
+  import SectionTitle from '../SectionTitle.svelte';
+  import { cubicInOut, cubicOut } from 'svelte/easing';
 
   const age: number =
     // @ts-ignore
@@ -8,16 +10,21 @@
 </script>
 
 <div id="about">
-  <h1>
-    <GradientText rgbValues={['#FFFF0F', '#FFFF42']} direction={'to right'}>About me</GradientText>
-  </h1>
-  <span class="aboutContainer">
+  <span in:fly={{ x: -150, duration: 850, easing: cubicOut, delay: 100, opacity: 0.00001 }}>
+    <SectionTitle rgbValues={['mediumpurple 45%', '#FFFFFF']} direction={'to top right'}
+      >About me</SectionTitle
+    >
+  </span>
+
+  <span class="aboutContainer" in:slide={{ duration: 750, delay: 250, easing: cubicInOut }}>
     <ContentBox>
       <p>
-        I'm Elias, a {age}-year-old developer. I've been programming as a hobbyist since 12, and
-        professionally as a Fullstack Web-Developer since 17. I had started my journey with simple
-        console-apps in C#, and then picked up web and game development. <br />
-        I currently work as a Fullstack Web-Developer, working with Next.js, React and many other technologies.
+        I'm Elias, {age == 18 ? 'an' : 'a'}
+        {age}-year-old developer. I've been programming as a hobbyist since I was 12, and
+        professionally as a Fullstack Web Developer since 17. I started my journey with simple
+        console apps in C# and then picked up web and game development.
+        <br /><br />
+        Now, I am working as a Fullstack web developer, working with Next.js, React, and many other technologies.
         <br /><br />
         My skill-set:
       </p>
@@ -55,17 +62,16 @@
       </ul>
     </ContentBox>
   </span>
+  <span aria-hidden="true" style="opacity: 0;">
+    <SectionTitle rgbValues={['#FFFF0F', '#FFFF42']} direction={'to right'}>About me</SectionTitle>
+  </span>
 </div>
 
 <style lang="scss">
   #about {
-    display: flex;
-    flex-direction: column;
-
-    > h1 {
-      margin: 2rem;
-      font-size: 4rem;
-    }
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    min-height: calc(100vh - 2rem);
   }
 
   .aboutContainer {
@@ -78,11 +84,8 @@
     .aboutContainer {
       font-size: 2.5vw;
     }
-
-    #about > h1 {
-      font-size: 8vw;
-    }
   }
+
   .skillset {
     > li {
       margin-top: 0.5rem;

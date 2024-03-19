@@ -14,11 +14,14 @@
 
   let cardWidth: number, cardHeight: number;
   let gallery: HTMLElement, galleryContainer: HTMLElement;
+  let rootStyles: HTMLElement | null;
 
   onMount(() => {
     getCardSize();
     $currentProjectIndex = 0;
     $galleryFlyDir = 0;
+    galleryContainer.style.minHeight = `calc(${cardHeight}px + 1rem)`;
+    rootStyles = document.querySelector(':root');
   });
 
   let t: NodeJS.Timeout;
@@ -26,14 +29,13 @@
     // Set left property of gallery element to show current project
     // (document.body.clientWidth - cardWidth) / 2 - To center one card
     // rest offsets that by current card index (with addition of 4.5rem gap)
-    if (gallery != null)
-      gallery.style.transform = `translateX(calc(${
-        (document.body.clientWidth - cardWidth) / 2
-      }px - (${cardWidth}px + 4.5rem) * ${$currentProjectIndex}))`;
-
-    // Set gallery container minimum height so project cards will not be cut off
-    if (galleryContainer != null) {
-      galleryContainer.style.minHeight = `calc(${cardHeight}px + 1rem)`;
+    if (rootStyles != null) {
+      rootStyles.style.setProperty('--idx', $currentProjectIndex.toString());
+      rootStyles.style.setProperty(
+        '--screenWidth',
+        Math.trunc((document.body.clientWidth - cardWidth) / 2) + 'px'
+      );
+      rootStyles.style.setProperty('--cardWidth', `calc(${Math.trunc(cardWidth)}px + 4.5rem)`);
     }
 
     // Delete any running timeouts so all transitions play smoothly
@@ -69,6 +71,12 @@
 </div>
 
 <style lang="scss">
+  :global(:root) {
+    --screenWidth: 0px;
+    --cardWidth: 0px;
+    --idx: 0;
+  }
+
   .gallery-container {
     position: relative;
     flex-grow: 1;
@@ -80,6 +88,10 @@
 
       display: flex;
       gap: 4.5rem;
+
+      // transform-origin: 50% 100%;
+
+      transform: translateX(calc(var(--screenWidth) - var(--cardWidth) * var(--idx)));
 
       transition: transform 0.75s cubic-bezier(0.6, 1, 0.6, 1);
     }

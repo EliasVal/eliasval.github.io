@@ -14,7 +14,7 @@
     <h1 class="primary-title" in:fly={{ y: 100, delay: 1250, duration: 1000, easing: cubicOut }}>
       Hi, I'm
       <GradientText rgbValues={['#EA6302', '#EB7413', '#F09712']} direction={'to right'}>
-        Elias Valknosky
+        Elias Valkonsky
       </GradientText>
     </h1>
     <h2 class="secondary-title" in:fly={{ y: 100, delay: 1400, duration: 1000, easing: cubicOut }}>
@@ -56,6 +56,7 @@
     .primary-title {
       font-size: 4rem;
       margin-bottom: 1rem;
+      position: relative;
     }
 
     .secondary-title {

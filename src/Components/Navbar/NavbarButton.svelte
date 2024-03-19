@@ -27,10 +27,6 @@
   div {
     margin: 0 0.5rem;
     display: inline-block;
-
-    &:first-child .navbar-button::before {
-      border-top-right-radius: 5px;
-    }
   }
 
   button {
@@ -68,6 +64,9 @@
       display: block;
       margin: 0;
       width: 100%;
+      &:first-child .navbar-button::before {
+        border-top-right-radius: 5px;
+      }
     }
 
     .navbar-button {

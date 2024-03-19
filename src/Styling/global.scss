@@ -4,21 +4,21 @@
   font-family: 'Rubik';
   font-style: italic;
   font-display: swap;
-  src: url('../Fonts/Rubik/rubik-italic.woff2') format('woff2');
+  src: url('../Fonts/Rubik/Rubik-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Rubik';
-  font-style: normal;
+  font-style: oblique;
   font-display: swap;
-  src: url('../Fonts/Rubik/rubik-normal.woff2') format('woff2');
+  src: url('../Fonts/Rubik/Rubik.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'CascadiaCode';
   font-style: normal;
   font-display: swap;
-  src: url('../Fonts/CascadiaCode/CascadiaCode.woff2') format('woff2');
+  src: url('../Fonts/CascadiaCode/CascadiaCode.ttf') format('truetype');
 }
 
 * {

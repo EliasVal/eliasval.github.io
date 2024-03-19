@@ -41,8 +41,8 @@
       "title": "BULLETFEST",
       "description": "A 2D Party game where you fight around with friends and strangers, with all kinds of strange weapons and items!",
       "status": {
-        "title": "In Development",
-        "color": "cyan"
+        "title": "Development Paused",
+        "color": "darkorange"
       },
       "madeWith": [
         { "img": "unity", "alt": "Unity Engine" },
@@ -62,8 +62,8 @@
       "title": "BeanBot",
       "description": "a Discord bot serving as the back-end for the game \"BULLETFEST\"!",
       "status": {
-        "title": "In Development",
-        "color": "cyan"
+        "title": "Development Paused",
+        "color": "darkorange"
       },
       "madeWith": [
         { "img": "firebase", "alt": "Firebase" },
