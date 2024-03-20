@@ -13,42 +13,43 @@
     </SectionTitle>
   </span>
   <div class="content">
-    <ul in:fade={{ duration: 250, delay: 100, easing: cubicInOut }}>
+    <div in:fade={{ duration: 250, delay: 100, easing: cubicInOut }}>
       <ContentBox>
-        <li
-          style="margin-bottom: 1rem;"
-          in:slide={{ duration: 500, delay: 250, easing: cubicInOut }}
-        >
-          <GradientText rgbValues={['#F00F0F', '#F9F9F9']} direction={'145deg'}>
-            Performance
-          </GradientText>
-          : whether it is a website or a game, I strive to make my projects perform the best.
-        </li>
-        <li
-          style="padding: 1rem 0; border-top: 1px dashed #fff; border-bottom: 1px dashed #fff"
-          in:slide={{ duration: 500, delay: 450, easing: cubicInOut }}
-        >
-          <GradientText rgbValues={['#0FF00F 50%', '#F9F9F9']} direction={'to top right'}>
-            SEO & Accessibility
-          </GradientText>
-          : I strive to achieve a perfect score in
-          <a href="https://web.dev/measure/">Google's lighthouse</a> tool in the SEO and Accessibility
-          criteria helping achieve a higher ranking in search engines such as Google and Bing, and allow
-          people with impairments to use the website, which they could not do otherwise.
-        </li>
+        <div in:slide={{ duration: 500, delay: 350, easing: cubicInOut }}>
+          <div>
+            <b>
+              <GradientText rgbValues={['#F00F0F', '#F9F9F9']} direction={'145deg'}>
+                Performance
+              </GradientText>
+            </b>: whether it is a website or a game, I strive to make my projects perform the best.
+          </div>
+          <div
+            style="padding: 1rem 0; border-top: 1px dashed #fff; border-bottom: 1px dashed #fff; margin: 1rem 0"
+          >
+            <b>
+              <GradientText rgbValues={['#0FF00F 50%', '#F9F9F9']} direction={'to top right'}>
+                SEO & Accessibility
+              </GradientText>
+            </b>: I strive to achieve a perfect score in
+            <a href="https://web.dev/measure/">Google's lighthouse</a> tool in the SEO and Accessibility
+            criteria helping achieve a higher ranking in search engines such as Google and Bing, and
+            allow people with impairments to use the website, which they could not do otherwise.
+          </div>
 
-        <li style="margin-top: 1rem;" in:slide={{ duration: 500, delay: 650, easing: cubicInOut }}>
-          <GradientText rgbValues={['#0FF0F0', '#F9F9F9']} direction={'to top right'}>
-            Design
-          </GradientText>
-          : I create unique designs for every website and game I make so that every product will feel
-          like a unique experience, such as this one. The designs may be simplistic, but they deliver
-          exactly what they need to.
-        </li>
+          <div>
+            <b>
+              <GradientText rgbValues={['#0FF0F0', '#F9F9F9']} direction={'to top right'}>
+                Design
+              </GradientText>
+            </b>: I create unique designs for every website and game I make so that every product
+            will feel like a unique experience, such as this one. The designs may be simplistic, but
+            they deliver exactly what they need to.
+          </div>
+        </div>
       </ContentBox>
       <br />
-    </ul>
-    <span in:fade={{ duration: 1750, delay: 1000, easing: cubicInOut }}>
+    </div>
+    <span in:fade={{ duration: 1200, delay: 1000, easing: cubicInOut }}>
       <ContentBox
         sub={true}
         title="- Albert Einstein, 1933&nbsp;"
@@ -84,12 +85,12 @@
       flex-direction: column;
       justify-content: center;
 
-      > ul {
+      > div {
         text-align: justify;
-        list-style: none;
-        // li b {
-        //   display: inline-block;
-        // }
+
+        b {
+          display: inline-block;
+        }
       }
     }
   }
