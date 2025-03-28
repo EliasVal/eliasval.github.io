@@ -24,14 +24,14 @@
         professionally as a Fullstack Web Developer since 17. I started my journey with simple
         console apps in C# and then picked up web and game development.
         <br /><br />
-        Now, I am working as a Fullstack web developer, working with Next.js, React, and many other technologies.
+        I worked as a Fullstack web developer for a year, with Next.js, React, and many other technologies.
         <br /><br />
         My skill-set:
       </p>
 
       <ul class="skillset">
         <li class="langs">
-          <a href="https://www.w3schools.com/cs/">C# (C Sharp)</a>
+          <a href="https://www.w3schools.com/cs/">C#</a>
           <a href="https://www.w3schools.com/js/">JavaScript</a>
           <a href="https://www.w3schools.com/typescript/">TypeScript</a>
           <a href="https://www.w3schools.com/html/">HTML5</a>
@@ -43,11 +43,14 @@
           <a href="https://svelte.dev/">Svelte</a>
           <a href="https://unity.com/">Unity Engine</a>
           <a href="https://nodejs.org/">Node.js</a>
+          <a href="https://bun.sh/">Bun</a>
           <a href="https://expressjs.com/">Express.js</a>
           <a href="https://dotnet.microsoft.com/">.NET Framework & Core</a>
+          <a href="https://angular.dev/">Angular</a>
         </li>
         <li class="tools">
           <a href="https://firebase.google.com">Firebase</a>
+          <a href="https://tailwindcss.com/">TailwindCSS</a>
           <a href="https://code.visualstudio.com/">Visual Studio Code</a>
           <a href="https://visualstudio.microsoft.com/">Visual Studio</a>
           <a href="https://git-scm.com">Git</a>
@@ -56,8 +59,12 @@
           <a href="https://linux.org">Linux</a>
           <a href="https://docker.com/">Docker</a>
           <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a>
-          <a href="https://azure.microsoft.com/en-us/products/devops">Azure Dev-Ops</a>
+          <a href="https://azure.microsoft.com/en-us/products/devops">Azure DevOps</a>
+          <a href="https://jira.atlassian.com/">Jira</a>
           <a href="https://playwright.dev/">Playwright</a>
+          <a href="https://www.postman.com/">Postman</a>
+          <a href="https://eslint.org/">ESLint</a>
+          <a href="http://mui.com/">MUI</a>
         </li>
       </ul>
     </ContentBox>

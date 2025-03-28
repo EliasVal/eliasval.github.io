@@ -37,44 +37,80 @@
       ]
     },
     {
-      "img": "bulletfest",
-      "title": "BULLETFEST",
-      "description": "A 2D Party game where you fight around with friends and strangers, with all kinds of strange weapons and items!",
+      "img": "chessed",
+      "title": "Chessed",
+      "description": "a Fully online chess app! complete with match history, match-finding and ELO!",
       "status": {
-        "title": "Development Paused",
-        "color": "darkorange"
+        "title": "Completed",
+        "color": "limegreen"
       },
       "madeWith": [
-        { "img": "unity", "alt": "Unity Engine" },
-        { "img": "firebase", "alt": "Firebase" },
-        { "img": "cs", "alt": "C#" }
+        { "img": "cs", "alt": "C#" },
+        { "img": "ts", "alt": "JavaScript" },
+        { "img": "nodejs", "alt": "NodeJS" }
       ],
       "availableAt": [
         {
-          "logo": "discord",
-          "url": "https://discord.com/invite/raupcYM4Gj",
-          "alt": "Discord Server"
+          "logo": "github",
+          "url": "https://github.com/EliasVal/chessed-frontend",
+          "alt": "Frontend Code"
+        },
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/chessed-backend",
+          "alt": "Backend Code"
+        }
+      ]
+    },
+    {
+      "img": "redalert",
+      "title": "Red Alert Discord Bot",
+      "description": "A Discord bot made to send messages about new red alerts in Israel.",
+      "status": {
+        "title": "Completed",
+        "color": "limegreen"
+      },
+      "madeWith": [
+        { "img": "nodejs", "alt": "NodeJS" },
+        { "img": "js", "alt": "JavaScript" }
+      ],
+      "availableAt": [
+        {
+          "logo": "github",
+          "url": "https://github.com/EliasVal/RedAlert-Discord-Bot",   
+          "alt": "Source Code (Github)"
         }
       ]
     },
     {
       "img": "bulletfest",
-      "title": "BeanBot",
-      "description": "a Discord bot serving as the back-end for the game \"BULLETFEST\"!",
+      "title": "BULLETFEST",
+      "description": "a 2D Party-game to fool around with goofy weapons! development was discontinued due to lack of time.",
       "status": {
-        "title": "Development Paused",
-        "color": "darkorange"
+        "title": "Discontinued",
+        "color": "darkred"
       },
       "madeWith": [
+        { "img": "unity", "alt": "Unity Engine" },
         { "img": "firebase", "alt": "Firebase" },
-        { "img": "ts", "alt": "TypeScript" },
-        { "img": "nodejs", "alt": "NodeJS" }
+        { "img": "cs", "alt": "C#" },
+        { "img": "ts", "alt": "TypeScript" }
       ],
       "availableAt": [
         {
           "logo": "discord",
           "url": "https://discord.com/invite/raupcYM4Gj",
           "alt": "Discord Server"
+        },
+        {
+          "logo": "github",
+          "url": "https://github.com/BULLETFEST/BULLETFEST",
+          "alt": "Source Code (Github)"
+        },
+        {
+          "logo": "github",
+          "url": "https://github.com/BULLETFEST/JooBot",
+          "alt": "Companion Discord bot"
         }
       ]
     },
