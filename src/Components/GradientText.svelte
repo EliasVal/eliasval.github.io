@@ -1,31 +1,33 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
-  export let rgbValues: string[];
-  export let direction: string;
+	interface Props {
+		direction: string;
+		rgbValues: string[];
+		children: any;
+	}
 
-  let elm: HTMLElement;
+	const { rgbValues, direction, children }: Props = $props();
 
-  // @ts-ignore
-  elm = elm;
+	let elm: HTMLElement;
 
-  onMount(() => {
-    elm.style.backgroundImage = `linear-gradient(${direction}, ${rgbValues.reduce((p, c) => {
-      return p + ', ' + c;
-    })})`;
+	onMount(() => {
+		elm.style.backgroundImage = `linear-gradient(${direction}, ${rgbValues.reduce((p, c) => {
+			return p + ', ' + c;
+		})})`;
 
-    // Get rid of trailing space
-    if (elm.innerText != '') elm.innerText = elm.innerText.replaceAll(/\t|\n|(\s$)/g, '');
-  });
+		// Get rid of trailing space
+		if (elm.innerText != '') elm.innerText = elm.innerText.replaceAll(/\t|\n|(\s$)/g, '');
+	});
 </script>
 
 <span bind:this={elm}>
-  <slot />
+	{@render children()}
 </span>
 
 <style>
-  span {
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+	span {
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 </style>

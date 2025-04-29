@@ -1,72 +1,77 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
-  export let steps = 100;
-  export let threshold = 50;
-  let element: HTMLElement;
-  let percent: number;
-  let observer: IntersectionObserver;
-  let unobserve = () => {};
-  let intersectionObserverSupport = true;
-  let toggleOnce = false;
-  const dispatch = createEventDispatcher();
+	import { onMount } from 'svelte';
 
-  function intersectPercent(entries: IntersectionObserverEntry[]) {
-    entries.forEach((entry) => {
-      percent = Math.round(Math.ceil(entry.intersectionRatio * 100));
-      if (percent >= threshold) {
-        if (!toggleOnce) {
-          toggleOnce = true;
-          // unobserve();
-        }
-        dispatch('visible');
-      }
-    });
-  }
+	interface Props {
+		steps?: number;
+		threshold?: number;
+		visible?: () => void;
+		children: any;
+	}
+	const { steps = 100, threshold = 50, children, visible = () => {} }: Props = $props();
 
-  function stepsToThreshold(steps: number) {
-    return [...Array(steps).keys()].map((n) => n / steps);
-  }
+	let element: HTMLElement;
+	let percent: number;
+	let observer: IntersectionObserver;
+	let unobserve = () => {};
+	let intersectionObserverSupport = $state(true);
+	let toggleOnce = $state(false);
 
-  onMount(() => {
-    intersectionObserverSupport =
-      'IntersectionObserver' in window &&
-      'IntersectionObserverEntry' in window &&
-      'intersectionRatio' in window.IntersectionObserverEntry.prototype;
+	function intersectPercent(entries: IntersectionObserverEntry[]) {
+		entries.forEach((entry) => {
+			percent = Math.round(Math.ceil(entry.intersectionRatio * 100));
+			if (percent >= threshold) {
+				if (!toggleOnce) {
+					toggleOnce = true;
+				}
+				visible();
+			}
+		});
+	}
 
-    const options = {
-      threshold: stepsToThreshold(steps)
-    };
+	function stepsToThreshold(steps: number) {
+		return [...Array(steps).keys()].map((n) => n / steps);
+	}
 
-    if (intersectionObserverSupport) {
-      observer = new IntersectionObserver(intersectPercent, options);
-      observer.observe(element);
-      unobserve = () => observer.unobserve(element);
-    }
-    return unobserve;
-  });
+	onMount(() => {
+		intersectionObserverSupport =
+			'IntersectionObserver' in window &&
+			'IntersectionObserverEntry' in window &&
+			'intersectionRatio' in window.IntersectionObserverEntry.prototype;
+
+		const options = {
+			threshold: stepsToThreshold(steps)
+		};
+
+		if (intersectionObserverSupport) {
+			observer = new IntersectionObserver(intersectPercent, options);
+			observer.observe(element);
+			unobserve = () => observer.unobserve(element);
+		}
+		return unobserve;
+	});
 </script>
 
 <section bind:this={element}>
-  <!-- Replacement of visibleOnce -->
-  {#if toggleOnce || !intersectionObserverSupport}
-    <slot />
-  {/if}
+	<!-- Replacement of visibleOnce -->
+	{#if toggleOnce || !intersectionObserverSupport}
+		{@render children()}
+	{/if}
 </section>
 
 <style lang="scss">
-  section {
-    min-height: 100vh;
+	section {
+		min-height: 100vh;
 
-    position: relative;
-    z-index: 2;
+		position: relative;
+		z-index: 2;
 
-    margin: 0 0 0.5rem 0;
-    // padding: 5rem 2rem;
-  }
+		margin: 0 0 0.5rem 0;
+		// padding: 5rem 2rem;
+	}
 
-  @media screen and (min-width: 750px) {
-    section {
-      scroll-margin-top: 2.5rem;
-    }
-  }
+	@media screen and (min-width: 750px) {
+		section {
+			scroll-margin-top: 2.5rem;
+		}
+	}
 </style>

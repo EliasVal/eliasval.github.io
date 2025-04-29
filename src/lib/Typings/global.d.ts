@@ -11,10 +11,8 @@ type Project = {
     url: string;
     alt?: string;
   }[];
-  madeWith: [
-    {
-      img: string;
-      alt?: string;
-    }
-  ];
+  madeWith: {
+    img: string;
+    alt?: string;
+  }[];
 };

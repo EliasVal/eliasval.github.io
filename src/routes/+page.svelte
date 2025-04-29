@@ -1,35 +1,35 @@
 <script lang="ts">
-  import Navbar from '../Components/Navbar/Navbar.svelte';
-  import Projects from './../Components/Sections/Projects.svelte';
+	import Navbar from '../Components/Navbar/Navbar.svelte';
+	import Projects from './../Components/Sections/Projects.svelte';
 
-  import '../Styling/global.scss';
+	import './global.scss';
 
-  import IntersectionObserver from '../Components/IntersectionObserver.svelte';
+	import IntersectionObserver from '../Components/IntersectionObserver.svelte';
 
-  import WorkEthics from '../Components/Sections/WorkValues.svelte';
-  import Main from '../Components/Sections/Main.svelte';
+	import WorkEthics from '../Components/Sections/WorkValues.svelte';
+	import Main from '../Components/Sections/Main.svelte';
 
-  import Footer from '../Components/Footer.svelte';
-  import { activeSection } from '$lib/tools';
-  import About from '../Components/Sections/About.svelte';
+	import Footer from '../Components/Footer.svelte';
+	import { globalState } from '$lib/state.svelte';
+	import About from '../Components/Sections/About.svelte';
 </script>
 
 <Navbar />
 
-<IntersectionObserver on:visible={() => ($activeSection = 0)}>
-  <Main />
+<IntersectionObserver visible={() => (globalState.activeSection = 0)}>
+	<Main />
 </IntersectionObserver>
 
-<IntersectionObserver on:visible={() => ($activeSection = 1)}>
-  <About />
+<IntersectionObserver visible={() => (globalState.activeSection = 1)}>
+	<About />
 </IntersectionObserver>
 
-<IntersectionObserver on:visible={() => ($activeSection = 2)}>
-  <WorkEthics />
+<IntersectionObserver visible={() => (globalState.activeSection = 2)}>
+	<WorkEthics />
 </IntersectionObserver>
 
-<IntersectionObserver on:visible={() => ($activeSection = 3)}>
-  <Projects />
+<IntersectionObserver visible={() => (globalState.activeSection = 3)}>
+	<Projects />
 </IntersectionObserver>
 
 <Footer />
