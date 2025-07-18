@@ -1,11 +1,13 @@
 <script lang="ts">
+	import { fade, fly } from 'svelte/transition';
 	import GradientText from './GradientText.svelte';
+	import { cubicOut } from 'svelte/easing';
 
 	const { direction = '', rgbValues = [], stickLeft = false, children } = $props();
 </script>
 
-<div>
-	<h1>
+<div in:fade={{ duration: 850, easing: cubicOut, delay: 100 }}>
+	<h1 in:fly={{ y: -10, duration: 850, easing: cubicOut, delay: 350 }}>
 		<GradientText {direction} {rgbValues}>
 			{@render children()}
 		</GradientText>
