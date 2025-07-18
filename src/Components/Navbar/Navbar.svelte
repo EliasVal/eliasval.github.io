@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 	import { slide } from 'svelte/transition';
+	import close from '../../icons/close.svg?raw';
+	import hamburger from '../../icons/hamburger.svg?raw';
 
 	let navbar: HTMLElement;
 	let screenWidth: number = $state(window.innerWidth);
@@ -38,13 +40,15 @@
 				isNavbarActive = !isNavbarActive;
 			}}
 		>
-			<img alt="" src="/svgs/hamburger.svg" />
+			<div style="width: 32px; height: 32px;">
+				{@html isNavbarActive ? close : hamburger}
+			</div>
 		</button>
 	{/if}
 
 	<nav bind:this={navbar} class="navbar">
 		{#if screenWidth > 820 || isNavbarActive}
-			<span transition:slide={{ easing: cubicInOut }}>
+			<span transition:slide={{ easing: cubicInOut, duration: 150 }}>
 				<span>
 					<svg class="logo" viewBox="0 0 44 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -120,17 +124,9 @@
 	}
 
 	.navbar-toggle {
-		z-index: 51;
-		padding: 0.5em;
-
+		padding: 2px;
 		border: #fff solid 2px;
-		border-radius: 5px 5px 0 0;
-		transition: border-radius 1.25s;
 		box-sizing: content-box;
-
-		img {
-			width: 1.75em;
-		}
 	}
 
 	img {
