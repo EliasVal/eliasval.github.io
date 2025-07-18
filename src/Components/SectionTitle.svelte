@@ -4,29 +4,27 @@
 	const { direction = '', rgbValues = [], stickLeft = false, children } = $props();
 </script>
 
-<h1 class={`${stickLeft ? 'stickLeft' : ''}`}>
-	<GradientText {direction} {rgbValues}>
-		{@render children()}
-	</GradientText>
-</h1>
+<div>
+	<h1>
+		<GradientText {direction} {rgbValues}>
+			{@render children()}
+		</GradientText>
+	</h1>
+</div>
 
 <style lang="scss">
+	div {
+		text-align: center;
+		border: 0.25rem rgba($color: #fff, $alpha: 0.25);
+		border-style: dashed solid;
+		border-radius: 10px;
+		padding: 1.5rem 0;
+		margin: 0 3rem;
+	}
+
 	h1 {
-		margin: 2rem auto;
-		max-width: 820px;
 		width: 100%;
 		font-size: 4rem;
-	}
-
-	h1.stickLeft {
-		max-width: unset;
-		margin: 2rem;
-	}
-
-	@media screen and (max-width: 920px) {
-		h1 {
-			margin: 2rem;
-		}
 	}
 
 	@media screen and (max-width: 687px) {

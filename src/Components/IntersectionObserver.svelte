@@ -52,7 +52,6 @@
 </script>
 
 <section bind:this={element}>
-	<!-- Replacement of visibleOnce -->
 	{#if toggleOnce || !intersectionObserverSupport}
 		{@render children()}
 	{/if}
@@ -60,18 +59,16 @@
 
 <style lang="scss">
 	section {
+		--padding-top: 5rem;
 		min-height: 100vh;
-
-		position: relative;
 		z-index: 2;
+		position: relative;
+		display: flex;
+		flex-direction: column;
 
-		margin: 0 0 0.5rem 0;
-		// padding: 5rem 2rem;
-	}
-
-	@media screen and (min-width: 750px) {
-		section {
-			scroll-margin-top: 2.5rem;
+		&:not(:first-of-type) {
+			padding-top: var(--padding-top);
+			min-height: calc(100vh - var(--padding-top));
 		}
 	}
 </style>

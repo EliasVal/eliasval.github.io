@@ -1,19 +1,17 @@
 <script lang="ts">
-	import { fly, slide } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 	import ContentBox from '../ContentBox.svelte';
 	import SectionTitle from '../SectionTitle.svelte';
-	import { cubicInOut, cubicOut } from 'svelte/easing';
+	import { cubicInOut } from 'svelte/easing';
 
 	const age: number =
 		new Date(new Date().valueOf() - new Date(2005, 11, 25).valueOf()).getFullYear() - 1970;
 </script>
 
 <div id="about">
-	<span in:fly={{ x: -150, duration: 850, easing: cubicOut, delay: 100, opacity: 0.00001 }}>
-		<SectionTitle rgbValues={['mediumpurple 45%', '#FFFFFF']} direction={'to top right'}
-			>About me</SectionTitle
-		>
-	</span>
+	<SectionTitle rgbValues={['mediumpurple 45%', '#FFFFFF']} direction={'to top right'}>
+		About Me
+	</SectionTitle>
 
 	<span class="aboutContainer" in:slide={{ duration: 750, delay: 250, easing: cubicInOut }}>
 		<ContentBox>
@@ -68,22 +66,20 @@
 			</ul>
 		</ContentBox>
 	</span>
-	<span aria-hidden="true" style="opacity: 0;">
-		<SectionTitle rgbValues={['#FFFF0F', '#FFFF42']} direction={'to right'}>About me</SectionTitle>
-	</span>
 </div>
 
 <style lang="scss">
 	#about {
-		display: grid;
-		grid-template-rows: min-content auto min-content;
-		min-height: calc(100vh - 2rem);
+		flex-grow: 1;
+		display: flex;
+		gap: 2rem;
+		flex-direction: column;
 	}
 
 	.aboutContainer {
+		flex-grow: 1;
 		align-self: center;
-		justify-self: center;
-		max-width: 75%;
+		margin: 0 2rem;
 	}
 
 	@media screen and (max-width: 687px) {

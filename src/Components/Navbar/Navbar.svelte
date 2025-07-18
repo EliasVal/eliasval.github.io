@@ -9,26 +9,24 @@
 	let isNavbarActive = $state(false);
 
 	const UpdateNavbar = () => {
-		const scroll = (1 / 150) * Math.min(window.scrollY, 150);
-
 		screenWidth = window.innerWidth;
 		const smallScreen = screenWidth <= 820;
 		if (!smallScreen) isNavbarActive = true;
 
-		navbar.style.opacity = smallScreen ? '1' : scroll.toString();
-		navbar.style.padding = smallScreen ? '0' : '1rem';
-		if (smallScreen) navbar.style.transition = 'none';
-		else navbar.style.transition = 'padding 0.25s';
+		navbar.style.padding = smallScreen ? '0' : '0.5rem 1rem';
 	};
 
 	onMount(() => {
 		UpdateNavbar();
-
 		if (screenWidth <= 820) isNavbarActive = false;
+
+		setTimeout(() => {
+			navbar.style.animationDelay = '0ms';
+		}, 2500);
 	});
 </script>
 
-<svelte:window on:scroll={UpdateNavbar} on:resize={UpdateNavbar} />
+<svelte:window on:resize={UpdateNavbar} />
 
 <div class="navbar-container">
 	{#if screenWidth <= 820}
@@ -94,7 +92,12 @@
 		left: 0;
 		right: 0;
 	}
+
 	.navbar {
+		transform: translateY(-100%);
+		animation: navbarFly 750ms ease-in-out forwards;
+		animation-delay: 1500ms;
+
 		> span {
 			display: flex;
 			justify-content: space-between;
@@ -155,6 +158,8 @@
 
 		.navbar {
 			border-radius: 0 5px 5px 5px;
+			animation: none;
+			transform: initial;
 
 			> span {
 				flex-direction: column;
@@ -168,12 +173,16 @@
 		}
 
 		.navbar .logo {
-			// padding: 0.65rem 0.55rem;
-			// border-bottom: #fff solid 2px;
-			// width: 10rem !important;
-			// box-sizing: border-box;
-			// font-size: 1rem;
 			display: none;
+		}
+	}
+
+	@keyframes navbarFly {
+		from {
+			transform: translateY(-100%);
+		}
+		to {
+			transform: translateY(0);
 		}
 	}
 </style>

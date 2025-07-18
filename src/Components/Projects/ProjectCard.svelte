@@ -78,6 +78,9 @@
 
 <style lang="scss">
 	.project-card {
+		--fly-deg: 0.75deg;
+		--fly-stop-deg: 0.25deg;
+
 		flex-shrink: 0;
 		width: 75vw;
 		background: linear-gradient(to bottom left, #555555, #3b3b3b);
@@ -88,13 +91,17 @@
 
 		transition:
 			scale 0.15s,
-			box-shadow 0.25s;
+			box-shadow 0.25s,
+			filter 0.15s;
+
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;
+		filter: grayscale(0.5) brightness(0.3);
 
 		&.selected {
-			scale: 105%;
+			filter: grayscale(0) brightness(1);
+			scale: 110%;
 			box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.15);
 		}
 
@@ -174,7 +181,7 @@
 			transform: rotateZ(0deg);
 		}
 		to {
-			transform: rotateZ(2deg);
+			transform: rotateZ(var(--fly-deg));
 		}
 	}
 
@@ -183,16 +190,16 @@
 			transform: rotateZ(0deg);
 		}
 		to {
-			transform: rotateZ(-2deg);
+			transform: rotateZ(calc(-1 * var(--fly-deg)));
 		}
 	}
 
 	@keyframes stop-right {
 		from {
-			transform: rotateZ(2deg);
+			transform: rotateZ(var(--fly-deg));
 		}
 		50% {
-			transform: rotateZ(-0.5deg);
+			transform: rotateZ(calc(-1 * var(--fly-stop-deg)));
 		}
 		to {
 			transform: rotateZ(0);
@@ -201,10 +208,10 @@
 
 	@keyframes stop-left {
 		from {
-			transform: rotateZ(-2deg);
+			transform: rotateZ(calc(-1 * var(--fly-deg)));
 		}
 		50% {
-			transform: rotateZ(0.5deg);
+			transform: rotateZ(var(--fly-stop-deg));
 		}
 		to {
 			transform: rotateZ(0);
