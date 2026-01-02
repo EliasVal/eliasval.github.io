@@ -6,32 +6,35 @@
 	import close from '../../icons/close.svg?raw';
 	import hamburger from '../../icons/hamburger.svg?raw';
 
+	const SMALL_SCREEN_WIDTH = 820;
+	const SLIDE_TRANSITION_DURATION = 150;
+
 	let navbar: HTMLElement;
-	let screenWidth: number = $state(window.innerWidth);
 	let isNavbarActive = $state(false);
+	let isSmallScreen = $state(true);
+	let transitioningToSmallScreen = $state(false);
 
-	const UpdateNavbar = () => {
-		screenWidth = window.innerWidth;
-		const smallScreen = screenWidth <= 820;
-		if (!smallScreen) isNavbarActive = true;
+	$effect(() => {
+		navbar.style.padding = isSmallScreen ? '0' : '0.5rem 1rem';
+		if (isSmallScreen) {
+			transitioningToSmallScreen = true;
+			setTimeout(() => {
+				transitioningToSmallScreen = false;
+			}, SLIDE_TRANSITION_DURATION);
 
-		navbar.style.padding = smallScreen ? '0' : '0.5rem 1rem';
-	};
+			isNavbarActive = false;
+		}
+	});
 
 	onMount(() => {
-		UpdateNavbar();
-		if (screenWidth <= 820) isNavbarActive = false;
-
-		setTimeout(() => {
-			navbar.style.animationDelay = '0ms';
-		}, 2500);
+		isSmallScreen = window.innerWidth <= SMALL_SCREEN_WIDTH;
 	});
 </script>
 
-<svelte:window on:resize={UpdateNavbar} />
+<svelte:window on:resize={() => (isSmallScreen = window.innerWidth <= SMALL_SCREEN_WIDTH)} />
 
 <div class="navbar-container">
-	{#if screenWidth <= 820}
+	{#if isSmallScreen}
 		<button
 			class="navbar-toggle"
 			class:active={isNavbarActive}
@@ -47,8 +50,13 @@
 	{/if}
 
 	<nav bind:this={navbar} class="navbar">
-		{#if screenWidth > 820 || isNavbarActive}
-			<span transition:slide={{ easing: cubicInOut, duration: 150 }}>
+		{#if !isSmallScreen || isNavbarActive}
+			<span
+				transition:slide={{
+					easing: cubicInOut,
+					duration: transitioningToSmallScreen ? 0 : SLIDE_TRANSITION_DURATION
+				}}
+			>
 				<span>
 					<svg class="logo" viewBox="0 0 44 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -67,7 +75,7 @@
 				</span>
 				<div class="nav-buttons">
 					<NavbarButton section={0}>
-						{#if screenWidth <= 820}
+						{#if isSmallScreen}
 							Home
 						{:else}
 							<img style="display: block;" width="25px" src="/svgs/home.svg" alt="Home" />
@@ -100,7 +108,6 @@
 	.navbar {
 		transform: translateY(-100%);
 		animation: navbarFly 750ms ease-in-out forwards;
-		animation-delay: 1500ms;
 
 		> span {
 			display: flex;

@@ -21,12 +21,12 @@ export const projects: Project[] = [
 			},
 			{
 				logo: 'web',
-				url: 'https://eliasval.github.io/old-svelte',
+				url: 'https://eliasval.github.io/old-svelte/index.html',
 				alt: 'Old Svelte Design'
 			},
 			{
 				logo: 'web',
-				url: 'https://eliasval.github.io/old-react',
+				url: 'https://eliasval.github.io/old-react/index.html',
 				alt: 'Old React Design'
 			}
 		],

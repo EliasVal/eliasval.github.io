@@ -6,16 +6,29 @@
 
 	import { onMount } from 'svelte';
 	import SectionTitle from '../SectionTitle.svelte';
+	import { intersectionObserver } from '../actions/intersection-observer';
 
 	onMount(() => (globalState.galleryIsFocused = true));
+
+	let isVisible = $state(false);
 </script>
 
-<div id="projects">
-	<SectionTitle rgbValues={['#0FF0FF', '#0FFFFF', '#FFFFFF']} direction={'to top right'} stickLeft>
-		My Projects
-	</SectionTitle>
-	<ProjectGallery {projects} />
-</div>
+<section
+	id="projects"
+	use:intersectionObserver={{
+		onVisible: () => {
+			globalState.activeSection = 3;
+			isVisible = true;
+		}
+	}}
+>
+	{#if isVisible}
+		<SectionTitle rgbValues={['#0FF0FF', '#0FFFFF', '#FFFFFF']} direction={'to top right'}>
+			My Projects
+		</SectionTitle>
+		<ProjectGallery {projects} />
+	{/if}
+</section>
 
 <style lang="scss">
 	#projects {

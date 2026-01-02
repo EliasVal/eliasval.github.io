@@ -1,21 +1,21 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import GradientText from './GradientText.svelte';
-	import { cubicOut } from 'svelte/easing';
+	import { cubicInOut } from 'svelte/easing';
 
-	const { direction = '', rgbValues = [], stickLeft = false, children } = $props();
+	const { direction = '', rgbValues = [], children } = $props();
 </script>
 
-<div in:fade={{ duration: 850, easing: cubicOut, delay: 100 }}>
-	<h1 in:fly={{ y: -10, duration: 850, easing: cubicOut, delay: 350 }}>
+<header in:fade={{ duration: 850, easing: cubicInOut, delay: 100 }}>
+	<h1 in:fade={{ duration: 500, easing: cubicInOut, delay: 200 }}>
 		<GradientText {direction} {rgbValues}>
 			{@render children()}
 		</GradientText>
 	</h1>
-</div>
+</header>
 
 <style lang="scss">
-	div {
+	header {
 		text-align: center;
 		border: 0.25rem rgba($color: #fff, $alpha: 0.25);
 		border-style: dashed solid;

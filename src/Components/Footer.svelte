@@ -17,7 +17,7 @@
 	});
 </script>
 
-<div class="footer">
+<footer>
 	<div class="divider">
 		<svg
 			id="visual"
@@ -85,6 +85,7 @@
 			</g>
 		</svg>
 	</div>
+
 	<div class="content">
 		<p>
 			Made in <GradientText rgbValues={['#f7630c 65%', '#ffffff']} direction="to bottom right">
@@ -94,10 +95,10 @@
 		</p>
 		<p>&copy; EliasValk, {new Date().getFullYear()}</p>
 	</div>
-</div>
+</footer>
 
 <style lang="scss">
-	.footer .divider {
+	footer .divider {
 		position: relative;
 		width: 100vw;
 		height: 155px;
@@ -109,7 +110,7 @@
 		}
 	}
 
-	.footer .content {
+	footer .content {
 		background-color: black;
 		position: relative;
 		padding: 0 1em 2em 1em;

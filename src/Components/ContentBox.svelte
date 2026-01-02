@@ -2,18 +2,20 @@
 	interface Props {
 		containerStyle?: Partial<CSSStyleDeclaration>;
 		titleStyle?: Partial<CSSStyleDeclaration>;
+		undertitleStyle?: Partial<CSSStyleDeclaration>;
 		contentStyle?: Partial<CSSStyleDeclaration>;
 		title?: string | null;
-		sub?: boolean;
+		undertitle?: string | null;
 		children: any;
 	}
 
 	const {
 		containerStyle = {},
 		titleStyle = {},
+		undertitleStyle = {},
 		contentStyle = {},
 		title = null,
-		sub = false,
+		undertitle = null,
 		children
 	}: Props = $props();
 
@@ -26,29 +28,37 @@
 </script>
 
 <div class="container" style={formatToHTMLStyleFromObject(containerStyle)}>
-	{#if title && !sub}
-		<h1 style={formatToHTMLStyleFromObject(titleStyle)}>
+	{#if title}
+		<h2 class="title" style={formatToHTMLStyleFromObject(titleStyle)}>
 			{title}
-		</h1>
+		</h2>
 	{/if}
 	<div class="content" style={formatToHTMLStyleFromObject(contentStyle)}>
 		{@render children()}
 	</div>
-	{#if title && sub}
-		<h1 style={formatToHTMLStyleFromObject(titleStyle)}>
-			{title}
-		</h1>
+	{#if undertitle}
+		<h2 style={formatToHTMLStyleFromObject(undertitleStyle)}>
+			{undertitle}
+		</h2>
 	{/if}
 </div>
 
 <style lang="scss">
 	.container {
 		max-width: 60ch;
-		padding: 1rem;
+		padding: 0.75em;
 		background: linear-gradient(to bottom right, #474747, #616161);
 		border-radius: 5px;
 		box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.13);
 		box-sizing: border-box;
+
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+	}
+
+	.title {
+		margin-inline-start: 0.2ch;
 	}
 
 	.content {
@@ -56,5 +66,6 @@
 		padding: 1rem;
 		border-radius: 5px;
 		font-size: 1.15em;
+		flex-grow: 1;
 	}
 </style>
