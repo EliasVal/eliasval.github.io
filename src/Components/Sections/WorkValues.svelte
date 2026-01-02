@@ -30,8 +30,8 @@
 							</GradientText>
 						</b>: I strive to achieve a perfect score in
 						<a href="https://web.dev/measure/">Google's lighthouse</a> tool in the SEO and Accessibility
-						criteria helping achieve a higher ranking in search engines such as Google and Bing, and
-						allow people with impairments to use the website, which they could not do otherwise.
+						criteria helping achieve a higher ranking in search engines such as Google and Bing, and allow
+						people with impairments to use the website, which they could not do otherwise.
 					</div>
 
 					<div>
