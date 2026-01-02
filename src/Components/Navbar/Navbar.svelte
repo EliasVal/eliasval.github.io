@@ -11,7 +11,7 @@
 
 	let navbar: HTMLElement;
 	let isNavbarActive = $state(false);
-	let isSmallScreen = $state(true);
+	let isSmallScreen = $state(false);
 	let transitioningToSmallScreen = $state(false);
 
 	$effect(() => {
