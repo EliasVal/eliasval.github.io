@@ -1,42 +1,5 @@
 export const projects: Project[] = [
 	{
-		img: 'WebBody',
-		title: 'Portfolio',
-		description:
-			'The website you\'re currently visiting!<br>Originally made with React, but now the portfolio was remade (twice) with Svelte!<br>Old versions also included in the "Available at" section below.',
-		status: {
-			title: 'Maintained',
-			color: 'royalblue'
-		},
-		availableAt: [
-			{
-				logo: 'github',
-				url: 'https://github.com/EliasVal/eliasval.github.io',
-				alt: 'Source Code (Github)'
-			},
-			{
-				logo: 'web',
-				url: 'https://eliasval.github.io',
-				alt: "Current Design (You're here!)"
-			},
-			{
-				logo: 'web',
-				url: 'https://eliasval.github.io/old-svelte/index.html',
-				alt: 'Old Svelte Design'
-			},
-			{
-				logo: 'web',
-				url: 'https://eliasval.github.io/old-react/index.html',
-				alt: 'Old React Design'
-			}
-		],
-		madeWith: [
-			{ img: 'svelte', alt: 'Svelte' },
-			{ img: 'ts', alt: 'TypeScript' },
-			{ img: 'scss', alt: 'SCSS' }
-		]
-	},
-	{
 		img: 'chessed',
 		title: 'Chessed',
 		description: 'a Fully online chess app! complete with match history, match-finding and ELO!',
@@ -205,74 +168,5 @@ export const projects: Project[] = [
 			{ img: 'cs', alt: 'C#' },
 			{ img: 'unity', alt: 'Unity Engine' }
 		]
-	},
-	{
-		img: 'WebBody',
-		title: 'Discord Emoji Bot',
-		description: 'A Discord bot made to "bypass" Discord\'s server limits on custom emojis!',
-		status: {
-			title: 'Completed',
-			color: 'limegreen'
-		},
-		availableAt: [
-			{
-				logo: 'github',
-				url: 'https://github.com/EliasVal/DiscordEmojiBot',
-				alt: 'Source Code (Github)'
-			}
-		],
-		madeWith: [
-			{ img: 'ts', alt: 'TypeScript' },
-			{ img: 'nodejs', alt: 'NodeJS' },
-			{ img: 'firebase', alt: 'Firebase' }
-		]
-	},
-	{
-		img: 'spunch',
-		title: 'Image to ASCII art Converter',
-		description:
-			'This applications converts images to ASCII art. Originally made with Electron and later remade with Windows Presentation Foundation (WPF) Forms.',
-		status: {
-			title: 'Completed',
-			color: 'limegreen'
-		},
-		availableAt: [
-			{
-				logo: 'github',
-				url: 'https://github.com/EliasVal/ITAConverter',
-				alt: 'Source Code (Github)'
-			},
-			{
-				logo: 'download',
-				url: 'https://github.com/EliasVal/ITAConverter/releases/tag/v1.0-WPF',
-				alt: 'Download'
-			}
-		],
-		madeWith: [
-			{ img: 'html', alt: 'HTML' },
-			{ img: 'scss', alt: 'SCSS' },
-			{ img: 'js', alt: 'JavaScript' },
-			{ img: 'cs', alt: 'C#' },
-			{ img: 'electron', alt: 'Electron' },
-			{ img: 'wpf', alt: 'WPF Forms' }
-		]
-	},
-	{
-		img: 'WebBody',
-		title: 'TCP Messaging App',
-		description:
-			'This project was just me fiddling around with networking, particularly the Transmission Control Protocol (TCP) in C#.',
-		status: {
-			title: 'Completed',
-			color: 'limegreen'
-		},
-		availableAt: [
-			{
-				logo: 'github',
-				url: 'https://github.com/EliasVal/TcpMessaging',
-				alt: 'Source Code (Github)'
-			}
-		],
-		madeWith: [{ img: 'cs', alt: 'C#' }]
 	}
 ];

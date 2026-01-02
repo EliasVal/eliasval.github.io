@@ -93,6 +93,27 @@
 			</GradientText>
 			with &#x1F9E1;
 		</p>
+
+		<div>
+			<a href="https://github.com/EliasVal/eliasval.github.io" title="Source Code" target="_blank">
+				<img style="filter: invert(1);" src="/svgs/github.svg" alt="" />
+			</a>
+			<a
+				href="https://eliasval.github.io/old-react/index.html"
+				title="Old Design (React)"
+				target="_blank"
+			>
+				<img style="filter: invert(1);" src="/svgs/web.svg" alt="" />
+			</a>
+			<a
+				href="https://eliasval.github.io/old-svelte/index.html"
+				title="Old Design (Svelte)"
+				target="_blank"
+			>
+				<img style="filter: invert(1);" src="/svgs/web.svg" alt="" />
+			</a>
+		</div>
+
 		<p>&copy; EliasValk, {new Date().getFullYear()}</p>
 	</div>
 </footer>
