@@ -60,22 +60,20 @@
 			</article>
 		</main>
 		<footer class="flex items-center justify-between">
-			<ProjectGalleryControls {projectsLength}>
-				{#if Object.entries(project.availableAt || {}).length > 0}
-					<span class="flex items-center gap-2">
-						<span class="hidden sm:inline-block">
-							<span class="project-details-header"> Available at </span>:
-						</span>
-						<span class="inline-flex">
-							{#each project.availableAt as location}
-								<a title={location.alt} href={location.url} style="text-decoration: none;">
-									<img src="/svgs/{location.logo}.svg" alt={location.alt} />
-								</a>
-							{/each}
-						</span>
+			{#if Object.entries(project.availableAt || {}).length > 0}
+				<span class="flex items-center gap-1.5">
+					<span>
+						<span class="project-details-header"> Available at </span>:
 					</span>
-				{/if}
-			</ProjectGalleryControls>
+					<span class="inline-flex items-center">
+						{#each project.availableAt as location}
+							<a title={location.alt} href={location.url}>
+								<img src="/svgs/{location.logo}.svg" alt={location.alt} />
+							</a>
+						{/each}
+					</span>
+				</span>
+			{/if}
 		</footer>
 	</div>
 </div>

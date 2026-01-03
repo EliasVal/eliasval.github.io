@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { globalState } from '$lib/state.svelte';
 	import ProjectCard from './ProjectCard.svelte';
+	import ProjectGalleryControls from './ProjectGalleryControls.svelte';
 
 	const { projects }: { projects: Project[] } = $props();
 
@@ -48,7 +49,6 @@
 				? 0
 				: globalState.currentProjectIndex + 1;
 
-		// Get its bounding rect (dimensions)
 		let rect = document.querySelectorAll('.project-card')[goodCard]?.getBoundingClientRect();
 		cardWidth = rect?.width || 0;
 		cardHeight = rect?.height || 0;
@@ -57,10 +57,14 @@
 
 <svelte:window on:resize={getCardSize} />
 
-<div class="gallery" bind:this={gallery}>
-	{#each projects as project, i}
-		<ProjectCard {project} projectIndex={i} projectsLength={projects.length} />
-	{/each}
+<div class="flex grow flex-col gap-12">
+	<div class="gallery grow" bind:this={gallery}>
+		{#each projects as project, i}
+			<ProjectCard {project} projectIndex={i} projectsLength={projects.length} />
+		{/each}
+	</div>
+
+	<ProjectGalleryControls projectsLength={projects.length} />
 </div>
 
 <style lang="scss">

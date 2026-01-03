@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { globalState } from '$lib/state.svelte';
-	export let projectsLength: number;
+	interface Props {
+		projectsLength: number;
+	}
+	const { projectsLength }: Props = $props();
 
 	const nextProject = () => {
 		let oldValue = globalState.currentProjectIndex;
@@ -11,8 +14,6 @@
 				: globalState.currentProjectIndex + 1;
 
 		globalState.galleryFlyDir = oldValue < globalState.currentProjectIndex ? -1 : 1;
-
-		globalState.galleryTransitionEnded = true;
 		globalState.galleryTransitionEnded = false;
 	};
 
@@ -25,8 +26,6 @@
 				: globalState.currentProjectIndex - 1;
 
 		globalState.galleryFlyDir = oldValue < globalState.currentProjectIndex ? -1 : 1;
-
-		globalState.galleryTransitionEnded = true;
 		globalState.galleryTransitionEnded = false;
 	};
 
@@ -38,30 +37,44 @@
 	};
 </script>
 
-<button on:click={prevProject} aria-label="Previous Project" title="Previous Project">
-	<img src="/svgs/arr-left.svg" alt="" />
-</button>
-<slot />
-<button on:click={nextProject} aria-label="Next Project" title="Next Project">
-	<img style="transform: scaleX(-1);" src="/svgs/arr-left.svg" alt="" />
-</button>
+<footer class="mx-8 flex justify-between">
+	<button onclick={prevProject} title="Previous Project">
+		<img src="/svgs/arr-left.svg" alt="" />
+	</button>
+	<span class="flex items-center gap-1">
+		{#each new Array(projectsLength) as _, i}
+			<button
+				class:bg-white={i == globalState.currentProjectIndex}
+				class="h-4 w-4 rounded-full border border-white bg-gray-800 transition"
+				onclick={() => {
+					const oldValue = globalState.currentProjectIndex;
+					globalState.currentProjectIndex = i;
+					globalState.galleryFlyDir = oldValue < globalState.currentProjectIndex ? -1 : 1;
+					globalState.galleryTransitionEnded = false;
+				}}
+				title={`Jump to project ${i + 1}`}
+			></button>
+		{/each}
+	</span>
+	<button onclick={nextProject} title="Next Project">
+		<img style="transform: scaleX(-1);" src="/svgs/arr-left.svg" alt="" />
+	</button>
+</footer>
 
 <style lang="postcss">
 	@reference "tailwindcss";
 
-	button {
+	footer > button {
 		border-radius: 20%;
 		background-color: white;
-		border: none;
-		height: 3rem;
+		border: 1px solid black;
 
 		img {
 			aspect-ratio: 1 / 1;
 		}
 
 		cursor: pointer;
-		pointer-events: fill;
 
-		@apply size-6 md:size-12;
+		@apply size-8 md:size-12;
 	}
 </style>
