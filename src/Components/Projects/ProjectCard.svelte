@@ -10,11 +10,7 @@
 	}
 
 	const { project, projectIndex, projectsLength }: Props = $props();
-
-	let width = $state(window.innerWidth);
 </script>
-
-<svelte:window on:resize={() => (width = window.innerWidth)} />
 
 <div
 	class="project-card"
@@ -25,21 +21,22 @@
 	class:stopRightAnim={globalState.galleryTransitionEnded && globalState.galleryFlyDir == 1}
 	class:stopLeftAnim={globalState.galleryTransitionEnded && globalState.galleryFlyDir == -1}
 >
-	<div class="project-image">
-		<img src="/images/{project.img}.jpg" alt={project.title} />
+	<div>
+		<img class="w-1/3 rounded-md md:w-full" src="/images/{project.img}.jpg" alt={project.title} />
 	</div>
 	<div class="project-details">
-		<h1>
+		<h1 class="font-[Rubik]">
 			<GradientText rgbValues={['#fff 25%', '#7f7f7f']} direction={'to bottom left'}>
 				{project.title}
 			</GradientText>
 		</h1>
-		<ul class="project-details-list">
-			<li>
+		<main class="flex grow flex-col gap-2">
+			<article>
 				<span class="project-details-header">Description</span>:
 				{@html project.description}
-			</li>
-			<li class="project-status">
+			</article>
+
+			<article class="project-status">
 				<span class="project-details-header">Project Status</span>:
 				<span style="font-weight: 550">
 					<GradientText
@@ -49,30 +46,37 @@
 						{project.status.title}
 					</GradientText>
 				</span>
-			</li>
-			<li class="made-with">
-				<span class="project-details-header">Made with</span>:
-				{#each project.madeWith as mw}
-					<img src="/svgs/{mw.img}.svg" alt={mw.alt} title={mw.alt} />
-				{/each}
-			</li>
-			<li class="card-footer">
-				<ProjectGalleryControls {projectsLength}>
-					{#if Object.entries(project.availableAt || {}).length > 0}
-						<span>
-							{#if width >= 510}
-								<span class="project-details-header">Available at</span>:
-							{/if}
+			</article>
+
+			<article class="made-with flex items-center gap-1">
+				<span>
+					<span class="project-details-header">Made with</span>:
+				</span>
+				<span>
+					{#each project.madeWith as mw}
+						<img src="/svgs/{mw.img}.svg" alt={mw.alt} title={mw.alt} />
+					{/each}
+				</span>
+			</article>
+		</main>
+		<footer class="flex items-center justify-between">
+			<ProjectGalleryControls {projectsLength}>
+				{#if Object.entries(project.availableAt || {}).length > 0}
+					<span class="flex items-center gap-2">
+						<span class="hidden sm:inline-block">
+							<span class="project-details-header"> Available at </span>:
+						</span>
+						<span class="inline-flex">
 							{#each project.availableAt as location}
 								<a title={location.alt} href={location.url} style="text-decoration: none;">
 									<img src="/svgs/{location.logo}.svg" alt={location.alt} />
 								</a>
 							{/each}
 						</span>
-					{/if}
-				</ProjectGalleryControls>
-			</li>
-		</ul>
+					</span>
+				{/if}
+			</ProjectGalleryControls>
+		</footer>
 	</div>
 </div>
 
@@ -105,17 +109,12 @@
 			box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.15);
 		}
 
-		.project-image {
-			img {
-				border-radius: 5px;
-			}
-		}
-
 		.project-details {
 			background: linear-gradient(to bottom right, #131313, #000);
 			border-radius: 5px;
 			flex-grow: 1;
 			padding: 1rem;
+			font-family: 'Cascadia Code';
 
 			display: flex;
 			flex-direction: column;
@@ -123,25 +122,6 @@
 			> h1 {
 				text-decoration: underline;
 				text-decoration-style: dashed;
-			}
-
-			&-list {
-				> li,
-				> li span {
-					margin-top: 0.75rem;
-					font-family: 'Cascadia Code';
-				}
-
-				.card-footer {
-					display: flex;
-					justify-content: space-between;
-					margin-top: auto;
-				}
-
-				list-style: none;
-				display: flex;
-				flex-direction: column;
-				flex-grow: 1;
 			}
 
 			&-header {
@@ -153,9 +133,7 @@
 
 			img {
 				filter: invert(1);
-				margin-right: 0.55rem;
-				scale: 125%;
-				transform: translateY(20%);
+				margin-right: 0.25rem;
 			}
 		}
 	}

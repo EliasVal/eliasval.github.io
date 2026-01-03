@@ -46,19 +46,22 @@
 	<img style="transform: scaleX(-1);" src="/svgs/arr-left.svg" alt="" />
 </button>
 
-<style lang="scss">
+<style lang="postcss">
+	@reference "tailwindcss";
+
 	button {
 		border-radius: 20%;
 		background-color: white;
-		border: none; //3px #000 solid;
+		border: none;
 		height: 3rem;
+
 		img {
 			aspect-ratio: 1 / 1;
 		}
 
-		width: 3rem;
 		cursor: pointer;
-
 		pointer-events: fill;
+
+		@apply size-6 md:size-12;
 	}
 </style>

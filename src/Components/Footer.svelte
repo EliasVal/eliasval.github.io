@@ -139,6 +139,8 @@
 		padding: 0 1em 2em 1em;
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1px 4rem;
 		p {
 			line-height: 1.2em;
 		}
