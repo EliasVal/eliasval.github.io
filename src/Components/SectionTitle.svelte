@@ -20,13 +20,13 @@
 		border: 0.25rem rgba($color: #fff, $alpha: 0.25);
 		border-style: dashed solid;
 		border-radius: 10px;
-		padding: 1.5rem 0;
+		padding: 1rem 0;
 		margin: 0 3rem;
 	}
 
 	h1 {
 		width: 100%;
-		font-size: 4rem;
+		font-size: 3.5rem;
 	}
 
 	@media screen and (max-width: 687px) {

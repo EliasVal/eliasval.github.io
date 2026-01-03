@@ -15,6 +15,7 @@
 
 <section
 	id="about"
+	class="[&>header]:self-stretch"
 	use:intersectionObserver={{
 		onVisible: () => {
 			globalState.activeSection = 1;
@@ -27,20 +28,18 @@
 			About Me & Work experience
 		</SectionTitle>
 
-		<span class="about-container" in:slide={{ duration: 700, delay: 200, easing: cubicInOut }}>
-			<ContentBox>
-				<p>
-					I'm Elias, {age == 18 ? 'an' : 'a'}
-					{age}-year-old developer. I've been programming as a hobbyist since I was 12, and
-					professionally as a Fullstack Web Developer since 17. I started my journey with simple
-					console apps in C# and then picked up web and game development.
-				</p>
-			</ContentBox>
-		</span>
+		<ContentBox>
+			<p in:slide={{ duration: 700, delay: 200, easing: cubicInOut }}>
+				I'm Elias, {age == 18 ? 'an' : 'a'}
+				{age}-year-old developer. I've been programming as a hobbyist since I was 12, and
+				professionally as a Fullstack Web Developer since 17. I started my journey with simple
+				console apps in C# and then picked up web and game development.
+			</p>
+		</ContentBox>
 
 		<span class="work-experience">
 			<ContentBox title="Tech-Stack">
-				<article in:slide={{ duration: 800, delay: 600, easing: cubicInOut }}>
+				<article in:slide={{ duration: 700, delay: 600, easing: cubicInOut }}>
 					<Techstack />
 				</article>
 			</ContentBox>
@@ -67,15 +66,12 @@
 		display: flex;
 		gap: 2rem;
 		flex-direction: column;
-	}
-
-	.about-container {
-		align-self: center;
+		align-items: center;
 	}
 
 	.work-experience {
 		display: flex;
-		gap: 2rem;
+		gap: 1rem;
 		flex-wrap: wrap;
 		justify-content: center;
 	}

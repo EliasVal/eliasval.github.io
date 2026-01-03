@@ -27,7 +27,7 @@
 	};
 </script>
 
-<div class="container" style={formatToHTMLStyleFromObject(containerStyle)}>
+<div class="card" style={formatToHTMLStyleFromObject(containerStyle)}>
 	{#if title}
 		<h2 class="title" style={formatToHTMLStyleFromObject(titleStyle)}>
 			{title}
@@ -44,13 +44,12 @@
 </div>
 
 <style lang="scss">
-	.container {
+	.card {
 		max-width: 60ch;
 		padding: 0.75em;
 		background: linear-gradient(to bottom right, #474747, #616161);
 		border-radius: 5px;
 		box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.13);
-		box-sizing: border-box;
 
 		display: flex;
 		flex-direction: column;

@@ -25,13 +25,13 @@
 		</SectionTitle>
 
 		<div class="content">
-			<div class="values" in:fade={{ duration: 250, delay: 100, easing: cubicInOut }}>
+			<div class="values" in:slide={{ duration: 1200, delay: 100, easing: cubicInOut }}>
 				<Content />
 			</div>
 
 			<span
 				style="display: flex; justify-content: center;"
-				in:fade={{ duration: 1200, delay: 1000, easing: cubicInOut }}
+				in:fade={{ duration: 1350, delay: 1000, easing: cubicInOut }}
 			>
 				<ContentBox
 					undertitle="- Albert Einstein, 1933&nbsp;"
