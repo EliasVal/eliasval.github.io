@@ -2,7 +2,9 @@ export const projects: Project[] = [
 	{
 		img: 'chessed',
 		title: 'Chessed',
-		description: 'a Fully online chess app! complete with match history, match-finding and ELO!',
+		description: `Fully functional online chess app with multiplayer, matchmaking and more!
+			<br />Made as a school project, using a custom-built chess engine, backend & frontend.
+			The backend was built in Node.js, and the frontend in Xamarin. Deployed on Google Cloud Platform.`,
 		status: {
 			title: 'Completed',
 			color: 'limegreen'
@@ -28,7 +30,8 @@ export const projects: Project[] = [
 	{
 		img: 'redalert',
 		title: 'Red Alert Discord Bot',
-		description: 'A Discord bot made to send messages about new red alerts in Israel.',
+		description:
+			'Discord bot made for sending Red Alerts in Discord servers, built using Node.js and Discord.js, deployed on Glitch.',
 		status: {
 			title: 'Completed',
 			color: 'limegreen'
@@ -48,8 +51,8 @@ export const projects: Project[] = [
 	{
 		img: 'bulletfest',
 		title: 'BULLETFEST',
-		description:
-			'a 2D Party-game to fool around with goofy weapons! development was discontinued due to lack of time.',
+		description: `2D Party-game to fool around with goofy weapons! The project was discontinued due to lack of time and resources.<br>
+			The game featured online multiplayer, various game-modes, and a companion Discord bot for community features! The game was built using the Unity Engine, with Firebase as backend services.`,
 		status: {
 			title: 'Discontinued',
 			color: 'darkred'
@@ -82,7 +85,7 @@ export const projects: Project[] = [
 		img: 'driveBot',
 		title: 'Drive Bot',
 		description:
-			'A Commissioned Discord bot that acts like a Cloud Storage medium! Complete with a fully navigatable file system!',
+			'A Commissioned Discord bot made to manage a "Virtual file system" within a Discord server.<br>The project was completed and delivered to the client successfully.',
 		status: {
 			title: 'Completed',
 			color: 'limegreen'
@@ -102,10 +105,9 @@ export const projects: Project[] = [
 	{
 		img: 'alphabot',
 		title: 'Alphabot',
-		description:
-			"An all-purpose Discord bot that I used to work on.<br>The project was abandoned due to problems with finding a proper server to host the bot, and Discord's many controversial API changes (such as practically forcing slash commands).",
+		description: `A Discord bot made to help manage and moderate Discord servers.<br>The project was discontinued due to lack of resources and low demand. The bot features moderation, utility and fun commands.`,
 		status: {
-			title: 'Deprecated',
+			title: 'Discontinued',
 			color: 'red'
 		},
 		availableAt: [
@@ -124,10 +126,11 @@ export const projects: Project[] = [
 	{
 		img: 'dbugger',
 		title: 'D-Bugger',
-		description:
-			'A project made for developers to log & keep track of bugs.<br>The project was shut down due to lack of funding and the low demand for it.',
+		description: `a Bug-tracker made for developers and teams to log, track and manage bugs, tasks, etc.
+			Made with Svelte and deployed on Google Cloud.<br />
+			The project was discontinued due to lack of funding and the low demand for it.`,
 		status: {
-			title: 'Deprecated',
+			title: 'Discontinued',
 			color: 'red'
 		},
 		availableAt: [
@@ -147,7 +150,8 @@ export const projects: Project[] = [
 	{
 		img: 'DFTH',
 		title: "Don't Feed the Hole",
-		description: 'A 2D Hypercasual game I made with a group of friends for a game-jam competition!',
+		description: `A 2D Hypercasual game built during a game-jam competition.
+		You play as a character defending their home planet by blocking space debris from feeding a massive black hole.`,
 		status: {
 			title: 'Completed',
 			color: 'limegreen'
