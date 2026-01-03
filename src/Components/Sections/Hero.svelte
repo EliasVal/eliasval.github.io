@@ -20,14 +20,14 @@
 >
 	{#if isVisible}
 		<div
-			class="w-[85%] absolute top-1/2 max-w-5xl -translate-y-[95%] pointer-events-none [&>svg]:opacity-10 z-0"
+			class="pointer-events-none absolute top-1/2 z-0 w-[85%] max-w-5xl -translate-y-[95%] [&>svg]:opacity-10"
 			in:fade={{ delay: 150, duration: 800, easing: cubicInOut }}
 		>
 			{@html logoWhite}
 		</div>
 
 		<h1
-			class="md:text-6xl text-[8vw] z-10"
+			class="z-10 text-[8vw] md:text-6xl"
 			in:fly={{ y: 100, delay: 700, duration: 1000, easing: cubicInOut }}
 		>
 			Hi, I'm
@@ -37,7 +37,7 @@
 		</h1>
 
 		<h2
-			class="secondary-title md:text-3xl text-[4vw]"
+			class="secondary-title text-[4vw] md:text-3xl"
 			in:fly={{ y: 100, delay: 800, duration: 1000, easing: cubicInOut }}
 		>
 			Welcome to my

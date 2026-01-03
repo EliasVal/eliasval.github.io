@@ -66,7 +66,7 @@
 	<nav bind:this={navbar} class="navbar">
 		{#if isNavbarActive}
 			<span
-				class="flex justify-between items-center p-0 md:py-2 md:px-4 bg-[#030303]"
+				class="flex items-center justify-between bg-[#030303] p-0 md:px-4 md:py-2"
 				transition:dynamicTransition
 			>
 				{#if !isSmallScreen}
@@ -77,7 +77,7 @@
 				<div class="nav-buttons">
 					<NavbarButton section={0}>
 						<span class="block md:hidden"> Home </span>
-						<span class="invert hidden md:block [&>svg]:size-6 size-6">
+						<span class="hidden size-6 invert md:block [&>svg]:size-6">
 							{@html home}
 						</span>
 					</NavbarButton>
@@ -89,7 +89,7 @@
 						onClick={() => window.open('mailto:eliasvalk.dev@gmail.com', '_blank')}
 					>
 						Contact
-						<span class="invert [&>svg]:size-4 ms-1">
+						<span class="ms-1 invert [&>svg]:size-4">
 							{@html external}
 						</span>
 					</NavbarButton>
