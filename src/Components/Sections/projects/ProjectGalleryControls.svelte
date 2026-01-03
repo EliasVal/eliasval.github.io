@@ -37,7 +37,7 @@
 	};
 </script>
 
-<footer class="mx-8 flex justify-between">
+<footer class="mx-8 flex justify-center gap-8">
 	<button onclick={prevProject} title="Previous Project">
 		<img src="/svgs/arr-left.svg" alt="" />
 	</button>
@@ -45,7 +45,7 @@
 		{#each new Array(projectsLength) as _, i}
 			<button
 				class:bg-white={i == globalState.currentProjectIndex}
-				class="h-4 w-4 rounded-full border border-white bg-gray-800 transition"
+				class="h-4 w-4 cursor-pointer rounded-full border border-white bg-gray-800 transition"
 				onclick={() => {
 					const oldValue = globalState.currentProjectIndex;
 					globalState.currentProjectIndex = i;
