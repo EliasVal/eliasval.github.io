@@ -53,7 +53,7 @@
 	<button
 		class="navbar-toggle block md:hidden"
 		class:active={isNavbarActive}
-		aria-label="Toggle Navigation Bar"
+		title={`${isNavbarActive ? 'Close' : 'Open'} Navigation Bar`}
 		onclick={() => {
 			isNavbarActive = !isNavbarActive;
 		}}
@@ -75,8 +75,8 @@
 					</span>
 				{/if}
 				<div class="nav-buttons">
-					<NavbarButton section={0}>
-						<span class="block md:hidden"> Home </span>
+					<NavbarButton section={0} title="Home">
+						<span class="block md:hidden">Home</span>
 						<span class="hidden size-6 invert md:block [&>svg]:size-6">
 							{@html home}
 						</span>

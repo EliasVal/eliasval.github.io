@@ -1,6 +1,4 @@
 <script lang="ts">
-	import './global.scss';
-
 	import Navbar from '../Components/Navbar/Navbar.svelte';
 	import Projects from './../Components/Sections/Projects.svelte';
 

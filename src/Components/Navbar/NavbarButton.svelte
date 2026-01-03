@@ -5,9 +5,10 @@
 		section: number;
 		onClick?: Function;
 		children: any;
+		title?: string;
 	}
 
-	const { section, onClick, children }: Props = $props();
+	const { section, onClick, children, title = '' }: Props = $props();
 
 	const NavbarButon = (dest: number) => {
 		if (dest != -1) {
@@ -18,28 +19,24 @@
 	};
 </script>
 
-<div>
-	<button
-		class="navbar-button"
-		class:active={globalState.activeSection == section}
-		onclick={() => (onClick == null ? NavbarButon(section) : onClick())}
-	>
-		{@render children()}
-	</button>
-</div>
+<button
+	class="navbar-button"
+	class:active={globalState.activeSection == section}
+	onclick={() => (onClick == null ? NavbarButon(section) : onClick())}
+	{title}
+>
+	{@render children()}
+</button>
 
 <style lang="scss">
-	div {
-		margin: 0 0.5rem;
-		display: inline-block;
-	}
-
 	button {
 		outline: none;
 		border: none;
 		cursor: pointer;
 		background: none;
 		position: relative;
+		margin: 0 0.5rem;
+		display: inline-block;
 	}
 
 	.navbar-button {
@@ -65,15 +62,6 @@
 	}
 
 	@media screen and (max-width: 820px) {
-		div {
-			display: block;
-			margin: 0;
-			width: 100%;
-			&:first-child .navbar-button::before {
-				border-top-right-radius: 5px;
-			}
-		}
-
 		.navbar-button {
 			width: 100%;
 			text-align: left;

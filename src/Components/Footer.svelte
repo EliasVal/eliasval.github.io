@@ -2,18 +2,20 @@
 	import { onMount } from 'svelte';
 	import GradientText from './GradientText.svelte';
 
-	import { animate, svg as Svg } from 'animejs';
-
 	onMount(() => {
-		for (let i = 1; i < 6; i++) {
-			animate(`.path-1${i}`, {
-				d: Svg.morphTo(`.path-2${i}`),
-				alternate: true,
-				loop: true,
-				duration: 2500,
-				ease: 'inOutCubic'
-			});
-		}
+		Promise.all([import('animejs/animation'), import('animejs/svg')]).then(
+			([{ animate }, { morphTo }]) => {
+				for (let i = 1; i < 6; i++) {
+					animate(`.path-1${i}`, {
+						d: morphTo(`.path-2${i}`),
+						alternate: true,
+						loop: true,
+						duration: 2500,
+						ease: 'inOutCubic'
+					});
+				}
+			}
+		);
 	});
 </script>
 

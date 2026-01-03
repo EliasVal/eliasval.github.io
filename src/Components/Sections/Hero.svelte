@@ -38,7 +38,7 @@
 
 		<h2
 			class="secondary-title text-[4vw] md:text-3xl"
-			in:fly={{ y: 100, delay: 800, duration: 1000, easing: cubicInOut }}
+			in:fly={{ y: 100, delay: 850, duration: 1000, easing: cubicInOut }}
 		>
 			Welcome to my
 			<GradientText rgbValues={['#FFFF0F', '#FFFF42']} direction={'to right'}>

@@ -7,6 +7,71 @@
 
 		<title>Elias Valk - Portfolio</title>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@200..700&family=Rubik:wght@300..700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-!%3F%27%23%26%2F%3A()%2C%5C"
+			rel="stylesheet"
+		/>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: 'Rubik', sans-serif;
+				color: white;
+				box-sizing: border-box;
+			}
+
+			*:focus {
+				-webkit-tap-highlight-color: transparent;
+				outline: none;
+				-ms-touch-action: manipulation;
+				touch-action: manipulation;
+			}
+
+			body,
+			html {
+				overflow-x: hidden;
+				background-color: rgb(32, 32, 32);
+			}
+
+			body::before {
+				position: fixed;
+
+				width: 100vw;
+				height: 100vh;
+
+				background-image: radial-gradient(rgba(255, 255, 255, 0.1) 9%, gray 2%, transparent 9%);
+				background-position: 0% 0%;
+				background-size: 5vmin 5vmin;
+
+				z-index: 1;
+
+				content: '';
+				pointer-events: none;
+			}
+
+			::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: rgba(0, 0, 0, 0.3);
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #464646;
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555;
+			}
+		</style>
+
 		<meta name="google-site-verification" content="P57V9lJZGctM2dhmk7bC9Ia2arFD5lJhPphBrN11Kuk" />
 
 		<meta

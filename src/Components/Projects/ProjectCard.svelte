@@ -129,7 +129,7 @@
 				> li,
 				> li span {
 					margin-top: 0.75rem;
-					font-family: 'CascadiaCode';
+					font-family: 'Cascadia Code';
 				}
 
 				.card-footer {
