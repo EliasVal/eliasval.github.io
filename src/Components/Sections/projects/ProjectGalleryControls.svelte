@@ -1,63 +1,39 @@
 <script lang="ts">
-	import { globalState } from '$lib/state.svelte';
+	import { galleryState, nextProject, prevProject } from '$lib/projects-state.svelte';
+
 	interface Props {
 		projectsLength: number;
 	}
 	const { projectsLength }: Props = $props();
 
-	const nextProject = () => {
-		let oldValue = globalState.currentProjectIndex;
-
-		globalState.currentProjectIndex =
-			globalState.currentProjectIndex + 1 >= projectsLength
-				? 0
-				: globalState.currentProjectIndex + 1;
-
-		globalState.galleryFlyDir = oldValue < globalState.currentProjectIndex ? -1 : 1;
-		globalState.galleryTransitionEnded = false;
-	};
-
-	const prevProject = () => {
-		let oldValue = globalState.currentProjectIndex;
-
-		globalState.currentProjectIndex =
-			globalState.currentProjectIndex - 1 < 0
-				? projectsLength - 1
-				: globalState.currentProjectIndex - 1;
-
-		globalState.galleryFlyDir = oldValue < globalState.currentProjectIndex ? -1 : 1;
-		globalState.galleryTransitionEnded = false;
-	};
-
 	document.onkeydown = function (e) {
-		if (globalState.galleryIsFocused) {
-			if (e.key == 'ArrowLeft') prevProject();
-			else if (e.key == 'ArrowRight') nextProject();
+		if (galleryState.isFocused) {
+			if (e.key == 'ArrowLeft') prevProject(projectsLength);
+			else if (e.key == 'ArrowRight') nextProject(projectsLength);
 		}
 	};
 </script>
 
 <footer class="mx-8 flex justify-center gap-8">
-	<button onclick={prevProject} title="Previous Project">
+	<button onclick={() => prevProject(projectsLength)} title="Previous Project">
 		<img src="/svgs/arr-left.svg" alt="" />
 	</button>
 	<span class="flex items-center gap-1">
 		{#each new Array(projectsLength) as _, i}
 			<button
-				class:bg-white={i == globalState.currentProjectIndex}
-				class="h-4 w-4 cursor-pointer rounded-full border border-white bg-gray-800 transition"
+				class:bg-white={i == galleryState.index}
+				class="size-4 cursor-pointer rounded-full border border-white bg-transparent transition"
 				onclick={() => {
-					const oldValue = globalState.currentProjectIndex;
-					globalState.currentProjectIndex = i;
-					globalState.galleryFlyDir = oldValue < globalState.currentProjectIndex ? -1 : 1;
-					globalState.galleryTransitionEnded = false;
+					galleryState.flyDirection = i > galleryState.index ? -1 : 1;
+					galleryState.index = i;
+					galleryState.inTransition = true;
 				}}
 				title={`Jump to project ${i + 1}`}
 			></button>
 		{/each}
 	</span>
-	<button onclick={nextProject} title="Next Project">
-		<img style="transform: scaleX(-1);" src="/svgs/arr-left.svg" alt="" />
+	<button onclick={() => nextProject(projectsLength)} title="Next Project">
+		<img class="rotate-180" src="/svgs/arr-left.svg" alt="" />
 	</button>
 </footer>
 

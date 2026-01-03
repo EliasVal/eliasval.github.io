@@ -2,13 +2,14 @@
 	import ProjectGallery from './ProjectGallery.svelte';
 
 	import { projects } from '$lib/data';
-	import { globalState } from '$lib/state.svelte';
 
 	import { onMount } from 'svelte';
 	import SectionTitle from '../../SectionTitle.svelte';
 	import { intersectionObserver } from '../../actions/intersection-observer';
+	import { galleryState } from '$lib/projects-state.svelte';
+	import { activeSection } from '$lib/current-section.svelte';
 
-	onMount(() => (globalState.galleryIsFocused = true));
+	onMount(() => (galleryState.isFocused = true));
 
 	let isVisible = $state(false);
 </script>
@@ -17,7 +18,7 @@
 	id="projects"
 	use:intersectionObserver={{
 		onVisible: () => {
-			globalState.activeSection = 3;
+			activeSection.index = 3;
 			isVisible = true;
 		}
 	}}

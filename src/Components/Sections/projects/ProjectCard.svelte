@@ -1,24 +1,44 @@
 <script lang="ts">
-	import { globalState } from '$lib/state.svelte';
+	import { galleryState, nextProject, prevProject } from '$lib/projects-state.svelte';
 	import GradientText from '../../GradientText.svelte';
+
+	let startSwipeX: number = $state(0);
 
 	interface Props {
 		project: Project;
 		projectIndex: number;
-		projectsLength: number;
+		projectCount: number;
 	}
 
-	const { project, projectIndex, projectsLength }: Props = $props();
+	const { project, projectIndex, projectCount }: Props = $props();
+
+	function pointerDown(e: PointerEvent) {
+		startSwipeX = e.clientX;
+	}
+
+	function pointerUp(e: PointerEvent) {
+		const endSwipeX = e.clientX;
+		const swipeDistance = endSwipeX - startSwipeX;
+
+		const minSwipeDistance = 50;
+
+		if (swipeDistance > minSwipeDistance) {
+			prevProject(projectCount);
+		} else if (swipeDistance < -minSwipeDistance) {
+			nextProject(projectCount);
+		}
+	}
 </script>
 
 <div
+	onpointerdown={pointerDown}
+	onpointerup={pointerUp}
 	class="project-card"
-	class:selected={projectIndex == globalState.currentProjectIndex &&
-		globalState.galleryTransitionEnded}
-	class:flyRightAnim={!globalState.galleryTransitionEnded && globalState.galleryFlyDir == 1}
-	class:flyLeftAnim={!globalState.galleryTransitionEnded && globalState.galleryFlyDir == -1}
-	class:stopRightAnim={globalState.galleryTransitionEnded && globalState.galleryFlyDir == 1}
-	class:stopLeftAnim={globalState.galleryTransitionEnded && globalState.galleryFlyDir == -1}
+	class:selected={projectIndex == galleryState.index && !galleryState.inTransition}
+	class:flyRightAnim={galleryState.inTransition && galleryState.flyDirection == 1}
+	class:flyLeftAnim={galleryState.inTransition && galleryState.flyDirection == -1}
+	class:stopRightAnim={!galleryState.inTransition && galleryState.flyDirection == 1}
+	class:stopLeftAnim={!galleryState.inTransition && galleryState.flyDirection == -1}
 >
 	<div>
 		<img class="w-1/3 rounded-md md:w-full" src="/images/{project.img}.jpg" alt={project.title} />
@@ -79,6 +99,8 @@
 
 <style lang="scss">
 	.project-card {
+		touch-action: pan-y;
+
 		--fly-deg: 0.75deg;
 		--fly-stop-deg: 0.25deg;
 

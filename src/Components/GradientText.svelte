@@ -16,8 +16,7 @@
 			return p + ', ' + c;
 		})})`;
 
-		// Get rid of trailing space
-		if (elm.innerText != '') elm.innerText = elm.innerText.replaceAll(/\t|\n|(\s$)/g, '');
+		if (elm.innerText != '') elm.innerText = elm.innerText.trim();
 	});
 </script>
 

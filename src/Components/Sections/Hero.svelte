@@ -2,9 +2,9 @@
 	import { fade, fly } from 'svelte/transition';
 	import GradientText from '../GradientText.svelte';
 	import { cubicInOut } from 'svelte/easing';
-	import { globalState } from '$lib/state.svelte';
 	import { intersectionObserver } from '../actions/intersection-observer';
 	import logoWhite from '../../icons/logo-white.svg?raw';
+	import { activeSection } from '$lib/current-section.svelte';
 
 	let isVisible = $state(false);
 </script>
@@ -13,7 +13,7 @@
 	id="hero"
 	use:intersectionObserver={{
 		onVisible: () => {
-			globalState.activeSection = 0;
+			activeSection.index = 0;
 			isVisible = true;
 		}
 	}}

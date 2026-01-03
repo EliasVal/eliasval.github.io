@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { globalState } from '$lib/state.svelte';
+	import { activeSection } from '$lib/current-section.svelte';
 
 	interface Props {
 		section: number;
@@ -21,7 +21,7 @@
 
 <button
 	class="navbar-button"
-	class:active={globalState.activeSection == section}
+	class:active={activeSection.index == section}
 	onclick={() => (onClick == null ? NavbarButon(section) : onClick())}
 	{title}
 >

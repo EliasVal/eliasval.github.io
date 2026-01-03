@@ -4,8 +4,8 @@
 	import ContentBox from '../../ContentBox.svelte';
 	import SectionTitle from '../../SectionTitle.svelte';
 	import { intersectionObserver } from '../../actions/intersection-observer';
-	import { globalState } from '$lib/state.svelte';
 	import Content from './content.svelte';
+	import { activeSection } from '$lib/current-section.svelte';
 
 	let isVisible = $state(false);
 </script>
@@ -14,7 +14,7 @@
 	id="workvalues"
 	use:intersectionObserver={{
 		onVisible: () => {
-			globalState.activeSection = 2;
+			activeSection.index = 2;
 			isVisible = true;
 		}
 	}}

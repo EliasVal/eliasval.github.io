@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { globalState } from '$lib/state.svelte';
 	import ProjectCard from './ProjectCard.svelte';
 	import ProjectGalleryControls from './ProjectGalleryControls.svelte';
+	import { galleryState } from '$lib/projects-state.svelte';
 
 	const { projects }: { projects: Project[] } = $props();
 
@@ -13,8 +13,8 @@
 
 	onMount(() => {
 		getCardSize();
-		globalState.currentProjectIndex = 0;
-		globalState.galleryFlyDir = 0;
+		galleryState.index = 0;
+		galleryState.flyDirection = 0;
 		rootStyles = document.querySelector(':root');
 	});
 
@@ -24,7 +24,7 @@
 		// (document.body.clientWidth - cardWidth) / 2 - To center one card
 		// rest offsets that by current card index (with addition of --cardGap gap)
 		if (rootStyles != null) {
-			rootStyles.style.setProperty('--idx', globalState.currentProjectIndex.toString());
+			rootStyles.style.setProperty('--idx', galleryState.index.toString());
 			rootStyles.style.setProperty(
 				'--screenWidth',
 				Math.trunc((document.body.clientWidth - cardWidth) / 2) + 'px'
@@ -38,16 +38,13 @@
 		// Delete any running timeouts so all transitions play smoothly
 		clearTimeout(t);
 		t = setTimeout(() => {
-			globalState.galleryTransitionEnded = true;
+			galleryState.inTransition = false;
 		}, 725);
 	});
 
 	const getCardSize = () => {
 		// Grab a non-scaled-up project card
-		let goodCard =
-			globalState.currentProjectIndex + 1 >= projects.length
-				? 0
-				: globalState.currentProjectIndex + 1;
+		let goodCard = galleryState.index + 1 >= projects.length ? 0 : galleryState.index + 1;
 
 		let rect = document.querySelectorAll('.project-card')[goodCard]?.getBoundingClientRect();
 		cardWidth = rect?.width || 0;
@@ -60,7 +57,7 @@
 <div class="flex grow flex-col gap-12">
 	<div class="gallery grow" bind:this={gallery}>
 		{#each projects as project, i}
-			<ProjectCard {project} projectIndex={i} projectsLength={projects.length} />
+			<ProjectCard {project} projectIndex={i} projectCount={projects.length} />
 		{/each}
 	</div>
 
