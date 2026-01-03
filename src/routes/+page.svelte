@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Navbar from '../Components/Navbar/Navbar.svelte';
-	import Projects from './../Components/Sections/Projects.svelte';
+	import Projects from '../Components/Sections/projects/Projects.svelte';
 
 	import WorkEthics from '../Components/Sections/work-values/WorkValues.svelte';
 	import Hero from '../Components/Sections/Hero.svelte';

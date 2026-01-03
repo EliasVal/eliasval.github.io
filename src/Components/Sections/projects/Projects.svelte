@@ -1,12 +1,12 @@
 <script lang="ts">
-	import ProjectGallery from '../Projects/ProjectGallery.svelte';
+	import ProjectGallery from './ProjectGallery.svelte';
 
 	import { projects } from '$lib/data';
 	import { globalState } from '$lib/state.svelte';
 
 	import { onMount } from 'svelte';
-	import SectionTitle from '../SectionTitle.svelte';
-	import { intersectionObserver } from '../actions/intersection-observer';
+	import SectionTitle from '../../SectionTitle.svelte';
+	import { intersectionObserver } from '../../actions/intersection-observer';
 
 	onMount(() => (globalState.galleryIsFocused = true));
 

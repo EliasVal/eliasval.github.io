@@ -1,7 +1,6 @@
 <script lang="ts">
-	import ProjectGalleryControls from './ProjectGalleryControls.svelte';
 	import { globalState } from '$lib/state.svelte';
-	import GradientText from '../GradientText.svelte';
+	import GradientText from '../../GradientText.svelte';
 
 	interface Props {
 		project: Project;
